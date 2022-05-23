@@ -1,0 +1,4 @@
+Record=TopLevelDocument|FileName=Battery-Charging-Section.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=Battery-Charging-Section.SchDoc|FileName=Power-Section.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=Battery-Charging-Section.SchDoc|FileName=Switching-Regulators.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=Battery-Charging-Section.SchDoc|FileName=Top-Sheet.SchDoc|SheetNumber=1
