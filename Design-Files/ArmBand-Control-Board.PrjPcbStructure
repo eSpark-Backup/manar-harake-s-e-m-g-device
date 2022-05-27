@@ -1,5 +1,6 @@
 Record=TopLevelDocument|FileName=Battery-Charging-Section.SchDoc|SheetNumber=3
 Record=NoMainPathDocument|SourceDocument=Battery-Charging-Section.SchDoc|FileName=BLE-Section.SchDoc|SheetNumber=6
+Record=NoMainPathDocument|SourceDocument=Battery-Charging-Section.SchDoc|FileName=Connector-Section.SchDoc|SheetNumber=8
 Record=NoMainPathDocument|SourceDocument=Battery-Charging-Section.SchDoc|FileName=Controller-Section.SchDoc|SheetNumber=5
 Record=NoMainPathDocument|SourceDocument=Battery-Charging-Section.SchDoc|FileName=IMU-Section.SchDoc|SheetNumber=7
 Record=NoMainPathDocument|SourceDocument=Battery-Charging-Section.SchDoc|FileName=Power-Section.SchDoc|SheetNumber=2
