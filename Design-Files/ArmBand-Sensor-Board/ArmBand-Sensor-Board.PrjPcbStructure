@@ -1,0 +1,5 @@
+Record=TopLevelDocument|FileName=Top-Sheet.SchDoc|SheetNumber=1
+Record=SheetSymbol|SourceDocument=Top-Sheet.SchDoc|Designator=U_Filter-Section|SchDesignator=U_Filter-Section|FileName=Filter-Section.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=Filter-Section.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Top-Sheet.SchDoc|Designator=U_Opamp-Sheet1|SchDesignator=U_Opamp-Sheet1|FileName=Opamp-Sheet1.SchDoc|SheetNumber=4|SymbolType=Normal|RawFileName=Opamp-Sheet1.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Top-Sheet.SchDoc|Designator=U_Opamp-Sheet2|SchDesignator=U_Opamp-Sheet2|FileName=Opamp-Sheet2.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=Opamp-Sheet2.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=NoMainPathDocument|SourceDocument=Top-Sheet.SchDoc|FileName=Connector-Sheet.SchDoc|SheetNumber=5
