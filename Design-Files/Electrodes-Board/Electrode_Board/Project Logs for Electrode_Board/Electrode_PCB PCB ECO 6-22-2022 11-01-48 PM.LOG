@@ -1,0 +1,10 @@
+Added Component: Designator=C3(Cap 0402)
+Add component (AddParameter): Name = "Supplier 1"; Value = "Arrow Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "CC0402KRX7R9BB103"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Measure# Pin=C3-1
+Added Pin To Net: NetName=NetC3_2 Pin=C3-2
+Added Member To Class: ClassName=OpAmp_Sheet Member=Component C1 10uF'
+Added Member To Class: ClassName=OpAmp_Sheet Member=Component C2 0.1uF
+Added Member To Class: ClassName=OpAmp_Sheet Member=Component C3 10nF
+Added Member To Class: ClassName=OpAmp_Sheet Member=Component R2 150K
+Added Member To Class: ClassName=OpAmp_Sheet Member=Component R3 150K
