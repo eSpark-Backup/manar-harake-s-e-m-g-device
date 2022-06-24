@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
-PCB File : C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\ArmBand-Contrrol-Board\ArmBand-Control-Board.PcbDoc
-Date     : 6/21/2022
-Time     : 11:23:12 PM
+PCB File : E:\ManarHarake-sEMGDevice\Design-Files\ArmBand-Contrrol-Board\ArmBand-Control-Board.PcbDoc
+Date     : 6/24/2022
+Time     : 12:46:33 PM
 
 Processing Rule : Clearance Constraint (Gap=7mil) (All),(All)
 Rule Violations :0
@@ -10,8 +10,7 @@ Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Net ANT# Between Track (416mil,1053.811mil)(416.094mil,1053.906mil) on Top Layer And Track (418.69mil,1054.31mil)(448.69mil,1054.31mil) on Bottom Layer 
-Rule Violations :1
+Rule Violations :0
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -44,6 +43,6 @@ Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (
 Rule Violations :0
 
 
-Violations Detected : 1
+Violations Detected : 0
 Waived Violations : 0
 Time Elapsed        : 00:00:02
