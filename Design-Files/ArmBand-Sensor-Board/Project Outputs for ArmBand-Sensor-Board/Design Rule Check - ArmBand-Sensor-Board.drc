@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
-PCB File : C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\ArmBand-Sensor-Board\ArmBand-Sensor-Board.PcbDoc
-Date     : 6/25/2022
-Time     : 1:11:00 PM
+PCB File : D:\Github\ManarHarake-sEMGDevice\Design-Files\ArmBand-Sensor-Board\ArmBand-Sensor-Board.PcbDoc
+Date     : 6/26/2022
+Time     : 4:18:40 PM
 
 Processing Rule : Clearance Constraint (Gap=7mil) (All),(All)
 Rule Violations :0
@@ -45,4 +45,4 @@ Rule Violations :0
 
 Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:02
+Time Elapsed        : 00:00:01
