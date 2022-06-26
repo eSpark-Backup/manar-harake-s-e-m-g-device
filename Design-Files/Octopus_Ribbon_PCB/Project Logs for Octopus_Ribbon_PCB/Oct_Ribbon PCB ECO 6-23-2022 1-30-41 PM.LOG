@@ -1,0 +1,6 @@
+Added Component: Designator=P2(6 pin Ribbon Pads)
+Added Pin To Net: NetName=Measure5 Pin=P2-2
+Added Pin To Net: NetName=VREF Pin=P2-3
+Added Pin To Net: NetName=VCC_3V3 Pin=P2-4
+Added Pin To Net: NetName=GND Pin=P2-5
+Added Member To Class: ClassName=Sheet1 Member=Component P2 6 pin Ribbon Pads
