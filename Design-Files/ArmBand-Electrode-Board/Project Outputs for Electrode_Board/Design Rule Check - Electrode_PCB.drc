@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
-PCB File : D:\Github\ManarHarake-sEMGDevice\Design-Files\ArmBand-Electrode-Board\Electrode_PCB.PcbDoc
-Date     : 6/26/2022
-Time     : 4:20:15 PM
+PCB File : C:\GitHub\ManarHarake-sEMGDevice\Design-Files\ArmBand-Electrode-Board\Electrode_PCB.PcbDoc
+Date     : 6/27/2022
+Time     : 10:28:19 PM
 
 Processing Rule : Clearance Constraint (Gap=7mil) (All),(All)
 Rule Violations :0
@@ -10,7 +10,8 @@ Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-Rule Violations :0
+   Violation between Un-Routed Net Constraint: Net GND Between Track (-393mil,79mil)(-273.37mil,79mil) on Bottom Layer And Track (-213.772mil,82mil)(-213.772mil,154.845mil) on Bottom Layer 
+Rule Violations :1
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -37,12 +38,13 @@ Processing Rule : Silk to Silk (Clearance=0mil) (All),(All)
 Rule Violations :0
 
 Processing Rule : Net Antennae (Tolerance=0mil) (All)
-Rule Violations :0
+   Violation between Net Antennae: Track (-393mil,79mil)(-273.37mil,79mil) on Bottom Layer 
+Rule Violations :1
 
 Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
 Rule Violations :0
 
 
-Violations Detected : 0
+Violations Detected : 2
 Waived Violations : 0
 Time Elapsed        : 00:00:01
