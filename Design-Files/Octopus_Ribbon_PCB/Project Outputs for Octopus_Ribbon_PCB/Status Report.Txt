@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Octopus_Ribbon_PCB.PrjPcb]
+   Generated File[Oct_Ribbon_PCB.TXT]
+   Generated File[Oct_Ribbon_PCB.LDP]
+   Generated File[Oct_Ribbon_PCB.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 1:41:44 AM On 6/30/2022
