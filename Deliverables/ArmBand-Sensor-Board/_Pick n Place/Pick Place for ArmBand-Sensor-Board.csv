@@ -1,0 +1,39 @@
+Altium Designer Pick and Place Locations
+C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\ArmBand-Sensor-Board\Project Outputs for ArmBand-Sensor-Board\Pick Place for ArmBand-Sensor-Board.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       30/06/22
+Time:       02:37
+Revision:   f2311b3a0c6e8e784992adff7ad54c7896165dbe
+Variant:    No variations
+Units used: mil
+
+"Designator","Comment","Layer","Footprint","Center-X(mil)","Center-Y(mil)","Rotation","Description","Ref-X(mil)","Ref-Y(mil)","Pad-X(mil)","Pad-Y(mil)"
+"J2","FH34SRJ-12S-0.5SH(50)","TopLayer","FH34SRJ-12S-0.5SH(50)","597,898mil","898,213mil","180","CONN FPC/FFC 12POS .5MM","597,898mil","898,213mil","489,630mil","849,000mil"
+"SW1","TC-0522C-1.7-260G","TopLayer","TC-0522C-1.7-260G","115,000mil","670,000mil","90","No Gull Wing 50mA 100MO 80000 260gf@±50gf 12V -25?~+85? 1.7mm Golden Round Button Brick nogging SPST SMD Tactile Switches ROHS","115,000mil","670,000mil","42,165mil","551,890mil"
+"R2","10K","TopLayer","Res0402","59,500mil","219,000mil","0","RES SMD 10K OHM 1% 1/16W 0402","59,500mil","219,000mil","41,000mil","219,000mil"
+"R1","10K","TopLayer","Res0402","205,500mil","834,000mil","0","RES SMD 10K OHM 1% 1/16W 0402","205,500mil","834,000mil","187,000mil","834,000mil"
+"SW2","TC-0522C-1.7-260G","TopLayer","TC-0522C-1.7-260G","115,000mil","383,000mil","270","No Gull Wing 50mA 100MO 80000 260gf@±50gf 12V -25?~+85? 1.7mm Golden Round Button Brick nogging SPST SMD Tactile Switches ROHS","115,000mil","383,000mil","187,835mil","501,110mil"
+"P20","Test Point","TopLayer","TEST_POINT","64,000mil","45,000mil","0","Test Point ON","64,000mil","45,000mil","64,000mil","45,000mil"
+"J1","AFC07-S32FCA-00","TopLayer","AFC07-S32FCA-00","555,890mil","151,716mil","0","Slide Lock 32 Bottom Contact Surface Mount 0.5mm SMD,P=0.5mm FFC/FPC Connectors ROHS","555,890mil","151,716mil","250,772mil","194,433mil"
+"U17","LM324DT","TopLayer","SO-14","446,000mil","484,000mil","0","IC OPAMP GP 1.3MHZ 14SO","446,000mil","484,000mil","340,685mil","634,000mil"
+"C52","1uF","TopLayer","Cap_0402","992,000mil","835,500mil","270","CAP CER 1UF 16V X5R 0402","992,000mil","835,500mil","992,000mil","854,000mil"
+"C1","0.1uF","TopLayer","Cap_0402","638,500mil","483,000mil","180","CAP CER 0.1UF 50V X7R 0402","638,500mil","483,000mil","657,000mil","483,000mil"
+"U18","LM324DT","TopLayer","SO-14","817,315mil","485,000mil","0","IC OPAMP GP 1.3MHZ 14SO","817,315mil","485,000mil","712,000mil","635,000mil"
+"U16","TPMCP6021T-E/OT","TopLayer","SOT-23-5","895,016mil","891,598mil","0","SOT-23-5 Operational Amplifier ROHS","895,016mil","891,598mil","844,032mil","929,000mil"
+"R26","64K","TopLayer","Res0603","791,000mil","862,000mil","90","1/10W Thin Film Resistor 75V ±0.5% ±25ppm/? -55?~+155? 64kO 0603 Chip Resistor - Surface Mount ROHS","791,000mil","862,000mil","791,000mil","832,000mil"
+"R25","64K","TopLayer","Res0603","870,000mil","794,000mil","0","1/10W Thin Film Resistor 75V ±0.5% ±25ppm/? -55?~+155? 64kO 0603 Chip Resistor - Surface Mount ROHS","870,000mil","794,000mil","840,000mil","794,000mil"
+"P18","Test Point","TopLayer","TEST_POINT","315,000mil","938,000mil","180","Test Point ON","315,000mil","938,000mil","315,000mil","938,000mil"
+"P16","Test Point","TopLayer","TEST_POINT","214,000mil","938,000mil","90","Test Point ON","214,000mil","938,000mil","214,000mil","938,000mil"
+"P15","Test Point","TopLayer","TEST_POINT","1134,000mil","190,601mil","0","Test Point ON","1134,000mil","190,601mil","1134,000mil","190,601mil"
+"P13","Test Point","TopLayer","TEST_POINT","1134,000mil","282,515mil","0","Test Point ON","1134,000mil","282,515mil","1134,000mil","282,515mil"
+"P11","Test Point","TopLayer","TEST_POINT","1134,000mil","374,429mil","0","Test Point ON","1134,000mil","374,429mil","1134,000mil","374,429mil"
+"P9","Test Point","TopLayer","TEST_POINT","1134,000mil","466,343mil","0","Test Point ON","1134,000mil","466,343mil","1134,000mil","466,343mil"
+"P7","Test Point","TopLayer","TEST_POINT","1134,000mil","558,257mil","0","Test Point ON","1134,000mil","558,257mil","1134,000mil","558,257mil"
+"P5","Test Point","TopLayer","TEST_POINT","1134,000mil","650,172mil","0","Test Point ON","1134,000mil","650,172mil","1134,000mil","650,172mil"
+"P3","Test Point","TopLayer","TEST_POINT","1134,000mil","742,086mil","0","Test Point ON","1134,000mil","742,086mil","1134,000mil","742,086mil"
+"P1","Test Point","TopLayer","TEST_POINT","1134,000mil","834,000mil","0","Test Point ON","1134,000mil","834,000mil","1134,000mil","834,000mil"
+"C60","0.1uF","TopLayer","Cap_0402","267,500mil","483,000mil","180","CAP CER 0.1UF 50V X7R 0402","267,500mil","483,000mil","286,000mil","483,000mil"
+"C51","1uF","TopLayer","Cap_0402","992,000mil","913,000mil","270","CAP CER 1UF 16V X5R 0402","992,000mil","913,000mil","992,000mil","931,500mil"
