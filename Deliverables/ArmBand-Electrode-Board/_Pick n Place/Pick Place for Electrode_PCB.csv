@@ -1,0 +1,33 @@
+Altium Designer Pick and Place Locations
+C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\ArmBand-Electrode-Board\Project Outputs for Electrode_Board\Pick Place for Electrode_PCB.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       30/06/22
+Time:       02:12
+Revision:   f2311b3a0c6e8e784992adff7ad54c7896165dbe
+Variant:    No variations
+Units used: mil
+
+"Designator","Comment","Layer","Footprint","Center-X(mil)","Center-Y(mil)","Rotation","Description","Ref-X(mil)","Ref-Y(mil)","Pad-X(mil)","Pad-Y(mil)"
+"P9","6 pin Ribbon Pads","BottomLayer","6_pin_Ribbon_Pads.","-183,945mil","118,000mil","0","Ribbon wire Connection Pads","-183,945mil","118,000mil","-134,732mil","118,000mil"
+"C3","10nF","BottomLayer","Cap_0402","32,500mil","558,500mil","180","CAP CER 10nF 50V 0402 SMD","32,500mil","558,500mil","51,000mil","558,500mil"
+"C2","0.1uF","BottomLayer","Cap_0402","-350,000mil","1025,000mil","180","CAP CER 0.1UF 50V X7R 0402","-350,000mil","1025,000mil","-331,500mil","1025,000mil"
+"C1","10uF'","BottomLayer","Cap0603","-345,245mil","977,633mil","180","CAP CER 10UF 25V X5R 0603","-345,245mil","977,633mil","-315,245mil","977,633mil"
+"U2","TL084CPWR","BottomLayer","14TSSOP","-211,000mil","440,000mil","180","IC OPAMP JFET 4 CIRCUIT 14TSSOP","-211,000mil","440,000mil","-100,764mil","516,772mil"
+"R10","1K","BottomLayer","Res0402","-381,000mil","381,500mil","270","RES 1K OHM 5% 1/16W 0402","-381,000mil","381,500mil","-381,000mil","400,000mil"
+"R9","TC33X-2-104E","BottomLayer","TC33X-2-104E","-334,370mil","636,197mil","180","TRIMMER 100K OHM 0.1W J LEAD TOP","-295,000mil","586,000mil","-295,000mil","586,000mil"
+"R8","80.6K","BottomLayer","Res0402","-129,500mil","315,000mil","0","1/16W 50V ±1% ±200ppm/? -55?~+155? 80.6kO 0402 Chip Resistor - Surface Mount ROHS","-129,500mil","315,000mil","-148,000mil","315,000mil"
+"R7","80.6K","BottomLayer","Res0402","-203,000mil","315,000mil","180","1/16W 50V ±1% ±200ppm/? -55?~+155? 80.6kO 0402 Chip Resistor - Surface Mount ROHS","-203,000mil","315,000mil","-184,500mil","315,000mil"
+"R6","150K","BottomLayer","Res0402","47,000mil","398,500mil","270","RES SMD 0402 150kOhm 5% Paper T/R","47,000mil","398,500mil","47,000mil","417,000mil"
+"R5","150K","BottomLayer","Res0402","-145,500mil","707,000mil","180","RES SMD 0402 150kOhm 5% Paper T/R","-145,500mil","707,000mil","-127,000mil","707,000mil"
+"R4","150K","BottomLayer","Res0402","-31,000mil","543,500mil","90","RES SMD 0402 150kOhm 5% Paper T/R","-31,000mil","543,500mil","-31,000mil","525,000mil"
+"R3","150K","BottomLayer","Res0402","-32,000mil","472,500mil","270","RES SMD 0402 150kOhm 5% Paper T/R","-32,000mil","472,500mil","-32,000mil","491,000mil"
+"R2","150K","BottomLayer","Res0402","8,000mil","435,000mil","90","RES SMD 0402 150kOhm 5% Paper T/R","8,000mil","435,000mil","8,000mil","416,500mil"
+"U1","AD8221ARZ-R7","BottomLayer","SOIC-8","-209,000mil","851,000mil","180","IC OPAMP INSTR 825KHZ 8SOIC","-209,000mil","851,000mil","-102,701mil","926,000mil"
+"D2","1N4148WS","BottomLayer","SOD-323","-129,984mil","652,000mil","0","100V -55?~+150?@(Tj) 400mW Single 1.25V@150mA 4ns 1µA@75V 200mA SOD-323 Switching Diode ROHS","-129,984mil","652,000mil","-181,165mil","652,000mil"
+"D1","1N4148WS","BottomLayer","SOD-323","-161,181mil","583,000mil","180","100V -55?~+150?@(Tj) 400mW Single 1.25V@150mA 4ns 1µA@75V 200mA SOD-323 Switching Diode ROHS","-161,181mil","583,000mil","-110,000mil","583,000mil"
+"R1","240R","BottomLayer","Res0402","-36,000mil","844,500mil","90","RES SMD 0402 240 Ohm 1% 1/16W ±100ppm/°C Molded SMD Paper T/R","-36,000mil","844,500mil","-36,000mil","826,000mil"
+"P1","sEMG sensor","TopLayer","sEMG_sensor","-184,509mil","534,266mil","0","Sensor Connecting Pads","-184,509mil","534,266mil","-184,508mil","927,462mil"
+"C4","1uF","BottomLayer","Cap_0402","-203,000mil","276,000mil","0","CAP CER 1UF 16V X5R 0402","-203,000mil","276,000mil","-221,500mil","276,000mil"
