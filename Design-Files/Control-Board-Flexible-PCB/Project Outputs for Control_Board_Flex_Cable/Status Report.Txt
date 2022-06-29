@@ -1,0 +1,23 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [Control_Board_Flex_Cable.PrjPcb]
+   Generated File[Flex_Cable.GTO]
+   Generated File[Flex_Cable.GTP]
+   Generated File[Flex_Cable.GTS]
+   Generated File[Flex_Cable.GTL]
+   Generated File[Flex_Cable.GBL]
+   Generated File[Flex_Cable.GBS]
+   Generated File[Flex_Cable.GBP]
+   Generated File[Flex_Cable.GBO]
+   Generated File[Flex_Cable.GM2]
+   Generated File[Flex_Cable.GPT]
+   Generated File[Flex_Cable.GPB]
+   Generated File[Flex_Cable.RUL]
+   Generated File[Flex_Cable.EXTREP]
+   Generated File[Flex_Cable.REP]
+
+
+Files Generated   : 14
+Documents Printed : 0
+
+Finished Output Generation At 1:20:33 AM On 6/30/2022
