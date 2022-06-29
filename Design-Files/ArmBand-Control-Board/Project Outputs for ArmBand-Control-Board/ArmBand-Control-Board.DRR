@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: ArmBand-Control-Board.PcbDoc   6/30/2022  2:30:22 AM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : ArmBand-Control-Board-RoundHoles.TXT
+ASCII SlotHoles File : ArmBand-Control-Board-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      12mil (0.3mm)                                             Round             181       PTH        16.38inch (415.95mm)
+T2      18mil (0.45mm)                                            Slot              4         PTH        1.37inch (34.86mm)
+T3      28mil (0.7mm)                                             Round             2         PTH        0.06inch (1.50mm)
+T4      37mil (0.95mm)                                            Round             12        PTH        2.41inch (61.31mm)
+T5      79mil (2mm)                                               Round             1         PTH        0.00inch (0.00mm)
+T6      98mil (2.5mm)                                             Round             1         PTH        0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              201
+
+Total Processing Time (hh:mm:ss) : 00:00:00
