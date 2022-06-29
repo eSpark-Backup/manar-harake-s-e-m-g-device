@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
-PCB File : C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Control-Board-Flexible-PCB\Flex_Cable.PcbDoc
+PCB File : C:\GitHub\ManarHarake-sEMGDevice\Design-Files\Control-Board-Flexible-PCB\Flex_Cable.PcbDoc
 Date     : 6/29/2022
-Time     : 12:23:54 AM
+Time     : 8:44:43 PM
 
 Processing Rule : Clearance Constraint (Gap=7mil) (All),(All)
 Rule Violations :0
@@ -45,4 +45,4 @@ Rule Violations :0
 
 Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:02
+Time Elapsed        : 00:00:01
