@@ -1,25 +1,11 @@
-Output: Gerber Files
-Type  : Gerber
+Output: Generates pick and place files
+Type  : Pick Place
 From  : Variant [[No Variations]] of Project [ArmBand-Sensor-Board.PrjPcb]
-   Generated File[ArmBand-Sensor-Board.GTO]
-   Generated File[ArmBand-Sensor-Board.GTP]
-   Generated File[ArmBand-Sensor-Board.GTS]
-   Generated File[ArmBand-Sensor-Board.GTL]
-   Generated File[ArmBand-Sensor-Board.GBL]
-   Generated File[ArmBand-Sensor-Board.GBS]
-   Generated File[ArmBand-Sensor-Board.GBP]
-   Generated File[ArmBand-Sensor-Board.GBO]
-   Generated File[ArmBand-Sensor-Board.GM2]
-   Generated File[ArmBand-Sensor-Board.GPT]
-   Generated File[ArmBand-Sensor-Board.GPB]
-   Generated File[ArmBand-Sensor-Board.GD1]
-   Generated File[ArmBand-Sensor-Board.GG1]
-   Generated File[ArmBand-Sensor-Board.RUL]
-   Generated File[ArmBand-Sensor-Board.EXTREP]
-   Generated File[ArmBand-Sensor-Board.REP]
+   Generated File[Pick Place for ArmBand-Sensor-Board.txt]
+   Generated File[Pick Place for ArmBand-Sensor-Board.csv]
 
 
-Files Generated   : 16
+Files Generated   : 2
 Documents Printed : 0
 
-Finished Output Generation At 2:38:05 AM On 6/30/2022
+Finished Output Generation At 9:41:53 PM On 7/1/2022
