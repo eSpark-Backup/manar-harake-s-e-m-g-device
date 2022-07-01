@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 Date     : 7/1/2022
-Time     : 6:02:32 PM
+Time     : 7:49:21 PM
 
 Processing Rule : Clearance Constraint (Gap=7mil) (All),(All)
 Rule Violations :0
@@ -15,7 +15,7 @@ Rule Violations :0
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=10mil) (Max=10mil) (Preferred=10mil) (All)
+Processing Rule : Width Constraint (Min=10mil) (Max=25mil) (Preferred=15mil) (All)
 Rule Violations :0
 
 Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)

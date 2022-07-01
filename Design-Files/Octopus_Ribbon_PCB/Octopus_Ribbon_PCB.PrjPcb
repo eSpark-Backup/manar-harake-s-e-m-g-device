@@ -81,23 +81,6 @@ GenerateClassCluster=0
 DocumentUniqueId=VBUYQHHP
 
 [Document3]
-DocumentPath=Oct_Ribbon_PCB.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=ACVWBUII
-
-[Document4]
 DocumentPath=Octopus_Ribbon_PCB.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
