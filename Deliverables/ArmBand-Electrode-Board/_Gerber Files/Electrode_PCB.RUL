@@ -1,4 +1,4 @@
-DRC Rules Export File for PCB: C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\ArmBand-Electrode-Board\Electrode_PCB.PcbDoc
+DRC Rules Export File for PCB: C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\ArmBand-Electrode-Board\Electrode_PCB.PcbDoc
 RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
 RuleKind=Width|RuleName=Width|Scope=Board|Minimum=10.00
 RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=7.00

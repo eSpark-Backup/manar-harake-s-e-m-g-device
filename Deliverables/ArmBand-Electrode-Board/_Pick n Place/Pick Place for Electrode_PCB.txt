@@ -1,12 +1,12 @@
 Altium Designer Pick and Place Locations
-C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\ArmBand-Electrode-Board\Project Outputs for Electrode_Board\Pick Place for Electrode_PCB.txt
+C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\ArmBand-Electrode-Board\Project Outputs for Electrode_Board\Pick Place for Electrode_PCB.txt
 
 ========================================================================================================================
 File Design Information:
 
-Date:       30/06/22
-Time:       02:12
-Revision:   f2311b3a0c6e8e784992adff7ad54c7896165dbe
+Date:       01/07/22
+Time:       21:11
+Revision:   11009915935012266a3fc481574118c83d8b0baf
 Variant:    No variations
 Units used: mil
 
