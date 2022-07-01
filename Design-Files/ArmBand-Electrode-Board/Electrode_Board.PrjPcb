@@ -31,7 +31,7 @@ ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
 IsProjectConflictPreventionWarningsEnabled=1
-OutputPath=Project Outputs for Electrode_Board
+OutputPath=
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
@@ -97,130 +97,84 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document4]
-DocumentPath=Gerber Files.Cam
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document5]
-DocumentPath=NC Drill Files.Cam
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
 [GeneratedDocument1]
-DocumentPath=Project Outputs for Electrode_Board\Design Rule Check - Electrode_PCB.html
-DItemRevisionGUID=
-
-[GeneratedDocument2]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_Board.xlsx
 DItemRevisionGUID=
 
-[GeneratedDocument3]
+[GeneratedDocument2]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.DRR
 DItemRevisionGUID=
 
-[GeneratedDocument4]
+[GeneratedDocument3]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.EXTREP
 DItemRevisionGUID=
 
-[GeneratedDocument5]
+[GeneratedDocument4]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.GBL
 DItemRevisionGUID=
 
-[GeneratedDocument6]
+[GeneratedDocument5]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.GBO
 DItemRevisionGUID=
 
-[GeneratedDocument7]
+[GeneratedDocument6]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.GBP
 DItemRevisionGUID=
 
-[GeneratedDocument8]
+[GeneratedDocument7]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.GBS
 DItemRevisionGUID=
 
-[GeneratedDocument9]
+[GeneratedDocument8]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.GD1
 DItemRevisionGUID=
 
-[GeneratedDocument10]
+[GeneratedDocument9]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.GG1
 DItemRevisionGUID=
 
-[GeneratedDocument11]
+[GeneratedDocument10]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.GM2
 DItemRevisionGUID=
 
-[GeneratedDocument12]
+[GeneratedDocument11]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.GPB
 DItemRevisionGUID=
 
-[GeneratedDocument13]
+[GeneratedDocument12]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.GPT
 DItemRevisionGUID=
 
-[GeneratedDocument14]
+[GeneratedDocument13]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.GTL
 DItemRevisionGUID=
 
-[GeneratedDocument15]
+[GeneratedDocument14]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.GTO
 DItemRevisionGUID=
 
-[GeneratedDocument16]
+[GeneratedDocument15]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.GTP
 DItemRevisionGUID=
 
-[GeneratedDocument17]
+[GeneratedDocument16]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.GTS
 DItemRevisionGUID=
 
-[GeneratedDocument18]
+[GeneratedDocument17]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.LDP
 DItemRevisionGUID=
 
-[GeneratedDocument19]
+[GeneratedDocument18]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.REP
 DItemRevisionGUID=
 
-[GeneratedDocument20]
+[GeneratedDocument19]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.RUL
 DItemRevisionGUID=
 
-[GeneratedDocument21]
+[GeneratedDocument20]
 DocumentPath=Project Outputs for Electrode_Board\Electrode_PCB.TXT
-DItemRevisionGUID=
-
-[GeneratedDocument22]
-DocumentPath=Project Outputs for Electrode_Board\Pick Place for Electrode_PCB.csv
-DItemRevisionGUID=
-
-[GeneratedDocument23]
-DocumentPath=Project Outputs for Electrode_Board\Pick Place for Electrode_PCB.txt
 DItemRevisionGUID=
 
 [Configuration1]
@@ -270,7 +224,7 @@ SCH_HasExpandLogicalToPhysicalSheets=-1
 SaveSettingsToOutJob=-1
 
 [Generic_EDE]
-OutputDir=Project Outputs for Electrode_Board
+OutputDir=
 
 [OutputGroup1]
 Name=Netlist Outputs
@@ -377,12 +331,42 @@ OutputName20=WireList Netlist
 OutputDocumentPath20=
 OutputVariantName20=
 OutputDefault20=0
+OutputType21=SIMetrixNetlist
+OutputName21=SIMetrix
+OutputDocumentPath21=
+OutputVariantName21=
+OutputDefault21=0
+OutputType22=SIMPLISNetlist
+OutputName22=SIMPLIS
+OutputDocumentPath22=
+OutputVariantName22=
+OutputDefault22=0
+OutputType23=XSpiceNetlist
+OutputName23=Mixed Sim Netlist
+OutputDocumentPath23=
+OutputVariantName23=
+OutputDefault23=0
 
 [OutputGroup2]
 Name=Simulator Outputs
 Description=
-TargetPrinter=HP LaserJet Pro MFP M127fn[58226E]
+TargetPrinter=HP LaserJet Pro MFP M127-M128 PCLmS
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+OutputType1=AdvSimNetlist
+OutputName1=Mixed Sim
+OutputDocumentPath1=
+OutputVariantName1=
+OutputDefault1=0
+OutputType2=SIMetrixSimulation
+OutputName2=SIMetrix
+OutputDocumentPath2=
+OutputVariantName2=
+OutputDefault2=0
+OutputType3=SIMPLISSimulation
+OutputName3=SIMPLIS
+OutputDocumentPath3=
+OutputVariantName3=
+OutputDefault3=0
 
 [OutputGroup3]
 Name=Documentation Outputs
@@ -459,7 +443,7 @@ PageOptions11=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|Print
 [OutputGroup4]
 Name=Assembly Outputs
 Description=
-TargetPrinter=HP LaserJet Pro MFP M127fn[58226E]
+TargetPrinter=HP LaserJet Pro MFP M127-M128 PCLmS
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=Test Points For Assembly
 OutputName1=Test Point Report
@@ -513,7 +497,7 @@ Configuration3_Item14=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Ful
 [OutputGroup5]
 Name=Fabrication Outputs
 Description=
-TargetPrinter=HP LaserJet Pro MFP M127fn[58226E]
+TargetPrinter=HP LaserJet Pro MFP M127-M128 PCLmS
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=CompositeDrill
 OutputName1=Composite Drill Drawing

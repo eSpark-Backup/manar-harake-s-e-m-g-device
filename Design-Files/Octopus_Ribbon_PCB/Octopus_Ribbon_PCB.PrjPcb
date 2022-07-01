@@ -97,6 +97,40 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+[Document4]
+DocumentPath=Gerber Files.Cam
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document5]
+DocumentPath=NC Drill Files.Cam
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Design Rule Check - Oct_Ribbon_V2.html
 DItemRevisionGUID=
@@ -177,6 +211,90 @@ DItemRevisionGUID=
 DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_PCB.TXT
 DItemRevisionGUID=
 
+[GeneratedDocument21]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument22]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument23]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument24]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument25]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument26]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument27]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.GD1
+DItemRevisionGUID=
+
+[GeneratedDocument28]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.GG1
+DItemRevisionGUID=
+
+[GeneratedDocument29]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.GM2
+DItemRevisionGUID=
+
+[GeneratedDocument30]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument31]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument32]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument33]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument34]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument35]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument36]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument37]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.REP
+DItemRevisionGUID=
+
+[GeneratedDocument38]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument39]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument40]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Pick Place for Oct_Ribbon_V2.1_PCB.csv
+DItemRevisionGUID=
+
+[GeneratedDocument41]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Pick Place for Oct_Ribbon_V2.1_PCB.txt
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
@@ -229,7 +347,7 @@ OutputDir=
 [OutputGroup1]
 Name=Netlist Outputs
 Description=
-TargetPrinter=PDFCreator
+TargetPrinter=HP LaserJet Pro MFP M127-M128 PCLmS
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=CadnetixNetlist
 OutputName1=Cadnetix Netlist
@@ -350,7 +468,7 @@ OutputDefault23=0
 [OutputGroup2]
 Name=Simulator Outputs
 Description=
-TargetPrinter=PDFCreator
+TargetPrinter=HP LaserJet Pro MFP M127-M128 PCLmS
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=AdvSimNetlist
 OutputName1=Mixed Sim
@@ -443,7 +561,7 @@ PageOptions11=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|Print
 [OutputGroup4]
 Name=Assembly Outputs
 Description=
-TargetPrinter=PDFCreator
+TargetPrinter=HP LaserJet Pro MFP M127-M128 PCLmS
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=Test Points For Assembly
 OutputName1=Test Point Report
@@ -458,7 +576,7 @@ OutputDefault2=0
 Configuration2_Name1=ForceUpdateSettings
 Configuration2_Item1=False
 Configuration2_Name2=OutputConfigurationParameter1
-Configuration2_Item2=Record=PickPlaceView|Units=Imperial|GenerateCSVFormat=True|GenerateTextFormat=True|ShowUnits=True|Separator=,|ExcludeFilterParam=False|IncludeVariations=True|IncludeStandardNoBOM=True|Filter= |FilterActive=False|YFlip=False|Column#1=Name:Designator,Fixed:True,Metric:False,Visible:True,Sort:None,Position:0|Column#2=Name:Comment,Fixed:True,Metric:False,Visible:True,Sort:None,Position:1|Column#3=Name:Layer,Fixed:True,Metric:False,Visible:True,Sort:None,Position:2|Column#4=Name:Footprint,Fixed:True,Metric:False,Visible:True,Sort:None,Position:3|Column#5=Name:Footprint Description,Fixed:True,Metric:False,Visible:False,Sort:None,Position:4|Column#6=Name:Center-X,Fixed:True,Metric:True,Visible:True,Sort:None,Position:5|Column#7=Name:Center-Y,Fixed:True,Metric:True,Visible:True,Sort:None,Position:6|Column#8=Name:Rotation,Fixed:True,Metric:False,Visible:True,Sort:None,Position:7|Column#9=Name:Description,Fixed:True,Metric:False,Visible:True,Sort:None,Position:8|Column#10=Name:ComponentKind,Fixed:True,Metric:False,Visible:False,Sort:None,Position:9|Column#11=Name:Height,Fixed:True,Metric:True,Visible:False,Sort:None,Position:10|Column#12=Name:Ref-X,Fixed:True,Metric:True,Visible:True,Sort:None,Position:11|Column#13=Name:Ref-Y,Fixed:True,Metric:True,Visible:True,Sort:None,Position:12|Column#14=Name:Pad-X,Fixed:True,Metric:True,Visible:True,Sort:None,Position:13|Column#15=Name:Pad-Y,Fixed:True,Metric:True,Visible:True,Sort:None,Position:14|Column#16=Name:Variation,Fixed:True,Metric:False,Visible:False,Sort:None,Position:15|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration2_Item2=Record=PickPlaceView|Units=Imperial|GenerateCSVFormat=True|GenerateTextFormat=True|ShowUnits=True|Separator=,|ExcludeFilterParam=False|IncludeVariations=True|IncludeStandardNoBOM=True|Filter= |FilterActive=False|YFlip=False|Column#1=Name:Designator,Fixed:True,Metric:False,Visible:True,Sort:None,Position:0|Column#2=Name:Comment,Fixed:True,Metric:False,Visible:True,Sort:None,Position:1|Column#3=Name:Layer,Fixed:True,Metric:False,Visible:True,Sort:None,Position:2|Column#4=Name:Footprint,Fixed:True,Metric:False,Visible:True,Sort:None,Position:3|Column#5=Name:Footprint Description,Fixed:True,Metric:False,Visible:False,Sort:None,Position:4|Column#6=Name:Center-X,Fixed:True,Metric:True,Visible:True,Sort:None,Position:5|Column#7=Name:Center-Y,Fixed:True,Metric:True,Visible:True,Sort:None,Position:6|Column#8=Name:Rotation,Fixed:True,Metric:False,Visible:True,Sort:None,Position:7|Column#9=Name:Description,Fixed:True,Metric:False,Visible:True,Sort:None,Position:8|Column#10=Name:ComponentKind,Fixed:True,Metric:False,Visible:False,Sort:None,Position:9|Column#11=Name:Height,Fixed:True,Metric:True,Visible:False,Sort:None,Position:10|Column#12=Name:Ref-X,Fixed:True,Metric:True,Visible:True,Sort:None,Position:11|Column#13=Name:Ref-Y,Fixed:True,Metric:True,Visible:True,Sort:None,Position:12|Column#14=Name:Pad-X,Fixed:True,Metric:True,Visible:True,Sort:None,Position:13|Column#15=Name:Pad-Y,Fixed:True,Metric:True,Visible:True,Sort:None,Position:14|Column#16=Name:Variation,Fixed:True,Metric:False,Visible:False,Sort:None,Position:15|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 OutputType3=Assembly
 OutputName3=Assembly Drawings
 OutputDocumentPath3=
@@ -468,36 +586,36 @@ PageOptions3=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintS
 Configuration3_Name1=ForceUpdateSettings
 Configuration3_Item1=False
 Configuration3_Name2=OutputConfigurationParameter1
-Configuration3_Item2=DesignatorDisplayMode=Physical|PrintArea=DesignExtent|PrintAreaLowerLeftCornerX=0|PrintAreaLowerLeftCornerY=0|PrintAreaUpperRightCornerX=0|PrintAreaUpperRightCornerY=0|Record=PcbPrintView|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration3_Item2=DesignatorDisplayMode=Physical|PrintArea=DesignExtent|PrintAreaLowerLeftCornerX=0|PrintAreaLowerLeftCornerY=0|PrintAreaUpperRightCornerX=0|PrintAreaUpperRightCornerY=0|Record=PcbPrintView|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 Configuration3_Name3=OutputConfigurationParameter2
-Configuration3_Item3=IncludeBoardCutouts=False|IncludeBottomLayerComponents=False|IncludeMultiLayerComponents=True|IncludeTopLayerComponents=True|IncludeViewports=True|Index=0|Mirror=False|Name=Top LayerAssembly Drawing|PadNumberFontSize=14|Record=PcbPrintOut|ShowHoles=False|ShowPadNets=False|ShowPadNumbers=False|SubstituteFonts=False|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration3_Item3=IncludeBoardCutouts=False|IncludeBottomLayerComponents=False|IncludeMultiLayerComponents=True|IncludeTopLayerComponents=True|IncludeViewports=True|Index=0|Mirror=False|Name=Top LayerAssembly Drawing|PadNumberFontSize=14|Record=PcbPrintOut|ShowHoles=False|ShowPadNets=False|ShowPadNumbers=False|SubstituteFonts=False|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 Configuration3_Name4=OutputConfigurationParameter3
-Configuration3_Item4=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Hidden|FFill=Hidden|FPad=Hidden|FRegion=Hidden|FText=Hidden|FTrack=Hidden|FVia=Hidden|Layer=TopLayer|Polygon=Hidden|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration3_Item4=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Hidden|FFill=Hidden|FPad=Hidden|FRegion=Hidden|FText=Hidden|FTrack=Hidden|FVia=Hidden|Layer=TopLayer|Polygon=Hidden|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 Configuration3_Name5=OutputConfigurationParameter4
-Configuration3_Item5=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=TopOverlay|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration3_Item5=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=TopOverlay|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 Configuration3_Name6=OutputConfigurationParameter5
-Configuration3_Item6=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Hidden|Layer=MultiLayer|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration3_Item6=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Hidden|Layer=MultiLayer|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 Configuration3_Name7=OutputConfigurationParameter6
-Configuration3_Item7=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical1|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration3_Item7=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical1|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 Configuration3_Name8=OutputConfigurationParameter7
-Configuration3_Item8=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical2|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration3_Item8=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical2|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 Configuration3_Name9=OutputConfigurationParameter8
-Configuration3_Item9=IncludeBoardCutouts=False|IncludeBottomLayerComponents=True|IncludeMultiLayerComponents=True|IncludeTopLayerComponents=False|IncludeViewports=True|Index=1|Mirror=False|Name=Bottom LayerAssembly Drawing|PadNumberFontSize=14|Record=PcbPrintOut|ShowHoles=False|ShowPadNets=False|ShowPadNumbers=False|SubstituteFonts=False|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration3_Item9=IncludeBoardCutouts=False|IncludeBottomLayerComponents=True|IncludeMultiLayerComponents=True|IncludeTopLayerComponents=False|IncludeViewports=True|Index=1|Mirror=False|Name=Bottom LayerAssembly Drawing|PadNumberFontSize=14|Record=PcbPrintOut|ShowHoles=False|ShowPadNets=False|ShowPadNumbers=False|SubstituteFonts=False|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 Configuration3_Name10=OutputConfigurationParameter9
-Configuration3_Item10=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Hidden|FFill=Hidden|FPad=Hidden|FRegion=Hidden|FText=Hidden|FTrack=Hidden|FVia=Hidden|Layer=BottomLayer|Polygon=Hidden|PrintOutIndex=1|Record=PcbPrintLayer|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration3_Item10=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Hidden|FFill=Hidden|FPad=Hidden|FRegion=Hidden|FText=Hidden|FTrack=Hidden|FVia=Hidden|Layer=BottomLayer|Polygon=Hidden|PrintOutIndex=1|Record=PcbPrintLayer|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 Configuration3_Name11=OutputConfigurationParameter10
-Configuration3_Item11=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=BottomOverlay|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration3_Item11=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=BottomOverlay|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 Configuration3_Name12=OutputConfigurationParameter11
-Configuration3_Item12=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Hidden|Layer=MultiLayer|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration3_Item12=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Hidden|Layer=MultiLayer|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 Configuration3_Name13=OutputConfigurationParameter12
-Configuration3_Item13=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical1|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration3_Item13=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical1|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 Configuration3_Name14=OutputConfigurationParameter13
-Configuration3_Item14=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical2|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration3_Item14=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|DrillType=Regular|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical2|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 
 [OutputGroup5]
 Name=Fabrication Outputs
 Description=
-TargetPrinter=PDFCreator
+TargetPrinter=HP LaserJet Pro MFP M127-M128 PCLmS
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=CompositeDrill
 OutputName1=Composite Drill Drawing
@@ -547,7 +665,7 @@ OutputDefault8=0
 Configuration8_Name1=ForceUpdateSettings
 Configuration8_Item1=False
 Configuration8_Name2=OutputConfigurationParameter1
-Configuration8_Item2=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|GenerateDrilledSlotsG85=False|GenerateEIADrillFile=False|GenerateSeparatePlatedNonPlatedFiles=False|GenerateSeparateViaTypeFiles=False|NumberOfDecimals=5|NumberOfUnits=2|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Record=DrillView|Units=Imperial|ZeroesMode=SuppressTrailingZeroes|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration8_Item2=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|GenerateDrilledSlotsG85=False|GenerateEIADrillFile=False|GenerateSeparatePlatedNonPlatedFiles=False|GenerateSeparateViaTypeFiles=False|NumberOfDecimals=5|NumberOfUnits=2|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Record=DrillView|Units=Imperial|ZeroesMode=SuppressTrailingZeroes|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 OutputType9=IPC2581
 OutputName9=IPC-2581 Files
 OutputDocumentPath9=
@@ -572,12 +690,12 @@ OutputDefault12=0
 Configuration12_Name1=ForceUpdateSettings
 Configuration12_Item1=False
 Configuration12_Name2=OutputConfigurationParameter1
-Configuration12_Item2=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|CentrePlots=False|DrillDrawingSymbol=GraphicsSymbol|DrillDrawingSymbolSize=200000|EmbeddedApertures=True|FilmBorderSize=10000000|FilmXSize=200000000|FilmYSize=160000000|FlashAllFills=False|FlashPadShapes=True|G54OnApertureChange=False|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GenerateReports=True|GerberUnit=Imperial|GerberUnit=Imperial|IncludeUnconnectedMidLayerPads=False|LayerClassesMirror.Set= |LayerClassesPlot.Set= |LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MinusApertureTolerance=50|MinusApertureTolerance=50|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|NoRegularPolygons=False|NumberOfDecimals=5|NumberOfDecimals=5|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray,16973830~1,16973832~1,16973834~1,16777217~1,16842751~1,16973835~1,16973833~1,16973831~1,16908290~1,16973848~1,16973849~1|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=True|PlotUsedDrillGuideLayerPairs=True|PlusApertureTolerance=50|PlusApertureTolerance=50|Record=GerberView|SoftwareArcs=False|Sorted=False|Sorted=False|DocumentPath=C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_PCB.PcbDoc
+Configuration12_Item2=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|CentrePlots=False|DrillDrawingSymbol=GraphicsSymbol|DrillDrawingSymbolSize=200000|EmbeddedApertures=True|FilmBorderSize=10000000|FilmXSize=200000000|FilmYSize=160000000|FlashAllFills=False|FlashPadShapes=True|G54OnApertureChange=False|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GenerateReports=True|GerberUnit=Imperial|GerberUnit=Imperial|IncludeUnconnectedMidLayerPads=False|LayerClassesMirror.Set= |LayerClassesPlot.Set= |LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MinusApertureTolerance=50|MinusApertureTolerance=50|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|NoRegularPolygons=False|NumberOfDecimals=5|NumberOfDecimals=5|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TPlotLayerStateArray,16973830~1,16973832~1,16973834~1,16777217~1,16842751~1,16973835~1,16973833~1,16973831~1,16908290~1,16973848~1,16973849~1|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=True|PlotUsedDrillGuideLayerPairs=True|PlusApertureTolerance=50|PlusApertureTolerance=50|Record=GerberView|SoftwareArcs=False|Sorted=False|Sorted=False|DocumentPath=C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Oct_Ribbon_V2.1_PCB.PcbDoc
 
 [OutputGroup6]
 Name=Report Outputs
 Description=
-TargetPrinter=PDFCreator
+TargetPrinter=HP LaserJet Pro MFP M127-M128 PCLmS
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=BOM_PartType
 OutputName1=Bill of Materials
@@ -626,7 +744,7 @@ OutputDefault8=0
 [OutputGroup7]
 Name=Other Outputs
 Description=
-TargetPrinter=PDFCreator
+TargetPrinter=HP LaserJet Pro MFP M127-M128 PCLmS
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=Text Print
 OutputName1=Text Print
@@ -734,7 +852,7 @@ PageOptions17=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|Print
 [OutputGroup8]
 Name=Validation Outputs
 Description=
-TargetPrinter=PDFCreator
+TargetPrinter=HP LaserJet Pro MFP M127-M128 PCLmS
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=BOM_Violations
 OutputName1=BOM Checks Report
@@ -778,7 +896,7 @@ OutputDefault7=0
 [OutputGroup9]
 Name=Export Outputs
 Description=
-TargetPrinter=PDFCreator
+TargetPrinter=HP LaserJet Pro MFP M127-M128 PCLmS
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=AutoCAD dwg/dxf PCB
 OutputName1=AutoCAD dwg/dxf File PCB
@@ -839,7 +957,7 @@ OutputDefault11=0
 [OutputGroup10]
 Name=PostProcess Outputs
 Description=
-TargetPrinter=PDFCreator
+TargetPrinter=HP LaserJet Pro MFP M127-M128 PCLmS
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=Copy Files
 OutputName1=Copy Files
