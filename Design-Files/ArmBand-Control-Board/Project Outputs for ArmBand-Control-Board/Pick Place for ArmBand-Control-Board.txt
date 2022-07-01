@@ -1,12 +1,12 @@
 Altium Designer Pick and Place Locations
-C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\ArmBand-Control-Board\Project Outputs for ArmBand-Control-Board\Pick Place for ArmBand-Control-Board.txt
+C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\ArmBand-Control-Board\Project Outputs for ArmBand-Control-Board\Pick Place for ArmBand-Control-Board.txt
 
 ========================================================================================================================
 File Design Information:
 
-Date:       30/06/22
-Time:       02:29
-Revision:   a53604c49003153f7e7c797cd2b13599d277a676
+Date:       01/07/22
+Time:       21:29
+Revision:   6507e8d5abfee0dfe96314a23f4f7cf1f1c0e77a
 Variant:    No variations
 Units used: mil
 

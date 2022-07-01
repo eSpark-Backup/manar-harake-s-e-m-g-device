@@ -2,8 +2,31 @@
 FileName = Flex_Cable.GBR
 AutoAperture = True
 *************************************************************
-Generating : Bottom Pad Master
-      File : Flex_Cable.GPB
+Generating : Mechanical 2
+      File : Flex_Cable.GM2
+
+    Adding Layer      : Mechanical 2
+
+
+Used DCodes :
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : Flex_Cable.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : Flex_Cable.GBP
+
+    Adding Layer      : Bottom Paste
 
     Adding Layer      : Bottom Layer
 
@@ -14,8 +37,39 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Top Pad Master
-      File : Flex_Cable.GPT
+Generating : Bottom Solder
+      File : Flex_Cable.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Flex_Cable.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : Flex_Cable.GTP
+
+    Adding Layer      : Top Paste
 
     Adding Layer      : Top Layer
 
@@ -41,10 +95,8 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Top Paste
-      File : Flex_Cable.GTP
-
-    Adding Layer      : Top Paste
+Generating : Top Pad Master
+      File : Flex_Cable.GPT
 
     Adding Layer      : Top Layer
 
@@ -56,10 +108,8 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Bottom Paste
-      File : Flex_Cable.GBP
-
-    Adding Layer      : Bottom Paste
+Generating : Bottom Pad Master
+      File : Flex_Cable.GPB
 
     Adding Layer      : Bottom Layer
 
@@ -67,27 +117,6 @@ Generating : Bottom Paste
 
 
 Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : Flex_Cable.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 2
-      File : Flex_Cable.GM2
-
-    Adding Layer      : Mechanical 2
-
-
-Used DCodes :
-    D11
 *************************************************************
 
 *************************************************************
@@ -114,34 +143,5 @@ Generating : Top Layer
 Used DCodes :
     D14
     D16
-*************************************************************
-
-*************************************************************
-Generating : Top Solder
-      File : Flex_Cable.GTS
-
-    Adding Layer      : Top Solder
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D15
-*************************************************************
-
-*************************************************************
-Generating : Bottom Solder
-      File : Flex_Cable.GBS
-
-    Adding Layer      : Bottom Solder
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
 *************************************************************
 

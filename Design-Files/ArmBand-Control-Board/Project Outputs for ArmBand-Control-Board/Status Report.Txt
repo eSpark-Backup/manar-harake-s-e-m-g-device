@@ -1,13 +1,11 @@
-Output: NC Drill Files
-Type  : NC Drill
-From  : Project [ArmBand-Control-Board.PrjPcb]
-   Generated File[ArmBand-Control-Board-RoundHoles.TXT]
-   Generated File[ArmBand-Control-Board-SlotHoles.TXT]
-   Generated File[ArmBand-Control-Board.LDP]
-   Generated File[ArmBand-Control-Board.DRR]
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of Project [ArmBand-Control-Board.PrjPcb]
+   Generated File[Pick Place for ArmBand-Control-Board.txt]
+   Generated File[Pick Place for ArmBand-Control-Board.csv]
 
 
-Files Generated   : 4
+Files Generated   : 2
 Documents Printed : 0
 
-Finished Output Generation At 2:30:22 AM On 6/30/2022
+Finished Output Generation At 9:29:48 PM On 7/1/2022
