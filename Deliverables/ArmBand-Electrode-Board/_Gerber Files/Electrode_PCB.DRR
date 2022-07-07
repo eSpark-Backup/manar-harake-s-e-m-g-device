@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: Electrode_PCB.PcbDoc   7/1/2022  9:12:59 PM
+NCDrill File Report For: Electrode_PCB.PcbDoc   7/7/2022  12:19:27 PM
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -7,10 +7,9 @@ ASCII RoundHoles File : Electrode_PCB.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      8mil (0.2mm)                                              Round             9         PTH        1.64inch (41.54mm)
-T2      12mil (0.3mm)                                             Round             6         PTH        1.32inch (33.58mm)
-T3      39mil (1mm)                                               Round             2         NPTH       1.13inch (28.74mm)
+T1      12mil (0.3mm)                                             Round             13        PTH        2.01inch (51.12mm)
+T2      39mil (1mm)                                               Round             2         NPTH       1.13inch (28.74mm)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              17
+Totals                                                                              15
 
 Total Processing Time (hh:mm:ss) : 00:00:00

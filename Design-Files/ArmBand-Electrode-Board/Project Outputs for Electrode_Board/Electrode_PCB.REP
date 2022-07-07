@@ -2,38 +2,8 @@
 FileName = Electrode_PCB.GBR
 AutoAperture = True
 *************************************************************
-Generating : Mechanical 2
-      File : Electrode_PCB.GM2
-
-    Adding Layer      : Mechanical 2
-
-
-Used DCodes :
-    D18
-    D68
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : Electrode_PCB.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-    D10
-    D18
-    D64
-    D65
-    D66
-    D67
-*************************************************************
-
-*************************************************************
-Generating : Bottom Paste
-      File : Electrode_PCB.GBP
-
-    Adding Layer      : Bottom Paste
+Generating : Bottom Pad Master
+      File : Electrode_PCB.GPB
 
     Adding Layer      : Bottom Layer
 
@@ -41,68 +11,20 @@ Generating : Bottom Paste
 
 
 Used DCodes :
+    D20
+    D21
+    D22
+    D23
     D24
     D25
     D26
     D27
     D28
-    D29
-    D30
-    D31
-    D32
 *************************************************************
 
 *************************************************************
-Generating : Bottom Solder
-      File : Electrode_PCB.GBS
-
-    Adding Layer      : Bottom Solder
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D15
-    D16
-    D17
-    D54
-    D55
-    D56
-    D57
-    D58
-    D59
-    D60
-    D61
-    D62
-    D63
-*************************************************************
-
-*************************************************************
-Generating : Top Solder
-      File : Electrode_PCB.GTS
-
-    Adding Layer      : Top Solder
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D13
-    D14
-    D15
-    D16
-    D17
-*************************************************************
-
-*************************************************************
-Generating : Top Paste
-      File : Electrode_PCB.GTP
-
-    Adding Layer      : Top Paste
+Generating : Top Pad Master
+      File : Electrode_PCB.GPT
 
     Adding Layer      : Top Layer
 
@@ -126,8 +48,10 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Top Pad Master
-      File : Electrode_PCB.GPT
+Generating : Top Paste
+      File : Electrode_PCB.GTP
+
+    Adding Layer      : Top Paste
 
     Adding Layer      : Top Layer
 
@@ -140,8 +64,10 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Bottom Pad Master
-      File : Electrode_PCB.GPB
+Generating : Bottom Paste
+      File : Electrode_PCB.GBP
+
+    Adding Layer      : Bottom Paste
 
     Adding Layer      : Bottom Layer
 
@@ -149,15 +75,43 @@ Generating : Bottom Pad Master
 
 
 Used DCodes :
+    D20
+    D21
+    D22
+    D23
     D24
     D25
     D26
     D27
     D28
-    D29
-    D30
-    D31
-    D32
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : Electrode_PCB.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D10
+    D16
+    D62
+    D63
+    D64
+    D65
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 2
+      File : Electrode_PCB.GM2
+
+    Adding Layer      : Mechanical 2
+
+
+Used DCodes :
+    D16
+    D66
 *************************************************************
 
 *************************************************************
@@ -170,8 +124,11 @@ Generating : Bottom Layer
 
 
 Used DCodes :
+    D16
     D18
+    D19
     D20
+    D21
     D22
     D23
     D24
@@ -202,8 +159,6 @@ Used DCodes :
     D49
     D50
     D51
-    D52
-    D53
 *************************************************************
 
 *************************************************************
@@ -218,12 +173,52 @@ Generating : Top Layer
 Used DCodes :
     D11
     D12
+    D16
+    D17
     D18
     D19
-    D20
-    D21
-    D22
-    D23
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Electrode_PCB.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D13
+    D14
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : Electrode_PCB.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
 *************************************************************
 
 *************************************************************
@@ -236,11 +231,11 @@ Generating : Drill Drawing
 
 
 Used DCodes :
-    D18
-    D34
+    D16
+    D30
+    D67
+    D68
     D69
-    D70
-    D71
 *************************************************************
 
 *************************************************************
@@ -253,6 +248,6 @@ Generating : Drill Guide
 
 
 Used DCodes :
-    D69
+    D67
 *************************************************************
 
