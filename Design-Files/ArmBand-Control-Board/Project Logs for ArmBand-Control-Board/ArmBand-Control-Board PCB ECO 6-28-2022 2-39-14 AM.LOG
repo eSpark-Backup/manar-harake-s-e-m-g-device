@@ -1,0 +1,5 @@
+Added Component: Designator=ANT(ANT#)
+Added Pin To Net: NetName=ANT# Pin=ANT-ANT#
+Added Pin To Net: NetName=GND Pin=ANT-GND
+Added Member To Class: ClassName=U_BLE-Section Member=Component ANT Antenna
+Added Member To Class: ClassName=U_Connector-Section Member=Component J4 2305018-2

@@ -1,0 +1,30 @@
+Change Component Designator: OldDesignator=l NewDesignator=R26
+Added Component: Designator=J2(FH34SRJ-12S-0.5SH(50))
+Add component (AddParameter): Name = "Category"; Value = "FFC / FPC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://www.hirose.com/product/en/download_file/key_name/FH34SRJ/category/Catalog/doc_file_id/31646/?file_category_id=4&item_id=27&is_series=1&src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.hirose.com/product/en/download_file/key_name/FH34SRJ/category/Catalog/doc_file_id/31646/?file_category_id=4&item_id=27&is_series=1&src-supplier=Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Hirose"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "FH34SRJ-12S-0.5SH(50)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0.47775 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "FH34SRJ-12S-0.5SH(50)-ND"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=SENSOR1 Pin=J2-1
+Added Pin To Net: NetName=SENSOR2 Pin=J2-2
+Added Pin To Net: NetName=SENSOR3 Pin=J2-3
+Added Pin To Net: NetName=SENSOR4 Pin=J2-4
+Added Pin To Net: NetName=SENSOR5 Pin=J2-5
+Added Pin To Net: NetName=SENSOR6 Pin=J2-6
+Added Pin To Net: NetName=SENSOR7 Pin=J2-7
+Added Pin To Net: NetName=SENSOR8 Pin=J2-8
+Added Pin To Net: NetName=VCC_3V3 Pin=J2-9
+Added Pin To Net: NetName=VCC_3V3 Pin=J2-10
+Added Pin To Net: NetName=GND Pin=J2-11
+Added Pin To Net: NetName=GND Pin=J2-12
+Added Pin To Net: NetName=GND Pin=J2-MP1
+Added Pin To Net: NetName=GND Pin=J2-MP2
+Added Member To Class: ClassName=U_Opamp-Sheet2 Member=Component C52 1uF
+Added Member To Class: ClassName=U_Connector-Sheet Member=Component J2 FH34SRJ-12S-0.5SH(50)
+Added Member To Class: ClassName=U_Opamp-Sheet1 Member=Component U12 AD8221ARZ-R7
+Added Member To Class: ClassName=U_Opamp-Sheet1 Member=Component U15 AD8221ARZ-R7
+Added Member To Class: ClassName=U_Opamp-Sheet2 Member=Component U17 LM324DT

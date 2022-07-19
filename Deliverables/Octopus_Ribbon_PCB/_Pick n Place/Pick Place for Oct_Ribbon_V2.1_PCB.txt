@@ -1,0 +1,22 @@
+Altium Designer Pick and Place Locations
+C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB\Project Outputs for Octopus_Ribbon_PCB\Pick Place for Oct_Ribbon_V2.1_PCB.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       01/07/22
+Time:       21:00
+Revision:   3e29b6ca1b4cd4a6972811a2928ec4bec2474e51
+Variant:    No variations
+Units used: mil
+
+Designator Comment              Layer       Footprint           Center-X(mil) Center-Y(mil) Rotation Description                   Ref-X(mil)  Ref-Y(mil)  Pad-X(mil)  Pad-Y(mil)  
+P9         "6 pin Ribbon Pads"  BottomLayer 6_pin_Ribbon_Pads.  7536,142mil   97,000mil     0        "Ribbon wire Connection Pads" 7536,142mil 97,000mil   7585,354mil 97,000mil   
+P8         "6 pin Ribbon Pads"  BottomLayer 6_pin_Ribbon_Pads.  3576,532mil   89,000mil     0        "Ribbon wire Connection Pads" 3576,532mil 89,000mil   3625,744mil 89,000mil   
+P7         "6 pin Ribbon Pads"  BottomLayer 6_pin_Ribbon_Pads.  6866,886mil   96,000mil     0        "Ribbon wire Connection Pads" 6866,886mil 96,000mil   6916,099mil 96,000mil   
+P6         "6 pin Ribbon Pads"  BottomLayer 6_pin_Ribbon_Pads.  1737,106mil   86,000mil     0        "Ribbon wire Connection Pads" 1737,106mil 86,000mil   1786,319mil 86,000mil   
+P5         "6 pin Ribbon Pads"  BottomLayer 6_pin_Ribbon_Pads.  6112,602mil   95,000mil     0        "Ribbon wire Connection Pads" 6112,602mil 95,000mil   6161,815mil 95,000mil   
+P4         "6 pin Ribbon Pads"  BottomLayer 6_pin_Ribbon_Pads.  637,213mil    84,000mil     0        "Ribbon wire Connection Pads" 637,213mil  84,000mil   686,425mil  84,000mil   
+P3         "32 pin Ribbon Pads" BottomLayer 32_pin_Ribbon_Pads. 3688,610mil   4003,000mil   180      "Ribbon wire Connection Pads" 3688,610mil 4003,000mil 3383,492mil 4003,000mil 
+P2         "6 pin Ribbon Pads"  BottomLayer 6_pin_Ribbon_Pads.  5417,284mil   93,000mil     0        "Ribbon wire Connection Pads" 5417,283mil 93,000mil   5466,496mil 93,000mil   
+P1         "6 pin Ribbon Pads"  BottomLayer 6_pin_Ribbon_Pads.  68,228mil     82,491mil     0        "Ribbon wire Connection Pads" 68,228mil   82,491mil   117,441mil  82,491mil   

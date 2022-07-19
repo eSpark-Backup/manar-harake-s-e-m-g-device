@@ -1,0 +1,80 @@
+Removed Pin From Net: NetName=Measure1 Pin=P10-1
+Removed Pin From Net: NetName=VREF Pin=P10-2
+Removed Pin From Net: NetName=VCC_3V3 Pin=P10-3
+Removed Pin From Net: NetName=GND Pin=P10-4
+Removed Pin From Net: NetName=Measure2 Pin=P10-5
+Removed Pin From Net: NetName=VREF Pin=P10-6
+Removed Pin From Net: NetName=VCC_3V3 Pin=P10-7
+Removed Pin From Net: NetName=GND Pin=P10-8
+Removed Pin From Net: NetName=Measure3 Pin=P10-9
+Removed Pin From Net: NetName=VREF Pin=P10-10
+Removed Pin From Net: NetName=VCC_3V3 Pin=P10-11
+Removed Pin From Net: NetName=GND Pin=P10-12
+Removed Pin From Net: NetName=Measure4 Pin=P10-13
+Removed Pin From Net: NetName=VREF Pin=P10-14
+Removed Pin From Net: NetName=VCC_3V3 Pin=P10-15
+Removed Pin From Net: NetName=GND Pin=P10-16
+Removed Pin From Net: NetName=Measure5 Pin=P10-17
+Removed Pin From Net: NetName=VREF Pin=P10-18
+Removed Pin From Net: NetName=VCC_3V3 Pin=P10-19
+Removed Pin From Net: NetName=GND Pin=P10-20
+Removed Pin From Net: NetName=Measure6 Pin=P10-21
+Removed Pin From Net: NetName=VREF Pin=P10-22
+Removed Pin From Net: NetName=VCC_3V3 Pin=P10-23
+Removed Pin From Net: NetName=GND Pin=P10-24
+Removed Pin From Net: NetName=Measure7 Pin=P10-25
+Removed Pin From Net: NetName=VREF Pin=P10-26
+Removed Pin From Net: NetName=VCC_3V3 Pin=P10-27
+Removed Pin From Net: NetName=GND Pin=P10-28
+Removed Pin From Net: NetName=Measure8 Pin=P10-29
+Removed Pin From Net: NetName=VREF Pin=P10-30
+Removed Pin From Net: NetName=VCC_3V3 Pin=P10-31
+Removed Pin From Net: NetName=GND Pin=P10-32
+Added Component: Designator=P1(6 pin Ribbon Pads)
+Added Component: Designator=P2(6 pin Ribbon Pads)
+Added Component: Designator=P4(6 pin Ribbon Pads)
+Added Component: Designator=P5(6 pin Ribbon Pads)
+Added Component: Designator=P6(6 pin Ribbon Pads)
+Added Component: Designator=P7(6 pin Ribbon Pads)
+Added Component: Designator=P8(6 pin Ribbon Pads)
+Added Component: Designator=P9(6 pin Ribbon Pads)
+Added Pin To Net: NetName=Measure1 Pin=P1-2
+Added Pin To Net: NetName=VREF Pin=P1-3
+Added Pin To Net: NetName=VCC_3V3 Pin=P1-4
+Added Pin To Net: NetName=GND Pin=P1-5
+Added Pin To Net: NetName=Measure5 Pin=P2-2
+Added Pin To Net: NetName=VREF Pin=P2-3
+Added Pin To Net: NetName=VCC_3V3 Pin=P2-4
+Added Pin To Net: NetName=GND Pin=P2-5
+Added Pin To Net: NetName=Measure2 Pin=P4-1
+Added Pin To Net: NetName=VREF Pin=P4-2
+Added Pin To Net: NetName=VCC_3V3 Pin=P4-3
+Added Pin To Net: NetName=GND Pin=P4-4
+Added Pin To Net: NetName=Measure6 Pin=P5-2
+Added Pin To Net: NetName=VREF Pin=P5-3
+Added Pin To Net: NetName=VCC_3V3 Pin=P5-4
+Added Pin To Net: NetName=GND Pin=P5-5
+Added Pin To Net: NetName=Measure3 Pin=P6-2
+Added Pin To Net: NetName=VREF Pin=P6-3
+Added Pin To Net: NetName=VCC_3V3 Pin=P6-4
+Added Pin To Net: NetName=GND Pin=P6-5
+Added Pin To Net: NetName=Measure7 Pin=P7-2
+Added Pin To Net: NetName=VREF Pin=P7-3
+Added Pin To Net: NetName=VCC_3V3 Pin=P7-4
+Added Pin To Net: NetName=GND Pin=P7-5
+Added Pin To Net: NetName=Measure4 Pin=P8-2
+Added Pin To Net: NetName=VREF Pin=P8-3
+Added Pin To Net: NetName=VCC_3V3 Pin=P8-4
+Added Pin To Net: NetName=GND Pin=P8-5
+Added Pin To Net: NetName=Measure8 Pin=P9-2
+Added Pin To Net: NetName=VREF Pin=P9-3
+Added Pin To Net: NetName=VCC_3V3 Pin=P9-4
+Added Pin To Net: NetName=GND Pin=P9-5
+Added Member To Class: ClassName=Sheet1 Member=Component P1 6 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P2 6 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P4 6 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P5 6 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P6 6 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P7 6 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P8 6 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P9 6 pin Ribbon Pads

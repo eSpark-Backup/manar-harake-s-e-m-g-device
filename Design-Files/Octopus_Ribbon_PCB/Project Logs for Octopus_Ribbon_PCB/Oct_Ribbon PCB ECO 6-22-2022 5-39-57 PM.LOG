@@ -1,0 +1,41 @@
+Added Pin To Net: NetName=Measure1 Pin=P1-1
+Added Pin To Net: NetName=VREF Pin=P1-2
+Added Pin To Net: NetName=VCC_3V3 Pin=P1-3
+Added Pin To Net: NetName=GND Pin=P1-4
+Added Pin To Net: NetName=Measure5 Pin=P2-1
+Added Pin To Net: NetName=VREF Pin=P2-2
+Added Pin To Net: NetName=VCC_3V3 Pin=P2-3
+Added Pin To Net: NetName=GND Pin=P2-4
+Added Pin To Net: NetName=Measure2 Pin=P4-1
+Added Pin To Net: NetName=VREF Pin=P4-2
+Added Pin To Net: NetName=VCC_3V3 Pin=P4-3
+Added Pin To Net: NetName=GND Pin=P4-4
+Added Pin To Net: NetName=Measure6 Pin=P5-1
+Added Pin To Net: NetName=VREF Pin=P5-2
+Added Pin To Net: NetName=VCC_3V3 Pin=P5-3
+Added Pin To Net: NetName=GND Pin=P5-4
+Added Pin To Net: NetName=Measure3 Pin=P6-1
+Added Pin To Net: NetName=VREF Pin=P6-2
+Added Pin To Net: NetName=VCC_3V3 Pin=P6-3
+Added Pin To Net: NetName=GND Pin=P6-4
+Added Pin To Net: NetName=Measure7 Pin=P7-1
+Added Pin To Net: NetName=VREF Pin=P7-2
+Added Pin To Net: NetName=VCC_3V3 Pin=P7-3
+Added Pin To Net: NetName=GND Pin=P7-4
+Added Pin To Net: NetName=Measure4 Pin=P8-1
+Added Pin To Net: NetName=VREF Pin=P8-2
+Added Pin To Net: NetName=VCC_3V3 Pin=P8-3
+Added Pin To Net: NetName=GND Pin=P8-4
+Added Pin To Net: NetName=Measure8 Pin=P9-1
+Added Pin To Net: NetName=VREF Pin=P9-2
+Added Pin To Net: NetName=VCC_3V3 Pin=P9-3
+Added Pin To Net: NetName=GND Pin=P9-4
+Added Member To Class: ClassName=Sheet1 Member=Component P1 6 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P2 6 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P3 32 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P4 6 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P5 6 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P6 6 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P7 6 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P8 6 pin Ribbon Pads
+Added Member To Class: ClassName=Sheet1 Member=Component P9 6 pin Ribbon Pads

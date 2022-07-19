@@ -1,0 +1,15 @@
+Altium Designer Pick and Place Locations
+C:\Users\Hunain\Desktop\Mars\ManarHarake-sEMGDevice\Design-Files\Control-Board-Flexible-PCB\Project Outputs for Control_Board_Flex_Cable\Pick Place for Flex_Cable.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       01/07/22
+Time:       21:26
+Revision:   c44168e640e3d3d0b8790e46d69aa38ef7542ba7
+Variant:    No variations
+Units used: mil
+
+Designator Comment              Layer    Footprint          Center-X(mil) Center-Y(mil) Rotation Description                   Ref-X(mil) Ref-Y(mil)  Pad-X(mil) Pad-Y(mil)  
+P2         "12 Pin Ribbon Pads" TopLayer 12_Pin_Ribbon_Pads 127,843mil    3504,000mil   0        "Ribbon wire Connection Pads" 236,110mil 3504,000mil 236,110mil 3504,000mil 
+P1         "12 Pin Ribbon Pads" TopLayer 12_Pin_Ribbon_Pads 127,843mil    38,000mil     0        "Ribbon wire Connection Pads" 236,110mil 38,000mil   236,110mil 38,000mil   

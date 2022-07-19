@@ -1,0 +1,33 @@
+c,,,,,,,,
+E:\ManarHarake-sEMGDevice\Design-Files\ArmBand-Electrode-Board\Pick Place for Electrode_PCB.csv,,,,,,,,
+,,,,,,,,
+========================================================================================================================,,,,,,,,
+File Design Information:,,,,,,,,
+,,,,,,,,
+Date:       07/07/22,,,,,,,,
+Time:       12:16,,,,,,,,
+Revision:   Not in VersionControl,,,,,,,,
+Variant:    No variations,,,,,,,,
+Units used: mil,,,,,,,,
+,,,,,,,,
+Designator,Layer,Center-X(mil),Center-Y(mil),Rotation,Ref-X(mil),Ref-Y(mil),Pad-X(mil),Pad-Y(mil)
+P9,BottomLayer,-183.945mil,118.000mil,0,-183.945mil,118.000mil,-134.732mil,118.000mil
+C3,BottomLayer,32.500mil,563.500mil,180,32.500mil,563.500mil,51.000mil,563.500mil
+C2,BottomLayer,-350.000mil,1025.000mil,180,-350.000mil,1025.000mil,-331.500mil,1025.000mil
+C1,BottomLayer,-345.245mil,977.633mil,180,-345.245mil,977.633mil,-315.245mil,977.633mil
+U2,BottomLayer,-211.000mil,440.000mil,180,-211.000mil,440.000mil,-100.764mil,516.772mil
+R10,BottomLayer,-381.000mil,381.500mil,270,-381.000mil,381.500mil,-381.000mil,400.000mil
+R9,BottomLayer,-334.370mil,636.197mil,180,-295.000mil,586.000mil,-295.000mil,586.000mil
+R8,BottomLayer,-129.500mil,315.000mil,0,-129.500mil,315.000mil,-148.000mil,315.000mil
+R7,BottomLayer,-203.000mil,315.000mil,180,-203.000mil,315.000mil,-184.500mil,315.000mil
+R6,BottomLayer,17.000mil,370.000mil,270,17.000mil,370.000mil,17.000mil,388.500mil
+R5,BottomLayer,-145.500mil,707.000mil,180,-145.500mil,707.000mil,-127.000mil,707.000mil
+R4,BottomLayer,17.000mil,509.500mil,90,17.000mil,509.500mil,17.000mil,491.000mil
+R3,BottomLayer,-27.000mil,472.500mil,270,-27.000mil,472.500mil,-27.000mil,491.000mil
+R2,BottomLayer,17.000mil,440.000mil,90,17.000mil,440.000mil,17.000mil,421.500mil
+U1,BottomLayer,-209.000mil,851.000mil,180,-209.000mil,851.000mil,-102.701mil,926.000mil
+D2,BottomLayer,-129.984mil,652.000mil,0,-129.984mil,652.000mil,-181.165mil,652.000mil
+D1,BottomLayer,-161.181mil,583.000mil,180,-161.181mil,583.000mil,-110.000mil,583.000mil
+R1,BottomLayer,-36.000mil,844.500mil,90,-36.000mil,844.500mil,-36.000mil,826.000mil
+P1,TopLayer,-184.509mil,534.266mil,0,-184.509mil,534.266mil,-184.508mil,927.462mil
+C4,BottomLayer,-203.000mil,276.000mil,0,-203.000mil,276.000mil,-221.500mil,276.000mil

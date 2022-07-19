@@ -1,0 +1,11 @@
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of Project [Control_Board_Flex_Cable.PrjPcb]
+   Generated File[Pick Place for Flex_Cable.txt]
+   Generated File[Pick Place for Flex_Cable.csv]
+
+
+Files Generated   : 2
+Documents Printed : 0
+
+Finished Output Generation At 9:26:38 PM On 7/1/2022
