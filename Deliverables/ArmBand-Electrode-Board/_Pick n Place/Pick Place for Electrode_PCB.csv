@@ -4,30 +4,30 @@ D:\Faizan\GitHub\ManarHarake-sEMGDevice\Design-Files\ArmBand-Electrode-Board\Pro
 ========================================================================================================================
 File Design Information:
 
-Date:       20/08/22
-Time:       11:32
+Date:       22/08/22
+Time:       07:02
 Revision:   a5d48fdd63f71ae3437fdbf51d2bd5f23e4ebf11
 Variant:    No variations
-Units used: mm
+Units used: mil
 
-"Layer","Center-X(mm)","Center-Y(mm)","Rotation","Ref-X(mm)","Ref-Y(mm)","Pad-X(mm)","Pad-Y(mm)"
-"BottomLayer","-4,6722mm","2,9972mm","0","-4,6722mm","2,9972mm","-3,4222mm","2,9972mm"
-"BottomLayer","0,8255mm","14,3129mm","180","0,8255mm","14,3129mm","1,2954mm","14,3129mm"
-"BottomLayer","-8,8900mm","26,0350mm","180","-8,8900mm","26,0350mm","-8,4201mm","26,0350mm"
-"BottomLayer","-8,7692mm","24,8319mm","180","-8,7692mm","24,8319mm","-8,0072mm","24,8319mm"
-"BottomLayer","-5,3594mm","11,1760mm","180","-5,3594mm","11,1760mm","-2,5594mm","13,1260mm"
-"BottomLayer","-9,6774mm","9,6901mm","270","-9,6774mm","9,6901mm","-9,6774mm","10,1600mm"
-"BottomLayer","-8,4930mm","16,1594mm","180","-7,4930mm","14,8844mm","-7,4930mm","14,8844mm"
-"BottomLayer","-3,2893mm","8,0010mm","0","-3,2893mm","8,0010mm","-3,7592mm","8,0010mm"
-"BottomLayer","-5,1562mm","8,0010mm","180","-5,1562mm","8,0010mm","-4,6863mm","8,0010mm"
-"BottomLayer","0,4318mm","9,3980mm","270","0,4318mm","9,3980mm","0,4318mm","9,8679mm"
-"BottomLayer","-3,6957mm","17,9578mm","180","-3,6957mm","17,9578mm","-3,2258mm","17,9578mm"
-"BottomLayer","0,4318mm","12,9413mm","90","0,4318mm","12,9413mm","0,4318mm","12,4714mm"
-"BottomLayer","-0,6858mm","12,0015mm","270","-0,6858mm","12,0015mm","-0,6858mm","12,4714mm"
-"BottomLayer","0,4318mm","11,1760mm","90","0,4318mm","11,1760mm","0,4318mm","10,7061mm"
-"BottomLayer","-5,3086mm","21,6154mm","180","-5,3086mm","21,6154mm","-2,6086mm","23,5204mm"
-"BottomLayer","-3,3016mm","16,5608mm","0","-3,3016mm","16,5608mm","-4,6016mm","16,5608mm"
-"BottomLayer","-4,0940mm","14,8082mm","180","-4,0940mm","14,8082mm","-2,7940mm","14,8082mm"
-"BottomLayer","-0,9144mm","21,4503mm","90","-0,9144mm","21,4503mm","-0,9144mm","20,9804mm"
-"TopLayer","-4,6865mm","13,5704mm","0","-4,6865mm","13,5704mm","-4,6865mm","23,5575mm"
-"BottomLayer","-5,1562mm","7,0104mm","0","-5,1562mm","7,0104mm","-5,6261mm","7,0104mm"
+"Designator","Layer","Center-X(mil)","Center-Y(mil)","Rotation","Ref-X(mil)","Ref-Y(mil)","Pad-X(mil)","Pad-Y(mil)"
+"P9","BottomLayer","-183,945mil","118,000mil","0","-183,945mil","118,000mil","-134,732mil","118,000mil"
+"C3","BottomLayer","32,500mil","563,500mil","180","32,500mil","563,500mil","51,000mil","563,500mil"
+"C2","BottomLayer","-350,000mil","1025,000mil","180","-350,000mil","1025,000mil","-331,500mil","1025,000mil"
+"C1","BottomLayer","-345,245mil","977,633mil","180","-345,245mil","977,633mil","-315,245mil","977,633mil"
+"U2","BottomLayer","-211,000mil","440,000mil","180","-211,000mil","440,000mil","-100,764mil","516,772mil"
+"R10","BottomLayer","-381,000mil","381,500mil","270","-381,000mil","381,500mil","-381,000mil","400,000mil"
+"R9","BottomLayer","-334,370mil","636,197mil","180","-295,000mil","586,000mil","-295,000mil","586,000mil"
+"R8","BottomLayer","-129,500mil","315,000mil","0","-129,500mil","315,000mil","-148,000mil","315,000mil"
+"R7","BottomLayer","-203,000mil","315,000mil","180","-203,000mil","315,000mil","-184,500mil","315,000mil"
+"R6","BottomLayer","17,000mil","370,000mil","270","17,000mil","370,000mil","17,000mil","388,500mil"
+"R5","BottomLayer","-145,500mil","707,000mil","180","-145,500mil","707,000mil","-127,000mil","707,000mil"
+"R4","BottomLayer","17,000mil","509,500mil","90","17,000mil","509,500mil","17,000mil","491,000mil"
+"R3","BottomLayer","-27,000mil","472,500mil","270","-27,000mil","472,500mil","-27,000mil","491,000mil"
+"R2","BottomLayer","17,000mil","440,000mil","90","17,000mil","440,000mil","17,000mil","421,500mil"
+"U1","BottomLayer","-209,000mil","851,000mil","180","-209,000mil","851,000mil","-102,701mil","926,000mil"
+"D2","BottomLayer","-129,984mil","652,000mil","0","-129,984mil","652,000mil","-181,165mil","652,000mil"
+"D1","BottomLayer","-161,181mil","583,000mil","180","-161,181mil","583,000mil","-110,000mil","583,000mil"
+"R1","BottomLayer","-36,000mil","844,500mil","90","-36,000mil","844,500mil","-36,000mil","826,000mil"
+"P1","TopLayer","-184,509mil","534,266mil","0","-184,509mil","534,266mil","-184,508mil","927,462mil"
+"C4","BottomLayer","-203,000mil","276,000mil","0","-203,000mil","276,000mil","-221,500mil","276,000mil"
