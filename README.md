@@ -18,7 +18,11 @@ The hardware mainly the control board expected to power up over 8.4V (Two cell L
 2. JLink Debugger / Programmer
 3. USB to USB Type C cable (For serial debugging)
 
-#### 1.1.2 Step by Step configuration
+
+####  1.1.2 Software required
+1. [Microchip Studio](https://www.microchip.com/en-us/tools-resources/develop/microchip-studio#Downloads)
+
+#### 1.1.3 Step by Step configuration
 1. Power up the supply and set it to 4V.
 2. Connect the power supply cables to the power input pins on the PCB as can be seen in the screenshot below. Make sure the polarity is correct after observing the -ve and +ve pin identifiers
 <p align="center" width="100%">
@@ -42,3 +46,5 @@ The hardware mainly the control board expected to power up over 8.4V (Two cell L
 <img src="https://user-images.githubusercontent.com/76909080/195996062-b666f94c-5eff-4f73-bf63-309af3ffa576.png"/><img src="https://user-images.githubusercontent.com/76909080/195996295-b1c436bd-0b0d-452f-8828-67160a2047d9.png"/>
 </p>
 
+4. Once the connection are properly made, proceed to launch Microchip Studio and verify device connection with debugger using the **Device Programming** option in the software.
+5. After successful connection between hardware and Microchip, proceed to upload the provided .hex file to the board from the **Memories** window of the **Device Programming** option.
