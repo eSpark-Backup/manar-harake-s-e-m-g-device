@@ -57,7 +57,7 @@ int32_t LSM6DSR_io_read(void *handle, uint8_t ReadAddr, uint8_t *pBuffer, uint16
 int32_t LSM6DSR_io_write(void *handle, uint8_t WriteAddr, uint8_t *pBuffer, uint16_t nBytesToWrite);
 
 void twiBegin(uint8_t devAddress);
-void imuInit(void);
+void imuSetCallback(void);
 uint8_t imuBegin(LSM6DSR* LSM);
 void imuReadID(uint8_t *Id);
 
@@ -89,17 +89,11 @@ int main(void)
 
 	// Start USB stack to authorize VBus monitoring
 	udc_start();
+	delay_ms(5000);
 	
-	imuInit();
 	twiBegin( (uint8_t)IMU_BUS_ADDR );
-	delay_ms(2000);
-	
-	lsm6dsr_read_reg(&reg_ctx, LSM6DSR_WHO_AM_I, &data_received, 1);
-	println("Reading WHO_AM_I Register");
-	println("packet_recieved : ");
-	char temp[10];
-	sprintf(temp, "%d", data_received);
-	println(temp);
+	imuSetCallback();
+	imuReadID(&data_received);
 	
 	LSM6DSR sensor;
 	imuBegin(&sensor);
@@ -328,7 +322,7 @@ void twiBegin(uint8_t devAddress)
 	twi_master_init(BOARD_BASE_TWI_IMU, &opt);
 }
 
-void imuInit()
+void imuSetCallback(void)
 {
 	reg_ctx.write_reg = LSM6DSR_io_write;
 	reg_ctx.read_reg = LSM6DSR_io_read;
@@ -337,9 +331,13 @@ void imuInit()
 
 void imuReadID(uint8_t *Id)
 {
-	if (lsm6dsr_device_id_get(&reg_ctx, Id) != LSM6DSR_OK)
+	if (lsm6dsr_device_id_get(&reg_ctx, Id) == LSM6DSR_OK)
 	{
-		println("Failed to read ID!");	
+		println("Reading WHO_AM_I Register");
+		println("packet_recieved : ");
+		char temp[10];
+		sprintf(temp, "%d", *Id);
+		println(temp);	
 	}
 }
 
