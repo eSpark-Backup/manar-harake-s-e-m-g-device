@@ -1,6 +1,0 @@
-Added Component: Designator=P9(6 pin Ribbon Pads.)
-Added Pin To Net: NetName=Measure Pin=P9-2
-Added Pin To Net: NetName=VREF Pin=P9-3
-Added Pin To Net: NetName=VCC_3V3 Pin=P9-4
-Added Pin To Net: NetName=GND Pin=P9-5
-Added Member To Class: ClassName=OpAmp_Sheet Member=Component P9 6 pin Ribbon Pads

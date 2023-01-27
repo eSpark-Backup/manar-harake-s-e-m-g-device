@@ -1,9 +1,0 @@
-Removed Pin From Net: NetName=Measure Pin=U3-8
-Removed Pin From Net: NetName=NetR9_3 Pin=U3-9
-Removed Pin From Net: NetName=GND Pin=U3-10
-Removed Member From Class: ClassName=OpAmp_Sheet Member=U3
-Added Pin To Net: NetName=GND Pin=U2-12
-Added Pin To Net: NetName=NetR9_3 Pin=U2-13
-Added Pin To Net: NetName=Measure Pin=U2-14
-Added Member To Class: ClassName=OpAmp_Sheet Member=Component R2 150K
-Added Member To Class: ClassName=OpAmp_Sheet Member=Component R3 150K

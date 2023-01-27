@@ -1,4 +1,0 @@
-Removed Pin From Net: NetName=Measure# Pin=J?-2
-Change Component Designator: OldDesignator=J? NewDesignator=J1
-Change Component Designator: OldDesignator=P? NewDesignator=P1
-Added Pin To Net: NetName=Measure Pin=J1-2

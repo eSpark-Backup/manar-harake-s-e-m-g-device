@@ -1,9 +1,0 @@
-Added Component: Designator=J7(HDR1X4 SMD)
-Add component (AddParameter): Name = "Manufacturer"; Value = "RTLECS"; VariantName = "[No Variations]"
-Add component (AddParameter): Name = "Pin shape"; Value = "Square pin"; VariantName = "[No Variations]"
-Add component (AddParameter): Name = "Pitch"; Value = "2.54"; VariantName = "[No Variations]"
-Added Pin To Net: NetName=VCC_3V3 Pin=J7-1
-Added Pin To Net: NetName=SWDIO Pin=J7-2
-Added Pin To Net: NetName=SWDCLK Pin=J7-3
-Added Pin To Net: NetName=GND Pin=J7-4
-Added Member To Class: ClassName=U_Connector-Section Member=Component J7 PH254P1x12SMRA-100

@@ -1,4 +1,0 @@
-Change Component Designator: OldDesignator=J? NewDesignator=J1
-Added Component: Designator=P20(TEST POINT)
-Added Pin To Net: NetName=VREF Pin=P20-1
-Added Member To Class: ClassName=U_Connector-Sheet Member=Component P20 Test Point
