@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------
-Gerber File Extension Report For: Electrode_PCB.GBR   7/7/2022  12:18:49 PM
+Gerber File Extension Report For: Electrode_PCB.GBR   1/31/2023  6:16:14 PM
 ------------------------------------------------------------------------------------------
 
 
@@ -11,7 +11,6 @@ Layer Extension     Layer Description
 .GTS                Top Solder                              
 .GTL                Top Layer                               
 .GBL                Bottom Layer                            
-.GBS                Bottom Solder                           
 .GBP                Bottom Paste                            
 .GBO                Bottom Overlay                          
 .GM2                Mechanical 2                            

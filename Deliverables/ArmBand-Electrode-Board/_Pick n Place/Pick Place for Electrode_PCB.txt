@@ -1,33 +1,41 @@
 Altium Designer Pick and Place Locations
-D:\Faizan\GitHub\ManarHarake-sEMGDevice\Design-Files\ArmBand-Electrode-Board\Project Outputs for Electrode_Board\Pick Place for Electrode_PCB.txt
+E:\ManarHarake-sEMGDevice\Design-Files\ArmBand-Electrode-Board\Project Outputs for Electrode_Board\Pick Place for Electrode_PCB.txt
 
 ========================================================================================================================
 File Design Information:
 
-Date:       22/08/22
-Time:       07:02
-Revision:   a5d48fdd63f71ae3437fdbf51d2bd5f23e4ebf11
+Date:       31/01/23
+Time:       17:43
+Revision:   0bb4580c64373c54bec0d2bb6eeab18a4752cc29
 Variant:    No variations
 Units used: mil
 
-Designator Layer       Center-X(mil) Center-Y(mil) Rotation Ref-X(mil)  Ref-Y(mil)  Pad-X(mil)  Pad-Y(mil)  
-P9         BottomLayer -183,945mil   118,000mil    0        -183,945mil 118,000mil  -134,732mil 118,000mil  
-C3         BottomLayer 32,500mil     563,500mil    180      32,500mil   563,500mil  51,000mil   563,500mil  
-C2         BottomLayer -350,000mil   1025,000mil   180      -350,000mil 1025,000mil -331,500mil 1025,000mil 
-C1         BottomLayer -345,245mil   977,633mil    180      -345,245mil 977,633mil  -315,245mil 977,633mil  
-U2         BottomLayer -211,000mil   440,000mil    180      -211,000mil 440,000mil  -100,764mil 516,772mil  
-R10        BottomLayer -381,000mil   381,500mil    270      -381,000mil 381,500mil  -381,000mil 400,000mil  
-R9         BottomLayer -334,370mil   636,197mil    180      -295,000mil 586,000mil  -295,000mil 586,000mil  
-R8         BottomLayer -129,500mil   315,000mil    0        -129,500mil 315,000mil  -148,000mil 315,000mil  
-R7         BottomLayer -203,000mil   315,000mil    180      -203,000mil 315,000mil  -184,500mil 315,000mil  
-R6         BottomLayer 17,000mil     370,000mil    270      17,000mil   370,000mil  17,000mil   388,500mil  
-R5         BottomLayer -145,500mil   707,000mil    180      -145,500mil 707,000mil  -127,000mil 707,000mil  
-R4         BottomLayer 17,000mil     509,500mil    90       17,000mil   509,500mil  17,000mil   491,000mil  
-R3         BottomLayer -27,000mil    472,500mil    270      -27,000mil  472,500mil  -27,000mil  491,000mil  
-R2         BottomLayer 17,000mil     440,000mil    90       17,000mil   440,000mil  17,000mil   421,500mil  
-U1         BottomLayer -209,000mil   851,000mil    180      -209,000mil 851,000mil  -102,701mil 926,000mil  
-D2         BottomLayer -129,984mil   652,000mil    0        -129,984mil 652,000mil  -181,165mil 652,000mil  
-D1         BottomLayer -161,181mil   583,000mil    180      -161,181mil 583,000mil  -110,000mil 583,000mil  
-R1         BottomLayer -36,000mil    844,500mil    90       -36,000mil  844,500mil  -36,000mil  826,000mil  
-P1         TopLayer    -184,509mil   534,266mil    0        -184,509mil 534,266mil  -184,508mil 927,462mil  
-C4         BottomLayer -203,000mil   276,000mil    0        -203,000mil 276,000mil  -221,500mil 276,000mil  
+Designator Comment            Layer       Footprint           Center-X(mil) Center-Y(mil) Rotation Description                                                                                    Ref-X(mil)  Ref-Y(mil)  Pad-X(mil)  Pad-Y(mil)  
+C6         0.1uF              BottomLayer CAP-0402            -353,980mil   795,000mil    90       "CAP CER 0.1UF 50V X7R 0402"                                                                   -353,980mil 795,000mil  -353,980mil 776,500mil  
+SB2        "Solder Bridge"    BottomLayer SOLDER_BRIDGE       -405,980mil   122,000mil    270      "Solder Bridge ON"                                                                             -405,980mil 122,000mil  -405,980mil 152,000mil  
+SB1        "Solder Bridge"    BottomLayer SOLDER_BRIDGE       -343,980mil   122,000mil    270      "Solder Bridge ON"                                                                             -343,980mil 122,000mil  -343,980mil 152,000mil  
+R11        1K                 BottomLayer RES-0402            9,020mil      96,000mil     0        "RES 1K OHM 5% 1/16W 0402"                                                                     9,020mil    96,000mil   -9,480mil   96,000mil   
+P3         "TEST POINT"       BottomLayer TEST-POINT          -162,980mil   1088,000mil   180      "Test Point ON"                                                                                -162,980mil 1088,000mil -162,980mil 1088,000mil 
+P2         "TEST POINT"       BottomLayer TEST-POINT          -162,980mil   996,000mil    180      "Test Point ON"                                                                                -162,980mil 996,000mil  -162,980mil 996,000mil  
+LED1       Orange             BottomLayer LED-0603            -2,980mil     144,000mil    0        "0603(H=0.4mm) ?D=600.5~612.5nm VR=5V VF=1.7V~2.2V IF=25mA PD=60mW"                            -2,980mil   144,000mil  -32,508mil  144,000mil  
+J1         FH19C-6S-0.5SH(10) BottomLayer FH19C-6S-0.5SH(10)_ -184,980mil   95,857mil     180      "CONN FFC BOTTOM 6POS 0.50MM R/A"                                                              -184,980mil 95,857mil   -135,768mil 145,070mil  
+C5         10uF               BottomLayer CAP-0603            -397,980mil   791,000mil    90       "CAP CER 10UF 25V X5R 0603"                                                                    -397,980mil 791,000mil  -397,980mil 761,000mil  
+C3         10nF               BottomLayer CAP-0402            27,020mil     586,000mil    270      "CAP CER 10000PF 50V X7R 0402"                                                                 27,020mil   586,000mil  27,020mil   604,500mil  
+C2         0.1uF              BottomLayer CAP-0402            -339,980mil   1025,000mil   180      "CAP CER 0.1UF 50V X7R 0402"                                                                   -339,980mil 1025,000mil -321,480mil 1025,000mil 
+C1         10uF               BottomLayer CAP-0603            -331,225mil   977,633mil    180      "CAP CER 10UF 25V X5R 0603"                                                                    -331,225mil 977,633mil  -301,225mil 977,633mil  
+U2         TL084CPWR          BottomLayer 14-TSSOP            -211,980mil   440,000mil    180      "IC OPAMP JFET 4 CIRCUIT 14TSSOP"                                                              -211,980mil 440,000mil  -102,728mil 516,772mil  
+R10        1K                 BottomLayer RES-0402            -381,980mil   381,500mil    270      "RES 1K OHM 5% 1/16W 0402"                                                                     -381,980mil 381,500mil  -381,980mil 400,000mil  
+R9         TC33X-2-104E       BottomLayer TC33X-2-104E_       -335,350mil   636,197mil    180      "TRIMMER 100K OHM 0.1W J LEAD TOP"                                                             -295,980mil 586,000mil  -295,980mil 586,000mil  
+R8         80.6K              BottomLayer Res0402             -130,480mil   315,000mil    0        "1/16W 50V ±1% ±200ppm/? -55?~+155? 80.6kO 0402 Chip Resistor - Surface Mount ROHS"            -130,480mil 315,000mil  -148,980mil 315,000mil  
+R7         80.6K              BottomLayer Res0402             -203,980mil   315,000mil    180      "1/16W 50V ±1% ±200ppm/? -55?~+155? 80.6kO 0402 Chip Resistor - Surface Mount ROHS"            -203,980mil 315,000mil  -185,480mil 315,000mil  
+R6         150K               BottomLayer RES-0402            27,020mil     370,000mil    270      "RES SMD 0402 150kOhm 5% Paper T/R"                                                            27,020mil   370,000mil  27,020mil   388,500mil  
+R5         150K               BottomLayer RES-0402            -146,480mil   707,000mil    180      "RES SMD 0402 150kOhm 5% Paper T/R"                                                            -146,480mil 707,000mil  -127,980mil 707,000mil  
+R4         150K               BottomLayer RES-0402            27,020mil     509,500mil    90       "RES SMD 0402 150kOhm 5% Paper T/R"                                                            27,020mil   509,500mil  27,020mil   491,000mil  
+R3         150K               BottomLayer RES-0402            -27,980mil    472,500mil    270      "RES SMD 0402 150kOhm 5% Paper T/R"                                                            -27,980mil  472,500mil  -27,980mil  491,000mil  
+R2         150K               BottomLayer RES-0402            27,020mil     440,000mil    90       "RES SMD 0402 150kOhm 5% Paper T/R"                                                            27,020mil   440,000mil  27,020mil   421,500mil  
+U1         AD8221ARZ-R7       BottomLayer SOIC-8              -191,980mil   851,000mil    180      "IC OPAMP INSTR 825KHZ 8SOIC"                                                                  -191,980mil 851,000mil  -85,681mil  926,000mil  
+D2         1N4148WS           BottomLayer SOD-323             -130,964mil   652,000mil    0        "100V -55?~+150?@(Tj) 400mW Single 1.25V@150mA 4ns 1µA@75V 200mA SOD-323 Switching Diode ROHS" -130,964mil 652,000mil  -176,240mil 652,000mil  
+D1         1N4148WS           BottomLayer SOD-323             -162,161mil   583,000mil    180      "100V -55?~+150?@(Tj) 400mW Single 1.25V@150mA 4ns 1µA@75V 200mA SOD-323 Switching Diode ROHS" -162,161mil 583,000mil  -116,886mil 583,000mil  
+R1         240R               BottomLayer RES-0402            -18,980mil    844,500mil    90       "RES 240 OHM 1% 1/16W 0402"                                                                    -18,980mil  844,500mil  -18,980mil  826,000mil  
+P1         "sEMG sensor"      TopLayer    SEMG-SENSOR         -185,489mil   534,266mil    0        "Sensor Connecting Pads"                                                                       -185,489mil 534,266mil  -185,488mil 927,462mil  
+C4         1uF                BottomLayer CAP-0402            -274,980mil   314,000mil    180      "CAP CER 1UF 16V X5R 0402"                                                                     -274,980mil 314,000mil  -256,480mil 314,000mil  
