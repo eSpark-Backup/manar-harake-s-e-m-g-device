@@ -1,11 +1,12 @@
-Output: Generates pick and place files
-Type  : Pick Place
-From  : Variant [[No Variations]] of Project [Free Documents]
-   Generated File[Pick Place for Electrode_PCB.txt]
-   Generated File[Pick Place for Electrode_PCB.csv]
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Free Documents]
+   Generated File[Electrode_PCB.TXT]
+   Generated File[Electrode_PCB.LDP]
+   Generated File[Electrode_PCB.DRR]
 
 
-Files Generated   : 2
+Files Generated   : 3
 Documents Printed : 0
 
-Finished Output Generation At 12:16:52 PM On 7/7/2022
+Finished Output Generation At 6:16:51 PM On 1/31/2023
