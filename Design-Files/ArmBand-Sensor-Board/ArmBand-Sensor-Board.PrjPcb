@@ -31,7 +31,7 @@ ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
 IsProjectConflictPreventionWarningsEnabled=1
-OutputPath=
+OutputPath=Project Outputs for ArmBand-Sensor-Board
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
@@ -165,86 +165,6 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[GeneratedDocument1]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.DRR
-DItemRevisionGUID=
-
-[GeneratedDocument2]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.EXTREP
-DItemRevisionGUID=
-
-[GeneratedDocument3]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.GBL
-DItemRevisionGUID=
-
-[GeneratedDocument4]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.GBO
-DItemRevisionGUID=
-
-[GeneratedDocument5]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.GBP
-DItemRevisionGUID=
-
-[GeneratedDocument6]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.GBS
-DItemRevisionGUID=
-
-[GeneratedDocument7]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.GD1
-DItemRevisionGUID=
-
-[GeneratedDocument8]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.GG1
-DItemRevisionGUID=
-
-[GeneratedDocument9]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.GM2
-DItemRevisionGUID=
-
-[GeneratedDocument10]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.GPB
-DItemRevisionGUID=
-
-[GeneratedDocument11]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.GPT
-DItemRevisionGUID=
-
-[GeneratedDocument12]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.GTL
-DItemRevisionGUID=
-
-[GeneratedDocument13]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.GTO
-DItemRevisionGUID=
-
-[GeneratedDocument14]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.GTP
-DItemRevisionGUID=
-
-[GeneratedDocument15]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.GTS
-DItemRevisionGUID=
-
-[GeneratedDocument16]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.LDP
-DItemRevisionGUID=
-
-[GeneratedDocument17]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.REP
-DItemRevisionGUID=
-
-[GeneratedDocument18]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.RUL
-DItemRevisionGUID=
-
-[GeneratedDocument19]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\ArmBand-Sensor-Board.TXT
-DItemRevisionGUID=
-
-[GeneratedDocument20]
-DocumentPath=Project Outputs for ArmBand-Sensor-Board\Pick Place for ArmBand-Sensor-Board.csv
-DItemRevisionGUID=
-
 [Configuration1]
 Name=Sources
 ParameterCount=0
@@ -292,7 +212,7 @@ SCH_HasExpandLogicalToPhysicalSheets=-1
 SaveSettingsToOutJob=0
 
 [Generic_EDE]
-OutputDir=
+OutputDir=Project Outputs for ArmBand-Sensor-Board
 
 [OutputGroup1]
 Name=Netlist Outputs
