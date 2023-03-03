@@ -1,41 +1,47 @@
 Altium Designer Pick and Place Locations
-E:\ManarHarake-sEMGDevice\Design-Files\ArmBand-Electrode-Board\Project Outputs for Electrode_Board\Pick Place for Electrode_PCB.csv
+C:\Users\XPENDER\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\ArmBand-Electrode-Board\Project Outputs for Electrode_Board\Pick Place for Electrode_PCB.csv
 
 ========================================================================================================================
 File Design Information:
 
-Date:       31/01/23
-Time:       17:43
-Revision:   0bb4580c64373c54bec0d2bb6eeab18a4752cc29
+Date:       06/02/23
+Time:       21:25
+Revision:   15a210fb54988422cf88d90554ebd87e923e0153
 Variant:    No variations
-Units used: mil
+Units used: mm
 
-"Designator","Comment","Layer","Footprint","Center-X(mil)","Center-Y(mil)","Rotation","Description","Ref-X(mil)","Ref-Y(mil)","Pad-X(mil)","Pad-Y(mil)"
-"C6","0.1uF","BottomLayer","CAP-0402","-353,980mil","795,000mil","90","CAP CER 0.1UF 50V X7R 0402","-353,980mil","795,000mil","-353,980mil","776,500mil"
-"SB2","Solder Bridge","BottomLayer","SOLDER_BRIDGE","-405,980mil","122,000mil","270","Solder Bridge ON","-405,980mil","122,000mil","-405,980mil","152,000mil"
-"SB1","Solder Bridge","BottomLayer","SOLDER_BRIDGE","-343,980mil","122,000mil","270","Solder Bridge ON","-343,980mil","122,000mil","-343,980mil","152,000mil"
-"R11","1K","BottomLayer","RES-0402","9,020mil","96,000mil","0","RES 1K OHM 5% 1/16W 0402","9,020mil","96,000mil","-9,480mil","96,000mil"
-"P3","TEST POINT","BottomLayer","TEST-POINT","-162,980mil","1088,000mil","180","Test Point ON","-162,980mil","1088,000mil","-162,980mil","1088,000mil"
-"P2","TEST POINT","BottomLayer","TEST-POINT","-162,980mil","996,000mil","180","Test Point ON","-162,980mil","996,000mil","-162,980mil","996,000mil"
-"LED1","Orange","BottomLayer","LED-0603","-2,980mil","144,000mil","0","0603(H=0.4mm) ?D=600.5~612.5nm VR=5V VF=1.7V~2.2V IF=25mA PD=60mW","-2,980mil","144,000mil","-32,508mil","144,000mil"
-"J1","FH19C-6S-0.5SH(10)","BottomLayer","FH19C-6S-0.5SH(10)_","-184,980mil","95,857mil","180","CONN FFC BOTTOM 6POS 0.50MM R/A","-184,980mil","95,857mil","-135,768mil","145,070mil"
-"C5","10uF","BottomLayer","CAP-0603","-397,980mil","791,000mil","90","CAP CER 10UF 25V X5R 0603","-397,980mil","791,000mil","-397,980mil","761,000mil"
-"C3","10nF","BottomLayer","CAP-0402","27,020mil","586,000mil","270","CAP CER 10000PF 50V X7R 0402","27,020mil","586,000mil","27,020mil","604,500mil"
-"C2","0.1uF","BottomLayer","CAP-0402","-339,980mil","1025,000mil","180","CAP CER 0.1UF 50V X7R 0402","-339,980mil","1025,000mil","-321,480mil","1025,000mil"
-"C1","10uF","BottomLayer","CAP-0603","-331,225mil","977,633mil","180","CAP CER 10UF 25V X5R 0603","-331,225mil","977,633mil","-301,225mil","977,633mil"
-"U2","TL084CPWR","BottomLayer","14-TSSOP","-211,980mil","440,000mil","180","IC OPAMP JFET 4 CIRCUIT 14TSSOP","-211,980mil","440,000mil","-102,728mil","516,772mil"
-"R10","1K","BottomLayer","RES-0402","-381,980mil","381,500mil","270","RES 1K OHM 5% 1/16W 0402","-381,980mil","381,500mil","-381,980mil","400,000mil"
-"R9","TC33X-2-104E","BottomLayer","TC33X-2-104E_","-335,350mil","636,197mil","180","TRIMMER 100K OHM 0.1W J LEAD TOP","-295,980mil","586,000mil","-295,980mil","586,000mil"
-"R8","80.6K","BottomLayer","Res0402","-130,480mil","315,000mil","0","1/16W 50V ±1% ±200ppm/? -55?~+155? 80.6kO 0402 Chip Resistor - Surface Mount ROHS","-130,480mil","315,000mil","-148,980mil","315,000mil"
-"R7","80.6K","BottomLayer","Res0402","-203,980mil","315,000mil","180","1/16W 50V ±1% ±200ppm/? -55?~+155? 80.6kO 0402 Chip Resistor - Surface Mount ROHS","-203,980mil","315,000mil","-185,480mil","315,000mil"
-"R6","150K","BottomLayer","RES-0402","27,020mil","370,000mil","270","RES SMD 0402 150kOhm 5% Paper T/R","27,020mil","370,000mil","27,020mil","388,500mil"
-"R5","150K","BottomLayer","RES-0402","-146,480mil","707,000mil","180","RES SMD 0402 150kOhm 5% Paper T/R","-146,480mil","707,000mil","-127,980mil","707,000mil"
-"R4","150K","BottomLayer","RES-0402","27,020mil","509,500mil","90","RES SMD 0402 150kOhm 5% Paper T/R","27,020mil","509,500mil","27,020mil","491,000mil"
-"R3","150K","BottomLayer","RES-0402","-27,980mil","472,500mil","270","RES SMD 0402 150kOhm 5% Paper T/R","-27,980mil","472,500mil","-27,980mil","491,000mil"
-"R2","150K","BottomLayer","RES-0402","27,020mil","440,000mil","90","RES SMD 0402 150kOhm 5% Paper T/R","27,020mil","440,000mil","27,020mil","421,500mil"
-"U1","AD8221ARZ-R7","BottomLayer","SOIC-8","-191,980mil","851,000mil","180","IC OPAMP INSTR 825KHZ 8SOIC","-191,980mil","851,000mil","-85,681mil","926,000mil"
-"D2","1N4148WS","BottomLayer","SOD-323","-130,964mil","652,000mil","0","100V -55?~+150?@(Tj) 400mW Single 1.25V@150mA 4ns 1µA@75V 200mA SOD-323 Switching Diode ROHS","-130,964mil","652,000mil","-176,240mil","652,000mil"
-"D1","1N4148WS","BottomLayer","SOD-323","-162,161mil","583,000mil","180","100V -55?~+150?@(Tj) 400mW Single 1.25V@150mA 4ns 1µA@75V 200mA SOD-323 Switching Diode ROHS","-162,161mil","583,000mil","-116,886mil","583,000mil"
-"R1","240R","BottomLayer","RES-0402","-18,980mil","844,500mil","90","RES 240 OHM 1% 1/16W 0402","-18,980mil","844,500mil","-18,980mil","826,000mil"
-"P1","sEMG sensor","TopLayer","SEMG-SENSOR","-185,489mil","534,266mil","0","Sensor Connecting Pads","-185,489mil","534,266mil","-185,488mil","927,462mil"
-"C4","1uF","BottomLayer","CAP-0402","-274,980mil","314,000mil","180","CAP CER 1UF 16V X5R 0402","-274,980mil","314,000mil","-256,480mil","314,000mil"
+"Designator","Layer","Center-X(mm)","Center-Y(mm)","Rotation","Ref-X(mm)","Ref-Y(mm)","Pad-X(mm)","Pad-Y(mm)"
+"C1","BottomLayer","-7,5692mm","24,7142mm","180","-7,5692mm","24,7142mm","-7,0993mm","24,7142mm"
+"C2","BottomLayer","-1,0160mm","10,1092mm","0","-1,0160mm","10,1092mm","-1,4859mm","10,1092mm"
+"C3","BottomLayer","0,6863mm","14,8844mm","270","0,6863mm","14,8844mm","0,6863mm","15,3543mm"
+"C4","BottomLayer","-6,9845mm","7,2390mm","180","-6,9845mm","7,2390mm","-6,5146mm","7,2390mm"
+"C5","BottomLayer","-9,0678mm","20,2946mm","90","-9,0678mm","20,2946mm","-9,0678mm","19,8247mm"
+"C6","BottomLayer","-9,3472mm","10,7188mm","90","-9,3472mm","10,7188mm","-9,3472mm","10,2489mm"
+"D1","BottomLayer","-0,7366mm","16,8148mm","0","-0,7366mm","16,8148mm","-1,8866mm","16,8148mm"
+"D2","BottomLayer","-4,5212mm","16,8148mm","0","-4,5212mm","16,8148mm","-5,6712mm","16,8148mm"
+"J1","BottomLayer","-4,6985mm","2,4348mm","180","-4,6985mm","2,4348mm","-3,4485mm","3,6848mm"
+"LED1","BottomLayer","-0,0757mm","3,6576mm","0","-0,0757mm","3,6576mm","-0,8257mm","3,6576mm"
+"P1","TopLayer","-4,7114mm","13,5704mm","0","-4,7114mm","13,5704mm","-4,7114mm","23,5575mm"
+"P2","BottomLayer","-3,0480mm","28,3972mm","180","-3,0480mm","28,3972mm","-3,0480mm","28,3972mm"
+"P3","BottomLayer","-8,0772mm","-0,4826mm","180","-8,0772mm","-0,4826mm","-8,0772mm","-0,4826mm"
+"R1","BottomLayer","-0,6350mm","21,4376mm","90","-0,6350mm","21,4376mm","-0,6350mm","20,9677mm"
+"R2","BottomLayer","0,6863mm","11,1506mm","90","0,6863mm","11,1506mm","0,6863mm","10,6807mm"
+"R3","BottomLayer","-0,6350mm","12,1158mm","270","-0,6350mm","12,1158mm","-0,6350mm","12,5857mm"
+"R4","BottomLayer","0,6863mm","12,9413mm","90","0,6863mm","12,9413mm","0,6863mm","12,4714mm"
+"R5","BottomLayer","-3,5814mm","18,2372mm","180","-3,5814mm","18,2372mm","-3,1115mm","18,2372mm"
+"R6","BottomLayer","0,6863mm","9,3726mm","270","0,6863mm","9,3726mm","0,6863mm","9,8425mm"
+"R7","BottomLayer","-5,1811mm","7,2644mm","180","-5,1811mm","7,2644mm","-4,7112mm","7,2644mm"
+"R8","BottomLayer","-3,3142mm","7,2644mm","0","-3,3142mm","7,2644mm","-3,7841mm","7,2644mm"
+"R9","BottomLayer","-8,5250mm","16,6166mm","180","-7,5250mm","15,3416mm","-7,5250mm","15,3416mm"
+"R10","BottomLayer","-8,7249mm","7,2390mm","0","-8,7249mm","7,2390mm","-9,1948mm","7,2390mm"
+"R11","BottomLayer","0,8382mm","2,0066mm","90","0,8382mm","2,0066mm","0,8382mm","1,5367mm"
+"SB1","BottomLayer","-9,0932mm","2,7686mm","270","-9,0932mm","2,7686mm","-9,0932mm","3,2385mm"
+"SB2","BottomLayer","-10,1657mm","2,7593mm","270","-10,1657mm","2,7593mm","-10,1657mm","3,2292mm"
+"SB3","BottomLayer","-2,4892mm","15,0114mm","90","-2,4892mm","15,0114mm","-2,4892mm","14,5415mm"
+"SB4","BottomLayer","-6,0198mm","13,6398mm","180","-6,0198mm","13,6398mm","-5,5499mm","13,6398mm"
+"SB5","BottomLayer","-7,2898mm","27,1526mm","0","-7,2898mm","27,1526mm","-7,7597mm","27,1526mm"
+"SB6","BottomLayer","-7,2898mm","25,8699mm","0","-7,2898mm","25,8699mm","-7,7597mm","25,8699mm"
+"SB7","BottomLayer","-9,7536mm","0,8636mm","270","-9,7536mm","0,8636mm","-9,7536mm","1,3335mm"
+"SB8","BottomLayer","-1,6256mm","6,0198mm","0","-1,6256mm","6,0198mm","-2,0955mm","6,0198mm"
+"U1","BottomLayer","-4,8763mm","21,6154mm","180","-4,8763mm","21,6154mm","-2,1763mm","23,5204mm"
+"U2","BottomLayer","-5,3843mm","10,4394mm","180","-5,3843mm","10,4394mm","-2,6093mm","12,3894mm"
