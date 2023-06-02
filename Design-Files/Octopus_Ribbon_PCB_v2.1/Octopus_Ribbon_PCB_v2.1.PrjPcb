@@ -47,23 +47,6 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
-DocumentPath=Oct_Ribbon_V2.1_PCB ####.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=QIQOBTQM
-
-[Document2]
 DocumentPath=Main_Sheet.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -80,7 +63,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QTQJOGUA
 
-[Document3]
+[Document2]
 DocumentPath=Oct_Ribbon_V2.1_PCB.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -95,9 +78,9 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=VBUYQHHP
+DocumentUniqueId=QIQOBTQM
 
-[Document4]
+[Document3]
 DocumentPath=Octopus_Ribbon_PCB.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -113,6 +96,27 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
+
+[Document4]
+DocumentPath=LOGO.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=LRNHVNTU
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Design Rule Check - Oct_Ribbon_V2.html
+DItemRevisionGUID=
 
 [Configuration1]
 Name=Sources
