@@ -112,7 +112,11 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=IABLWFQT
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Electrode_Board_v2.1\Design Rule Check - Electrode_PCB_v2.html
+DItemRevisionGUID=
 
 [Configuration1]
 Name=Sources
