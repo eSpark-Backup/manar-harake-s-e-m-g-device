@@ -64,23 +64,6 @@ GenerateClassCluster=0
 DocumentUniqueId=QTQJOGUA
 
 [Document2]
-DocumentPath=..\..\..\..\..\..\..\ALTIUM\PROJECT 4(01-06-2023)\Octopus_Ribbon_PCB_v2.1\Oct_Ribbon_V2.1_PCB.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=QIQOBTQM
-
-[Document3]
 DocumentPath=Octopus_Ribbon_PCB.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -97,7 +80,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document4]
+[Document3]
 DocumentPath=LOGO.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -113,6 +96,23 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LRNHVNTU
+
+[Document4]
+DocumentPath=Oct_Ribbon_v2.1_PCB.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=QIQOBTQM
 
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Octopus_Ribbon_PCB\Design Rule Check - Oct_Ribbon_V2.html
