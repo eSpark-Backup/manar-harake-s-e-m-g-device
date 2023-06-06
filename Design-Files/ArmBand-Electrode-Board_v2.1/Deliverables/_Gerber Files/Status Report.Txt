@@ -1,0 +1,26 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [Electrode_Board_v2.1.PrjPcb]
+   Generated File[Electrode_PCB_v2.1.GTO]
+   Generated File[Electrode_PCB_v2.1.GTP]
+   Generated File[Electrode_PCB_v2.1.GTS]
+   Generated File[Electrode_PCB_v2.1.GTL]
+   Generated File[Electrode_PCB_v2.1.GBL]
+   Generated File[Electrode_PCB_v2.1.GBS]
+   Generated File[Electrode_PCB_v2.1.GBP]
+   Generated File[Electrode_PCB_v2.1.GBO]
+   Generated File[Electrode_PCB_v2.1.GM2]
+   Generated File[Electrode_PCB_v2.1.GM3]
+   Generated File[Electrode_PCB_v2.1.GPT]
+   Generated File[Electrode_PCB_v2.1.GPB]
+   Generated File[Electrode_PCB_v2.1.GD1]
+   Generated File[Electrode_PCB_v2.1.GG1]
+   Generated File[Electrode_PCB_v2.1.RUL]
+   Generated File[Electrode_PCB_v2.1.EXTREP]
+   Generated File[Electrode_PCB_v2.1.REP]
+
+
+Files Generated   : 17
+Documents Printed : 0
+
+Finished Output Generation At 3:02:45 AM On 6/6/2023

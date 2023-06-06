@@ -1,0 +1,26 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [Octopus_Ribbon_PCB_v2.1.PrjPcb]
+   Generated File[Oct_Ribbon_v2.1_PCB.GTO]
+   Generated File[Oct_Ribbon_v2.1_PCB.GTP]
+   Generated File[Oct_Ribbon_v2.1_PCB.GTS]
+   Generated File[Oct_Ribbon_v2.1_PCB.GTL]
+   Generated File[Oct_Ribbon_v2.1_PCB.GBL]
+   Generated File[Oct_Ribbon_v2.1_PCB.GBS]
+   Generated File[Oct_Ribbon_v2.1_PCB.GBP]
+   Generated File[Oct_Ribbon_v2.1_PCB.GBO]
+   Generated File[Oct_Ribbon_v2.1_PCB.GM2]
+   Generated File[Oct_Ribbon_v2.1_PCB.GM3]
+   Generated File[Oct_Ribbon_v2.1_PCB.GPT]
+   Generated File[Oct_Ribbon_v2.1_PCB.GPB]
+   Generated File[Oct_Ribbon_v2.1_PCB.GD1]
+   Generated File[Oct_Ribbon_v2.1_PCB.GG1]
+   Generated File[Oct_Ribbon_v2.1_PCB.RUL]
+   Generated File[Oct_Ribbon_v2.1_PCB.EXTREP]
+   Generated File[Oct_Ribbon_v2.1_PCB.REP]
+
+
+Files Generated   : 17
+Documents Printed : 0
+
+Finished Output Generation At 2:43:59 AM On 6/6/2023

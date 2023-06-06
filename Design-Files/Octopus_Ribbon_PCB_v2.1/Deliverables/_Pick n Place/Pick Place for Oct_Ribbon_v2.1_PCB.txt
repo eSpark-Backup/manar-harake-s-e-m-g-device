@@ -1,0 +1,22 @@
+Altium Designer Pick and Place Locations
+C:\Users\eSpark Cons Group\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Octopus_Ribbon_PCB_v2.1\Project Outputs for Octopus_Ribbon_PCB_v2.1\Pick Place for Oct_Ribbon_v2.1_PCB.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       06/06/23
+Time:       02:50
+Revision:   ce471ee1c768a055f95c63d092cef754db2f742a
+Variant:    No variations
+Units used: mm
+
+Designator Center-X(mm) Center-Y(mm) Layer       Rotation Ref-X(mm)  Ref-Y(mm)  Pad-X(mm)  Pad-Y(mm)  
+J9         2,1844mm     2,0955mm     BottomLayer 0        2,1844mm   2,0955mm   3,8094mm   2,0955mm   
+J8         200,1393mm   2,0955mm     BottomLayer 0        200,1393mm 2,0955mm   201,7643mm 2,0955mm   
+J7         93,9292mm    2,0955mm     BottomLayer 0        93,9292mm  2,0955mm   95,5542mm  2,0955mm   
+J6         44,5764mm    2,0955mm     BottomLayer 0        44,5764mm  2,0955mm   46,2014mm  2,0955mm   
+J5         183,1340mm   2,0955mm     BottomLayer 0        183,1340mm 2,0955mm   184,7590mm 2,0955mm   
+J4         16,6364mm    2,0955mm     BottomLayer 0        16,6364mm  2,0955mm   18,2614mm  2,0955mm   
+J3         164,4142mm   2,0955mm     BottomLayer 0        164,4142mm 2,0955mm   166,0392mm 2,0955mm   
+J2         143,7767mm   2,0955mm     BottomLayer 0        143,7767mm 2,0955mm   145,4017mm 2,0955mm   
+J1         98,4026mm    104,5997mm   BottomLayer 180      98,4026mm  104,5997mm 90,6526mm  104,5997mm 
