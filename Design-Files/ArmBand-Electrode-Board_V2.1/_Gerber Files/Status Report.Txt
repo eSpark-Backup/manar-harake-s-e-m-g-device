@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Electrode_Board_v2.1.PrjPcb]
+   Generated File[Electrode_PCB_v2.1.TXT]
+   Generated File[Electrode_PCB_v2.1.LDP]
+   Generated File[Electrode_PCB_v2.1.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 10:13:34 PM On 6/12/2023
