@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [ArmBand-Sensor-Board.PrjPcb]
+   Generated File[ArmBand-Sensor-Board.TXT]
+   Generated File[ArmBand-Sensor-Board.LDP]
+   Generated File[ArmBand-Sensor-Board.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 1:10:49 AM On 2/3/2023
