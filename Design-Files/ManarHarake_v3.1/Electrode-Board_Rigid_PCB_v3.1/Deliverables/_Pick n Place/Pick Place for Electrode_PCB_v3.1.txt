@@ -1,0 +1,15 @@
+Altium Designer Pick and Place Locations
+D:\eSpark-Consultants\ManarHarake-sEMGDevice\Design-Files\ManarHarake_v3.1\Electrode-Board_V3.1\Project Outputs for Electrode_Board_v3.1\Pick Place for Electrode_PCB_v3.1.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       07/02/24
+Time:       18:06
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mm
+
+Designator Layer       Center-X(mm) Center-Y(mm) Rotation Ref-X(mm) Ref-Y(mm) Pad-X(mm) Pad-Y(mm) 
+P1         BottomLayer -4,7114mm    13,5704mm    180      -4,7114mm 13,5704mm -4,7114mm 23,5575mm 
+P2         TopLayer    -4,7114mm    13,5704mm    0        -4,7114mm 13,5704mm -4,7114mm 23,5575mm 

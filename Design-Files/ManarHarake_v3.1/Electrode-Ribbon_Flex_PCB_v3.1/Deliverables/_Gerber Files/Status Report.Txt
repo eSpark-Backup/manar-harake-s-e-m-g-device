@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Electrode_Ribbon_PCB_v3.1.PrjPcb]
+   Generated File[Electrode_Ribbon_PCB_v3.1.TXT]
+   Generated File[Electrode_Ribbon_PCB_v3.1.LDP]
+   Generated File[Electrode_Ribbon_PCB_v3.1.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 6:24:53 pm On 07/02/2024
