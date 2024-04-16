@@ -1,5 +1,18 @@
 # ManarHarake-sEMGDevice Firmware flashing Guide
 
+## Prerequisites 
+Install J-Link tools
+
+Download J-Link tools from [here](https://www.segger.com/downloads/jlink/)
+We used v7.94e. Download the latest from this link for the tools [here](https://www.segger.com/downloads/jlink/JLink_Windows_x86_64.exe)
+
+Follow the installation guide and install.
+
+<p align="center">
+    <img src="https://github.com/eSpark-Consultants/raafat-BLEproduct/assets/143803999/a6c424dc-f132-4e7d-9920-9985fdb77baf)"  height="300"/>
+</p>
+
+
 ## 1 ATMEL SAM4s
 ### 1.1 Setting up the Hardware
 The hardware mainly the control board expected to power up over 8.4V (Two cell LiPo / Li-Ion battery). However, due to slight issues with the battery supervisor circuit, the Voltage Divider network expected to bring voltages to safe range had to be removed. **The board is now powered up over 4V for safe operations**.
@@ -61,11 +74,11 @@ The hardware mainly the control board expected to power up over 8.4V (Two cell L
 
 #### 2.1.3 Step by Step configuration
 1. Power up the supply and set it to 4V.
-3. Connect the power supply cables to the power input pins on the PCB as can be seen in the screenshot below. Make sure the polarity is correct after observing the -ve and +ve pin identifiers
+2. Connect the power supply cables to the power input pins on the PCB as can be seen in the screenshot below. Make sure the polarity is correct after observing the -ve and +ve pin identifiers
 <p align="center" width="100%">
 <img src="https://user-images.githubusercontent.com/76909080/195995410-549fbed7-de78-469c-aeab-4af878973c96.png"/>
 </p>
-4. Connect the debugger with the board as per the table below. The debugger pin snapshot as well as the PCB pin names are given in screenshots below:
+3. Connect the debugger with the board as per the table below. The debugger pin snapshot as well as the PCB pin names are given in screenshots below:
 <div align="center" width="100%">
 
 |Board Pin Name|Debugger Pin Name|
@@ -82,19 +95,19 @@ The hardware mainly the control board expected to power up over 8.4V (Two cell L
 <img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/e4995451-d11e-4dc7-b677-f1a327353996" width = "300"/>
 </p>
 
-5. Once the connection are properly made, proceed to launch **nRF Connect for Desktop**. Select **Programmer** app from the apps list by clicking **Open**, Programmer window will appear. If its not available press **Install**.
+4. Once the connection are properly made, proceed to launch **nRF Connect for Desktop**. Select **Programmer** app from the apps list by clicking **Open**, Programmer window will appear. If its not available press **Install**.
 
 <p align="center" width="80%">
 <img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/23bfe67c-0dbe-4790-8614-79c6c961b25d" width = "600" />
 </p>
 
-6. Select Device from top left option **Select Device** and connect your debugger. **Add File** and select provided .hex file to flash on NRF. Click on **Erase & Write** to flash the binaries.
+5. Select Device from top left option **Select Device** and connect your debugger. **Add File** and select provided .hex file to flash on NRF. Click on **Erase & Write** to flash the binaries.
 
 <p align="center" width="80%">
 <img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/08fe4dab-733c-43ee-b735-05af7f059d69" width = "600" />
 </p>
 
-7. Open NRF Connect application on mobile and then Connect to **Nordic_UART_Service**, request MTU of 247 to receive larger data packets and lastly Enable Notifications.
+6. Open NRF Connect application on mobile and then Connect to **Nordic_UART_Service**, request MTU of 247 to receive larger data packets and lastly Enable Notifications.
 
 <p align="center" width="80%">
 <img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/93b1acd2-ef7b-40b2-9524-849af836a4e3" width = "200" />
