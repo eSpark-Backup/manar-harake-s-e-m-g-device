@@ -9,7 +9,7 @@ We used v7.94e. Download the latest from this link for the tools [here](https://
 Follow the installation guide and install.
 
 <p align="center">
-    <img src="https://github.com/eSpark-Consultants/raafat-BLEproduct/assets/143803999/a6c424dc-f132-4e7d-9920-9985fdb77baf)"  height="300"/>
+    <img src="https://github.com/eSpark-Consultants/raafat-BLEproduct/assets/143803999/a6c424dc-f132-4e7d-9920-9985fdb77baf"  height="300"/>
 </p>
 
 
