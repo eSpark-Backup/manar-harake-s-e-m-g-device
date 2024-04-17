@@ -107,7 +107,7 @@ The hardware mainly the control board expected to power up over 8.4V (Two cell L
 <img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/08fe4dab-733c-43ee-b735-05af7f059d69" width = "600" />
 </p>
 
-6. Open NRF Connect application on mobile and then Connect to **Nordic_UART_Service**, request MTU of 247 to receive larger data packets and lastly Enable Notifications.
+6. Open NRF Connect application on mobile and then Connect to **Nordic_UART_Service**, request MTU of 512 to receive larger data packets and lastly Enable Notifications.
 
 <p align="center" width="80%">
 <img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/93b1acd2-ef7b-40b2-9524-849af836a4e3" width = "200" />
