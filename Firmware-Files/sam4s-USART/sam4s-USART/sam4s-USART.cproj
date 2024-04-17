@@ -512,7 +512,19 @@
     <Folder Include="src\config\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\adc_serivce.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\adc_service.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\ASF\sam\drivers\adc\adc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\usart_service.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\usart_service.h">
       <SubType>compile</SubType>
     </Compile>
     <None Include="src\ASF\sam\drivers\adc\adc.h">
@@ -1004,10 +1016,16 @@
     <Compile Include="src\ASF\sam\utils\syscalls\gcc\syscalls.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\lsm6dsr.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\lsm6dsr_reg.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\lsm6dsr_reg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\lsmdsr.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\main.c">

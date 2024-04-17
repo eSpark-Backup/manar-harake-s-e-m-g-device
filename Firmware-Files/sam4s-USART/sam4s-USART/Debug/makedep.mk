@@ -2,7 +2,11 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+src\adc_service.c
+
 src\ASF\sam\drivers\adc\adc.c
+
+src\usart_service.c
 
 src\ASF\sam\drivers\adc\adc_sam3u.c
 
@@ -37,6 +41,8 @@ src\ASF\sam\utils\cmsis\sam4s\source\templates\system_sam4s.c
 src\ASF\sam\utils\syscalls\gcc\syscalls.c
 
 src\lsm6dsr_reg.c
+
+src\lsmdsr.c
 
 src\main.c
 
