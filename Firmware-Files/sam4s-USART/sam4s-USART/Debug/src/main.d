@@ -121,14 +121,16 @@ src/main.d src/main.o: ../src/main.c ../src/asf.h \
  ../src/ASF/common/services/gpio/gpio.h \
  ../src/ASF/common/services/gpio/sam_gpio/sam_gpio.h \
  ../src/ASF/sam/drivers/pio/pio.h ../src/ASF/sam/drivers/pmc/sleep.h \
- ../src/ASF/sam/drivers/uart/uart.h \
+ ../src/ASF/sam/drivers/twi/twi.h ../src/ASF/sam/drivers/uart/uart.h \
  ../src/ASF/common/services/serial/serial.h \
  ../src/ASF/common/services/serial/sam_uart/uart_serial.h \
  ../src/ASF/sam/drivers/usart/usart.h ../src/config/conf_uart_serial.h \
  ../src/ASF/sam/drivers/pio/pio_handler.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\string.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\xlocale.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\sys\string.h
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\sys\string.h \
+ ../src/lsm6dsr_reg.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\math.h
 
 ../src/asf.h:
 
@@ -384,6 +386,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/sam/drivers/pmc/sleep.h:
 
+../src/ASF/sam/drivers/twi/twi.h:
+
 ../src/ASF/sam/drivers/uart/uart.h:
 
 ../src/ASF/common/services/serial/serial.h:
@@ -401,3 +405,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\xlocale.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\sys\string.h:
+
+../src/lsm6dsr_reg.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\math.h:

@@ -87,6 +87,9 @@
 // From module: System Clock Control - SAM4S implementation
 #include <sysclk.h>
 
+// From module: TWI - Two-wire Interface
+#include <twi.h>
+
 // From module: UART - Univ. Async Rec/Trans
 #include <uart.h>
 

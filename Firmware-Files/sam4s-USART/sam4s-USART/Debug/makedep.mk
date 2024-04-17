@@ -12,6 +12,8 @@ src\ASF\sam\drivers\pio\pio.c
 
 src\ASF\common\services\delay\sam\cycle_counter.c
 
+src\ASF\sam\drivers\twi\twi.c
+
 src\ASF\sam\drivers\usart\usart.c
 
 src\ASF\common\services\serial\usart_serial.c
@@ -33,6 +35,8 @@ src\ASF\sam\utils\cmsis\sam4s\source\templates\gcc\startup_sam4s.c
 src\ASF\sam\utils\cmsis\sam4s\source\templates\system_sam4s.c
 
 src\ASF\sam\utils\syscalls\gcc\syscalls.c
+
+src\lsm6dsr_reg.c
 
 src\main.c
 
