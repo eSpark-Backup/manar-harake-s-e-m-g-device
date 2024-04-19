@@ -66,6 +66,23 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document2]
+DocumentPath=Electrode_Test_Board_v3.2.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=QIQOBTQM
+
+[Document3]
 DocumentPath=OpAmp_Sheet.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -82,276 +99,207 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QTQJOGUA
 
-[Document3]
-DocumentPath=Electrode_Ribbon_PCB_v3.1.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=QIQOBTQM
-
-[Document4]
-DocumentPath=Deliverables\_Gerber Files\Gerber File.Cam
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document5]
-DocumentPath=Deliverables\_Gerber Files\NC Drill File.Cam
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document6]
-DocumentPath=CAMtastic1.Cam
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document7]
-DocumentPath=CAMtastic2.Cam
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Design Rule Check - Electrode_Ribbon_PCB_v3.html
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Design Rule Check - Oct_Ribbon_V2.html
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Design Rule Check - Electrode_Ribbon_PCB_v3.html
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.DRR
+DocumentPath=Project Outputs for Electrode_Test_Board_v3.2\Design Rule Check - Electrode_Test_Board_v3.html
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.EXTREP
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Design Rule Check - Oct_Ribbon_V2.html
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GBL
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GBO
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GBP
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GBS
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GD1
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GG1
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GM
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GD1
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GM2
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GG1
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GM3
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GM
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GPB
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GM2
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GPT
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GM3
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GTL
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GPB
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GTO
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GPT
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GTP
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GTS
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument20]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.LDP
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument21]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.REP
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument22]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.RUL
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument23]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.TXT
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.REP
 DItemRevisionGUID=
 
 [GeneratedDocument24]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.DRR
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.RUL
 DItemRevisionGUID=
 
 [GeneratedDocument25]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.EXTREP
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Electrode_Ribbon_PCB_v3.0.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument26]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GBL
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument27]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GBO
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument28]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GBP
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument29]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GBS
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument30]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GD1
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument31]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GG1
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument32]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GM
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GD1
 DItemRevisionGUID=
 
 [GeneratedDocument33]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GM2
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GG1
 DItemRevisionGUID=
 
 [GeneratedDocument34]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GM3
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GM
 DItemRevisionGUID=
 
 [GeneratedDocument35]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GPB
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GM2
 DItemRevisionGUID=
 
 [GeneratedDocument36]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GPT
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GM3
 DItemRevisionGUID=
 
 [GeneratedDocument37]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GTL
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GPB
 DItemRevisionGUID=
 
 [GeneratedDocument38]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GTO
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GPT
 DItemRevisionGUID=
 
 [GeneratedDocument39]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GTP
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument40]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GTS
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument41]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.LDP
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument42]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.REP
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument43]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.RUL
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument44]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.TXT
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.REP
 DItemRevisionGUID=
 
 [GeneratedDocument45]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.xlsx
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.RUL
 DItemRevisionGUID=
 
 [GeneratedDocument46]
-DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Pick Place for Electrode_Ribbon_PCB_v3.0.csv
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument47]
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.xlsx
+DItemRevisionGUID=
+
+[GeneratedDocument48]
+DocumentPath=BOM\Electrode_Test_Board_v3.2.xlsx
+DItemRevisionGUID=
+
+[GeneratedDocument49]
+DocumentPath=BOM\JLCPCB_BOMElectrode_Test_Board_v3.2.xlsx
+DItemRevisionGUID=
+
+[GeneratedDocument50]
+DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Pick Place for Electrode_Ribbon_PCB_v3.0.csv
+DItemRevisionGUID=
+
+[GeneratedDocument51]
 DocumentPath=Project Outputs for Electrode_Ribbon_PCB_v3.0\Pick Place for Electrode_Ribbon_PCB_v3.0.txt
 DItemRevisionGUID=
 
@@ -788,7 +736,7 @@ Configuration1_Item1=CaptionAsName
 Configuration1_Name2=ForceUpdateSettings
 Configuration1_Item2=False
 Configuration1_Name3=General
-Configuration1_Item3=OpenExported=True|AddToProject=True|ReportBOMViolationsInMessages=False|ForceFit=False|NotFitted=False|Database=False|DatabasePriority=False|IncludePcbData=False|IncludeVaultData=False|IncludeCloudData=False|IncludeDocumentData=True|IncludeAlternatives=False|ShowExportOptions=True|TemplateFilename=C:\GitHub\eSpark-Hardware\BOM Format\BOM Template\PCBWay.Bom.Template.xlsx|TemplateVaultGuid=|TemplateItemGuid=|TemplateRevisionGuid=|BatchMode=5|FormWidth=1200|FormHeight=710|SupplierProdQty=1|SupplierAutoQty=False|SupplierUseCachedPricing=False|SupplierCurrency=USD|SolutionsPerItem=1|SuppliersPerSolution=1|ViewType=1|UseDirectApi=False|BomSetName=
+Configuration1_Item3=OpenExported=True|AddToProject=True|ReportBOMViolationsInMessages=False|ForceFit=False|NotFitted=False|Database=False|DatabasePriority=False|IncludePcbData=False|IncludeVaultData=False|IncludeCloudData=False|IncludeDocumentData=True|IncludeAlternatives=False|ShowExportOptions=True|TemplateFilename=S:\eSpark-Hardware\BOM Format\Client.Bom.Template.xlsx|TemplateVaultGuid=|TemplateItemGuid=|TemplateRevisionGuid=|BatchMode=5|FormWidth=1200|FormHeight=710|SupplierProdQty=1|SupplierAutoQty=False|SupplierUseCachedPricing=False|SupplierCurrency=USD|SolutionsPerItem=1|SuppliersPerSolution=1|ViewType=1|UseDirectApi=False|BomSetName=
 Configuration1_Name4=GroupOrder
 Configuration1_Item4=Comment=True|Footprint=True
 Configuration1_Name5=SortOrder
