@@ -1,4 +1,4 @@
-DRC Rules Export File for PCB: D:\eSpark-Consultants\ManarHarake-sEMGDevice\Design-Files\ManarHarake_v3.1\Electrode-Ribbon_PCB_v3.1\Electrode_Ribbon_PCB_v3.1.PcbDoc
+DRC Rules Export File for PCB: C:\Users\eSpark\Desktop\ManarHarake-sEMGDevice\Design-Files\ManarHarake_v3.2\Electrode-Test_Board_PCB_v3.2\Electrode_Test_Board_v3.2.PcbDoc
 RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
 RuleKind=Width|RuleName=Width|Scope=Board|Minimum=10.00
 RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=6.00

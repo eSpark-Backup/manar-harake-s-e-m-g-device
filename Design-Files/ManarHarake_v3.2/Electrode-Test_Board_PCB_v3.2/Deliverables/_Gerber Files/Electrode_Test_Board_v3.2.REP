@@ -1,39 +1,11 @@
 *************************************************************
-FileName = Electrode_Ribbon_PCB_v3.1.GBR
+FileName = Electrode_Test_Board_v3.2.GBR
 AutoAperture = True
 *************************************************************
-Generating : Fabrication
-      File : Electrode_Ribbon_PCB_v3.1.GM3
+Generating : Top Solder
+      File : Electrode_Test_Board_v3.2.GTS
 
-    Adding Layer      : Fabrication
-
-
-Used DCodes :
-    D10
-    D11
-    D47
-    D102
-    D103
-*************************************************************
-
-*************************************************************
-Generating : Bottom Pad Master
-      File : Electrode_Ribbon_PCB_v3.1.GPB
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D96
-    D97
-    D98
-*************************************************************
-
-*************************************************************
-Generating : Top Pad Master
-      File : Electrode_Ribbon_PCB_v3.1.GPT
+    Adding Layer      : Top Solder
 
     Adding Layer      : Top Layer
 
@@ -41,64 +13,26 @@ Generating : Top Pad Master
 
 
 Used DCodes :
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
     D29
-*************************************************************
-
-*************************************************************
-Generating : Top Overlay
-      File : Electrode_Ribbon_PCB_v3.1.GTO
-
-    Adding Layer      : Top Overlay
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-    D14
-    D15
-    D16
-    D17
-    D18
-    D19
-    D20
-*************************************************************
-
-*************************************************************
-Generating : Top Paste
-      File : Electrode_Ribbon_PCB_v3.1.GTP
-
-    Adding Layer      : Top Paste
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
-    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
 *************************************************************
 
 *************************************************************
 Generating : Bottom Paste
-      File : Electrode_Ribbon_PCB_v3.1.GBP
+      File : Electrode_Test_Board_v3.2.GBP
 
     Adding Layer      : Bottom Paste
 
@@ -108,60 +42,13 @@ Generating : Bottom Paste
 
 
 Used DCodes :
-    D96
-    D97
-    D98
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : Electrode_Ribbon_PCB_v3.1.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-    D10
-    D12
-*************************************************************
-
-*************************************************************
-Generating : Board Outline
-      File : Electrode_Ribbon_PCB_v3.1.GM2
-
-    Adding Layer      : Board Outline
-
-
-Used DCodes :
-    D10
-*************************************************************
-
-*************************************************************
-Generating : Bottom Layer
-      File : Electrode_Ribbon_PCB_v3.1.GBL
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D11
-    D44
-    D46
-    D47
-    D48
-    D51
-    D94
-    D95
-    D96
-    D97
-    D98
+    D69
+    D70
 *************************************************************
 
 *************************************************************
 Generating : Top Layer
-      File : Electrode_Ribbon_PCB_v3.1.GTL
+      File : Electrode_Test_Board_v3.2.GTL
 
     Adding Layer      : Top Layer
 
@@ -169,8 +56,8 @@ Generating : Top Layer
 
 
 Used DCodes :
-    D10
-    D11
+    D19
+    D20
     D21
     D22
     D23
@@ -179,7 +66,6 @@ Used DCodes :
     D26
     D27
     D28
-    D29
     D44
     D45
     D46
@@ -205,66 +91,11 @@ Used DCodes :
     D66
     D67
     D68
-    D69
-    D70
-    D71
-    D72
-    D73
-    D74
-    D75
-    D76
-    D77
-    D78
-    D79
-    D80
-    D81
-    D82
-    D83
-    D84
-    D85
-    D86
-    D87
-    D88
-    D89
-    D90
-    D91
-    D92
-    D93
-    D94
-    D95
-*************************************************************
-
-*************************************************************
-Generating : Top Solder
-      File : Electrode_Ribbon_PCB_v3.1.GTS
-
-    Adding Layer      : Top Solder
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D30
-    D31
-    D32
-    D33
-    D34
-    D35
-    D36
-    D37
-    D38
-    D39
-    D40
-    D41
-    D42
-    D43
 *************************************************************
 
 *************************************************************
 Generating : Bottom Solder
-      File : Electrode_Ribbon_PCB_v3.1.GBS
+      File : Electrode_Test_Board_v3.2.GBS
 
     Adding Layer      : Bottom Solder
 
@@ -276,14 +107,146 @@ Generating : Bottom Solder
 Used DCodes :
     D42
     D43
-    D99
-    D100
-    D101
+    D71
+    D72
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : Electrode_Test_Board_v3.2.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : Electrode_Test_Board_v3.2.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D67
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : Electrode_Test_Board_v3.2.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : Electrode_Test_Board_v3.2.GPB
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D67
+    D69
+    D70
+*************************************************************
+
+*************************************************************
+Generating : Board Outline
+      File : Electrode_Test_Board_v3.2.GM2
+
+    Adding Layer      : Board Outline
+
+
+Used DCodes :
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Fabrication
+      File : Electrode_Test_Board_v3.2.GM3
+
+    Adding Layer      : Fabrication
+
+
+Used DCodes :
+    D45
+    D46
+    D73
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : Electrode_Test_Board_v3.2.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : Electrode_Test_Board_v3.2.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D44
+    D67
+    D68
+    D69
+    D70
 *************************************************************
 
 *************************************************************
 Generating : Drill Drawing
-      File : Electrode_Ribbon_PCB_v3.1.GD1
+      File : Electrode_Test_Board_v3.2.GD1
 
     Adding Drill Pair : Top Layer-Bottom Layer
 
@@ -291,15 +254,15 @@ Generating : Drill Drawing
 
 
 Used DCodes :
-    D11
-    D47
-    D49
-    D104
+    D45
+    D46
+    D74
+    D75
 *************************************************************
 
 *************************************************************
 Generating : Drill Guide
-      File : Electrode_Ribbon_PCB_v3.1.GG1
+      File : Electrode_Test_Board_v3.2.GG1
 
     Adding Drill Pair : Top Layer-Bottom Layer
 
@@ -307,15 +270,15 @@ Generating : Drill Guide
 
 
 Used DCodes :
-    D104
+    D74
 *************************************************************
 
 *************************************************************
 Generating : Profile
-      File : Electrode_Ribbon_PCB_v3.1.GM
+      File : Electrode_Test_Board_v3.2.GM
 
 
 Used DCodes :
-    D105
+    D76
 *************************************************************
 

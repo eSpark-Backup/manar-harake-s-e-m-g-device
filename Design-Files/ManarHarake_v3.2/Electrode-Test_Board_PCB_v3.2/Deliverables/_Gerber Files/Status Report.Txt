@@ -1,12 +1,27 @@
-Output: NC Drill Files
-Type  : NC Drill
-From  : Project [Electrode_Ribbon_PCB_v3.1.PrjPcb]
-   Generated File[Electrode_Ribbon_PCB_v3.1.TXT]
-   Generated File[Electrode_Ribbon_PCB_v3.1.LDP]
-   Generated File[Electrode_Ribbon_PCB_v3.1.DRR]
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [Electrode_Test_Board_v3.2.PrjPcb]
+   Generated File[Electrode_Test_Board_v3.2.GTO]
+   Generated File[Electrode_Test_Board_v3.2.GTP]
+   Generated File[Electrode_Test_Board_v3.2.GTS]
+   Generated File[Electrode_Test_Board_v3.2.GTL]
+   Generated File[Electrode_Test_Board_v3.2.GBL]
+   Generated File[Electrode_Test_Board_v3.2.GBS]
+   Generated File[Electrode_Test_Board_v3.2.GBP]
+   Generated File[Electrode_Test_Board_v3.2.GBO]
+   Generated File[Electrode_Test_Board_v3.2.GM2]
+   Generated File[Electrode_Test_Board_v3.2.GM3]
+   Generated File[Electrode_Test_Board_v3.2.GPT]
+   Generated File[Electrode_Test_Board_v3.2.GPB]
+   Generated File[Electrode_Test_Board_v3.2.GD1]
+   Generated File[Electrode_Test_Board_v3.2.GG1]
+   Generated File[Electrode_Test_Board_v3.2.GM]
+   Generated File[Electrode_Test_Board_v3.2.RUL]
+   Generated File[Electrode_Test_Board_v3.2.EXTREP]
+   Generated File[Electrode_Test_Board_v3.2.REP]
 
 
-Files Generated   : 3
+Files Generated   : 18
 Documents Printed : 0
 
-Finished Output Generation At 6:24:53 pm On 07/02/2024
+Finished Output Generation At 9:33:25 AM On 4/22/2024
