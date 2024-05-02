@@ -21,7 +21,7 @@ We used v7.94e. Download the latest from this link for the tools [here](https://
 Follow the installation guide and install.
 
 <p align="center">
-    <img src="https://github.com/eSpark-Consultants/raafat-BLEproduct/assets/143803999/a6c424dc-f132-4e7d-9920-9985fdb77baf)" width = "700" height="300"/>
+    <img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/0901cec0-fe3a-456d-974d-cfb8da7d0f30" width = "700" height="300"/>
 </p>
 
 ## 2 - Setup NRF connect SDK on VS Code
@@ -38,31 +38,31 @@ Alternatively, you can also download a [Zip archive](https://code.visualstudio.c
 ### b) Add NRF Connect SDK extension in VS Code.
 Add both the nrf connect sdk extensions.
 
-<img src="https://github.com/eSpark-Consultants/raafat-BLEproduct/assets/143803999/ba714b70-cb98-41fe-82e6-e9f11e4526d9)" width = "1000" />
+<img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/670269ad-773c-4479-84b9-6140b4be5c9c" width = "1000" />
 
 After installing the extensions nrf connect extension icon will appear on the left bar.
 
-<img src="https://github.com/eSpark-Consultants/raafat-BLEproduct/assets/143803999/895e1698-7df3-47f8-a39e-92a24d6211c3)" width = "1000" />
+<img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/f08ad467-805d-4f4d-8c60-141f9b010369" width = "1000" />
 
 #### i) Install Toolchain
 Click on Manage toolchain, then install the nRF Connect SDK Toolchain v2.5.2.
 
-<img src="https://github.com/eSpark-Consultants/raafat-BLEproduct/assets/143803999/202c63c9-fa2c-4185-82e2-833c8feec8c8)" width = "1000" />
+<img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/e3d4da4b-6ea2-4273-a197-70d63652eb82" width = "1000" />
 
-<img src="https://github.com/eSpark-Consultants/raafat-BLEproduct/assets/143803999/5b42f6b9-dc77-4c67-b5cf-593d7d092e9f)" width = "1000" />
+<img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/628c3111-762c-461c-bac0-9873f75a3e7a" width = "1000" />
 
 **Note**: Install v2.5.2 Toolchain, I have already installed that's why its not showing in the list.
 
-<img src="https://github.com/eSpark-Consultants/raafat-BLEproduct/assets/143803999/fe3a2bdd-26dc-48ed-9dc4-a4ea0a6bdcf0)" width = "1000" />
+<img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/f6052a19-d01e-406b-a82d-7e3a5cd0a59e" width = "1000" />
 
 #### ii) Install SDK
 Then do the same for Manage SDKs, install v2.5.1
 
-<img src="https://github.com/eSpark-Consultants/raafat-BLEproduct/assets/143803999/6a77cee0-9248-4ed4-ba06-89ca9c80fcc2)" width = "1000" />
+<img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/d52c8d1b-7353-444f-a2d2-1b2b75b6e9d9" width = "1000" />
 
 Note: Install v2.5.1 SDK, I have already install that's why its showing in directory c:/ncs/2.5.1.
 
-<img src="https://github.com/eSpark-Consultants/raafat-BLEproduct/assets/143803999/8b5d3bce-5645-494f-86d0-40ddc9721378)" width = "1000" />
+<img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/fe5501e0-25ed-4ef4-83cf-719e072b650e" width = "1000" />
 
 ## 3 - Setup Atmel Studio IDE.
 
@@ -82,3 +82,5 @@ Click on file and select example projects, a window will appear from which you c
 
 <img src="https://github.com/eSpark-Consultants/ManarHarake-sEMGDevice/assets/143803999/c0d0b6a2-6613-438d-ad42-e5170fe6f218" width = "1000" />
 </p>
+
+
