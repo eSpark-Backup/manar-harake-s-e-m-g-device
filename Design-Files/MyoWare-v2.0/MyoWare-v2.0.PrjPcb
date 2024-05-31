@@ -99,6 +99,23 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=OYTQKMKL
 
+[Document4]
+DocumentPath=MyoWare-2.0-Opamp-v1.1.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=ESDGJIXD
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
