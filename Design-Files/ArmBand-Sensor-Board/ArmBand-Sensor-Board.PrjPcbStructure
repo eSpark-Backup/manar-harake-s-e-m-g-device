@@ -1,3 +1,0 @@
-Record=TopLevelDocument|FileName=Top-Sheet.SchDoc|SheetNumber=1
-Record=SheetSymbol|SourceDocument=Top-Sheet.SchDoc|Designator=U_Connector-Sheet|SchDesignator=U_Connector-Sheet|FileName=Connector-Sheet.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=Connector-Sheet.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
-Record=SheetSymbol|SourceDocument=Top-Sheet.SchDoc|Designator=U_Opamp-Sheet2|SchDesignator=U_Opamp-Sheet2|FileName=Opamp-Sheet2.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=Opamp-Sheet2.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
