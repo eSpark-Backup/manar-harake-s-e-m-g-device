@@ -1,0 +1,37 @@
+Altium Designer Pick and Place Locations
+C:\Users\LiberDB\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\Electrode-Board-v4.0\ArmBand-Electrode-Board-v4.0.2\Project Outputs for Electrode_Board_v4.0.2\Pick Place for Electrode_PCB_v4.0.2.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       26/06/24
+Time:       21:25
+Revision:   f69d2488d1dea5b4deb3c6b6361c7d78f6468f2d
+Variant:    No variations
+Units used: mm
+
+"Designator","Layer","Center-X(mm)","Center-Y(mm)","Rotation","Ref-X(mm)","Ref-Y(mm)","Pad-X(mm)","Pad-Y(mm)"
+"C1","BottomLayer","-9,1186mm","25,0317mm","270","-9,1186mm","25,0317mm","-9,1186mm","25,5016mm"
+"C3","BottomLayer","-2,0066mm","12,0142mm","180","-2,0066mm","12,0142mm","-1,2446mm","12,0142mm"
+"C4","BottomLayer","-2,0066mm","13,3096mm","180","-2,0066mm","13,3096mm","-1,2446mm","13,3096mm"
+"C5","BottomLayer","-7,3533mm","20,5740mm","180","-7,3533mm","20,5740mm","-6,8834mm","20,5740mm"
+"C7","BottomLayer","-5,6388mm","10,0076mm","0","-5,6388mm","10,0076mm","-6,4008mm","10,0076mm"
+"J1","BottomLayer","-4,6990mm","1,1651mm","0","-4,6990mm","1,1618mm","-6,1990mm","1,1618mm"
+"LED1","BottomLayer","-0,3556mm","4,8768mm","180","-0,3556mm","4,8768mm","0,3944mm","4,8768mm"
+"P1","TopLayer","-4,7114mm","13,5704mm","0","-4,7114mm","13,5704mm","-4,7114mm","23,5575mm"
+"P4","BottomLayer","-4,6990mm","18,6182mm","0","-4,6990mm","18,6182mm","-4,6990mm","18,6182mm"
+"R1","BottomLayer","-0,2286mm","23,4823mm","90","-0,2286mm","23,4823mm","-0,2286mm","23,0124mm"
+"R11","BottomLayer","-0,3429mm","6,1214mm","180","-0,3429mm","6,1214mm","0,1270mm","6,1214mm"
+"R12","BottomLayer","-6,2992mm","26,8280mm","0","-6,2992mm","26,8280mm","-6,7691mm","26,8280mm"
+"R13","BottomLayer","-2,6970mm","26,8280mm","0","-2,6970mm","26,8280mm","-3,1669mm","26,8280mm"
+"SB1","BottomLayer","-0,2159mm","8,1534mm","0","-0,2159mm","8,1534mm","-0,6858mm","8,1534mm"
+"SB2","BottomLayer","-9,3980mm","11,4445mm","0","-9,3980mm","11,4445mm","-9,8679mm","11,4445mm"
+"SB3","BottomLayer","-2,0828mm","8,1534mm","0","-2,0828mm","8,1534mm","-2,5527mm","8,1534mm"
+"SB4","BottomLayer","-7,1088mm","16,8850mm","180","-7,1088mm","16,8850mm","-6,6389mm","16,8850mm"
+"SB5","BottomLayer","-5,3721mm","14,7320mm","180","-5,3721mm","14,7320mm","-4,9022mm","14,7320mm"
+"SB6","BottomLayer","-7,0993mm","8,1534mm","0","-7,0993mm","8,1534mm","-7,5692mm","8,1534mm"
+"SB9","BottomLayer","-2,3086mm","16,8656mm","0","-2,3086mm","16,8656mm","-2,7785mm","16,8656mm"
+"SB10","BottomLayer","-4,4981mm","26,8280mm","180","-4,4981mm","26,8280mm","-4,0282mm","26,8280mm"
+"SB11","BottomLayer","-9,1186mm","22,7330mm","270","-9,1186mm","22,7330mm","-9,1186mm","23,2029mm"
+"U1","BottomLayer","-4,5969mm","23,6220mm","180","-4,5969mm","23,6220mm","-1,8969mm","25,5270mm"
+"U2","BottomLayer","-6,1722mm","12,3698mm","180","-6,1722mm","12,3698mm","-4,8722mm","13,3198mm"
