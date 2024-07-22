@@ -1,8 +1,8 @@
 Board Information Report
 Filename     : C:\Users\MarsVirgo\Documents\GitHub\ManarHarake-sEMGDevice\Design-Files\MyoWare-v2.0\MyoWare_PCB_v2.0.PcbDoc
-Date         : 7/21/2024
-Time         : 9:20:58 PM
-Time Elapsed : 00:00:00
+Date         : 7/22/2024
+Time         : 7:11:19 PM
+Time Elapsed : 00:00:01
 
 General
     Board Size, 510.512milsx1258.834mils
@@ -10,19 +10,19 @@ General
 count : 2
 
 Routing Information
-    Routing completion, 86.11%
+    Routing completion, 100.00%
     Connections, 72
-    Connections routed, 62
-    Connections remaining, 10
+    Connections routed, 72
+    Connections remaining, 0
 count : 4
 
 Layer, Arcs, Pads, Vias, Tracks, Texts, Fills, Regions, ComponentBodies
-    Top Layer, 28, 3, 0, 29, 0, 0, 0, 0
-    Bottom Layer, 73, 98, 0, 95, 0, 10, 0, 0
+    Top Layer, 41, 3, 0, 60, 0, 0, 0, 0
+    Bottom Layer, 101, 98, 0, 145, 0, 19, 0, 0
     Dimension, 0, 0, 0, 48, 8, 0, 0, 35
     Board Outline, 4, 0, 0, 6, 0, 0, 0, 0
     Fabrication, 0, 0, 0, 0, 0, 0, 0, 0
-    Multi-Layer, 0, 2, 22, 0, 0, 0, 1, 0
+    Multi-Layer, 0, 2, 30, 0, 0, 0, 1, 0
     Top Paste, 0, 0, 0, 0, 0, 0, 0, 0
     Top Overlay, 4, 0, 0, 4, 2, 0, 0, 0
     Top Solder, 0, 0, 0, 0, 0, 0, 0, 0
@@ -38,8 +38,8 @@ Drill Pairs, Vias
 count : 0
 
 Layer, Sq.In., Sq.MM., Percent of layer
-    Top Layer, 0.367, 236.973, 60%
-    Bottom Layer, 0.16, 102.963, 26%
+    Top Layer, 0.383, 246.923, 63%
+    Bottom Layer, 0.198, 127.74, 32%
 count : 2
 
 Non-Plated Hole Size, Pads, Vias
