@@ -6,6 +6,7 @@
 #include "esp_log.h"
 
 static const char *TAG = "ADC_CONTROLLER_READER";
+void adc_queue_handle_task(void *pvParameters);
 
 typedef enum {
     ADC_TYPE_NONE = 0, // No ADC type assigned
@@ -34,7 +35,11 @@ typedef struct adc_ctrl_t {
     adc_offset_t offset;
 } adc_ctrl_t;
 
-#define MAX_ADC_OUTPUT_LENGTH 1024*2  // Adjust size as needed
+typedef struct {
+    adc_ctrl_t adc_channels[NUM_ADC_CHANNELS];  // Array to hold ADC readings
+} adc_batch_t;
+
+QueueHandle_t adc_queue;
 
 typedef char* (*adc_formatter_t)(const adc_ctrl_t *adc_channels, size_t num_channels, char *output, size_t max_output_length);
 
@@ -104,6 +109,16 @@ esp_err_t initializing_adc(void)
 
     r = __initialize_adc(adc_channels, NUM_ADC_CHANNELS);
     assert( r == ESP_OK );
+
+        adc_queue = xQueueCreate(10, sizeof(adc_batch_t));  // 10 is the max number of batches in the queue
+    if (adc_queue == NULL) {
+        // Handle queue creation failure
+        printf("Failed to create ADC queue\n");
+        return;
+    }
+
+    // Start the ADC processing task
+    xTaskCreate(adc_queue_handle_task, "adc_queue_handle_task", 2048, NULL, 10, NULL);
 
     return r;
 }
@@ -297,6 +312,7 @@ void print_adc_values()
 void read_adc(void)
 {
     __read_adc(adc_channels, NUM_ADC_CHANNELS, width);
+    __send_adc_batch_to_queue(adc_channels);
 }
 
 // Interrupt handler for the timer
@@ -328,7 +344,47 @@ void adc_timer_init() {
     timer_start(TIMER_GROUP, TIMER_INDEX);
 }
 
-void adc_start()
+void adc_sampling_start()
 {
     adc_timer_init();
 }
+
+
+void __send_adc_batch_to_queue(adc_ctrl_t *adc_channels)
+{
+    adc_batch_t adc_batch;  // Structure to hold all ADC readings
+
+    // Copy the adc_channels array to adc_batch
+    memcpy(adc_batch.adc_channels, adc_channels, sizeof(adc_batch.adc_channels));
+
+    // Send the entire batch of ADC readings to the queue
+    if (xQueueSend(adc_queue, &adc_batch, portMAX_DELAY) != pdPASS)
+    {
+        // Handle queue send error (e.g., queue full)
+        printf("Failed to send ADC batch to the queue\n");
+    }
+}
+
+void adc_queue_handle_task(void *pvParameters)
+{
+    adc_batch_t received_batch;  // Structure to hold the received batch of ADC data
+
+    while (1)
+    {
+        // Wait for the batch of ADC data to arrive in the queue
+        if (xQueueReceive(adc_queue, &received_batch, portMAX_DELAY) == pdPASS)
+        {
+            // Process the received ADC batch
+            char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, serial_plotter_formatter);
+            // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, json_formatter);
+            // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, csv_formatter);
+            printf("%s", adc_values_string);
+        }
+        else
+        {
+            // Handle the case where receiving from the queue failed
+            printf("Failed to receive ADC batch from the queue\n");
+        }
+    }
+}
+

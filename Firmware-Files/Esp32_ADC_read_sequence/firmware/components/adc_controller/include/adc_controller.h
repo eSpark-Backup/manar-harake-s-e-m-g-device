@@ -18,6 +18,8 @@
 #define TIMER_DIVIDER  16  // Timer clock divider (80 MHz / 16 = 5 MHz)
 #define TIMER_INTERVAL_SEC  0.05  // Sampling interval in seconds
 
+#define MAX_ADC_OUTPUT_LENGTH 1024*2  // Adjust size as needed
+
 #define ADC_CON_ATTEN ADC_ATTEN_11db
 #define NUM_ADC_CHANNELS 8
 
@@ -29,6 +31,6 @@ static const adc_bits_width_t width = ADC_WIDTH_BIT_13;
 
 
 esp_err_t initializing_adc(void);
-void adc_start();
+void adc_sampling_start();
 void read_adc(void);
 void print_adc_values();

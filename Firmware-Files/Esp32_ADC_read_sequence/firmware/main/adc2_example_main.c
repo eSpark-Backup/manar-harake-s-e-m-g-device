@@ -17,16 +17,15 @@ static const char *TAG = "ADC_READER";
 
 void app_main(void)
 {
-
     esp_err_t r;
+
     r = initializing_adc();
     assert( r == ESP_OK );
-    adc_start();
+
+    adc_sampling_start();
 
     while(1)
     {
-        printf("\nPrinting ADC Values\n");
-        print_adc_values();
-        vTaskDelay(50/portTICK_PERIOD_MS);
+        vTaskDelay(500/portTICK_PERIOD_MS);
     }
 }
