@@ -3,3 +3,6 @@ History/
 __Previews/
 *debug.log
 
+/Firmware-Files/Esp32_ADC_read_sequence/firmware/build
+/Firmware-Files/Esp32_ADC_read_sequence/firmware/.devcontainer
+/Firmware-Files/Esp32_ADC_read_sequence/firmware/.vscode
