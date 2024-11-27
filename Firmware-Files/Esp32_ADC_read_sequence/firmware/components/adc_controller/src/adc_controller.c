@@ -2,12 +2,27 @@
 #include "freertos/task.h"
 #include "freertos/queue.h"
 #include "adc_controller.h"
+#include "driver/timer.h"
+#include "esp_log.h"
+
+static const char *TAG = "ADC_CONTROLLER_READER";
 
 typedef enum {
     ADC_TYPE_NONE = 0, // No ADC type assigned
     ADC_TYPE_ADC1,     // ADC1 type
     ADC_TYPE_ADC2      // ADC2 type
 } adc_type_t;
+
+typedef enum {
+    OFFSET_0 = 0,    // Example offset values
+    OFFSET_100 = 100,
+    OFFSET_200 = 200,
+    OFFSET_300 = 300,
+    OFFSET_400 = 400,
+    OFFSET_500 = 500,
+    OFFSET_600 = 600,
+    OFFSET_700 = 700
+} adc_offset_t;
 
 typedef struct adc_ctrl_t {
     union {
@@ -16,6 +31,7 @@ typedef struct adc_ctrl_t {
     } adc_ctl_channel_t;
     int raw_value;     // Store the raw ADC reading
     adc_type_t type;   // Type of ADC (ADC1 or ADC2)
+    adc_offset_t offset;
 } adc_ctrl_t;
 
 #define MAX_ADC_OUTPUT_LENGTH 1024*2  // Adjust size as needed
@@ -23,14 +39,14 @@ typedef struct adc_ctrl_t {
 typedef char* (*adc_formatter_t)(const adc_ctrl_t *adc_channels, size_t num_channels, char *output, size_t max_output_length);
 
 adc_ctrl_t adc_channels[NUM_ADC_CHANNELS] = {
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_5, .type = ADC_TYPE_ADC1 },
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_0, .type = ADC_TYPE_ADC1 },
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_1, .type = ADC_TYPE_ADC1 },
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_2, .type = ADC_TYPE_ADC1 },
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_3, .type = ADC_TYPE_ADC1 },
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_4, .type = ADC_TYPE_ADC1 },
-    { .adc_ctl_channel_t.adc2_channel = ADC2_EXAMPLE_CHANNEL_0, .type = ADC_TYPE_ADC2 },
-    { .adc_ctl_channel_t.adc2_channel = ADC2_EXAMPLE_CHANNEL_1, .type = ADC_TYPE_ADC2 },
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_5, .type = ADC_TYPE_ADC1, .offset = OFFSET_0},
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_0, .type = ADC_TYPE_ADC1, .offset = OFFSET_100},
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_1, .type = ADC_TYPE_ADC1, .offset = OFFSET_200},
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_2, .type = ADC_TYPE_ADC1, .offset = OFFSET_300},
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_3, .type = ADC_TYPE_ADC1, .offset = OFFSET_400},
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_4, .type = ADC_TYPE_ADC1, .offset = OFFSET_500},
+    { .adc_ctl_channel_t.adc2_channel = ADC2_EXAMPLE_CHANNEL_0, .type = ADC_TYPE_ADC2, .offset = OFFSET_600},
+    { .adc_ctl_channel_t.adc2_channel = ADC2_EXAMPLE_CHANNEL_1, .type = ADC_TYPE_ADC2, .offset = OFFSET_700},
 };
 
 esp_err_t __initialize_adc(adc_ctrl_t *adc_channels, size_t num_channels)
@@ -156,12 +172,12 @@ char* serial_plotter_formatter(const adc_ctrl_t *adc_channels, size_t num_channe
         {
             case ADC_TYPE_ADC1:
                 written = snprintf(output + offset, max_output_length - offset,
-                                   "%d", adc_channels[i].raw_value);
+                                   "%d", adc_channels[i].raw_value + adc_channels[i].offset);
                 break;
 
             case ADC_TYPE_ADC2:
                 written = snprintf(output + offset, max_output_length - offset,
-                                   "%d", adc_channels[i].raw_value);
+                                   "%d", adc_channels[i].raw_value + adc_channels[i].offset);
                 break;
 
             case ADC_TYPE_NONE:
@@ -281,4 +297,38 @@ void print_adc_values()
 void read_adc(void)
 {
     __read_adc(adc_channels, NUM_ADC_CHANNELS, width);
+}
+
+// Interrupt handler for the timer
+void IRAM_ATTR timer_isr_handler(void *param) {
+    // Clear the interrupt flag
+    timer_group_clr_intr_status_in_isr(TIMER_GROUP, TIMER_INDEX);
+
+    // Re-enable the alarm
+    timer_group_enable_alarm_in_isr(TIMER_GROUP, TIMER_INDEX);
+
+    read_adc();
+}
+
+void adc_timer_init() {
+    timer_config_t config = {
+        .divider = TIMER_DIVIDER,
+        .counter_dir = TIMER_COUNT_UP,
+        .counter_en = TIMER_PAUSE,
+        .alarm_en = TIMER_ALARM_EN,
+        .auto_reload = true
+    };
+
+    timer_init(TIMER_GROUP, TIMER_INDEX, &config);
+    timer_set_counter_value(TIMER_GROUP, TIMER_INDEX, 0x00000000);
+    timer_set_alarm_value(TIMER_GROUP, TIMER_INDEX, TIMER_INTERVAL_SEC * (TIMER_BASE_CLK / TIMER_DIVIDER));
+    timer_enable_intr(TIMER_GROUP, TIMER_INDEX);
+
+    timer_isr_register(TIMER_GROUP, TIMER_INDEX, timer_isr_handler, NULL, ESP_INTR_FLAG_IRAM, NULL);
+    timer_start(TIMER_GROUP, TIMER_INDEX);
+}
+
+void adc_start()
+{
+    adc_timer_init();
 }

@@ -13,6 +13,11 @@
 #define ADC1_EXAMPLE_CHANNEL_4          ADC1_CHANNEL_3
 #define ADC1_EXAMPLE_CHANNEL_5          ADC1_CHANNEL_0
 
+#define TIMER_GROUP    TIMER_GROUP_0
+#define TIMER_INDEX    TIMER_0
+#define TIMER_DIVIDER  16  // Timer clock divider (80 MHz / 16 = 5 MHz)
+#define TIMER_INTERVAL_SEC  0.05  // Sampling interval in seconds
+
 #define ADC_CON_ATTEN ADC_ATTEN_11db
 #define NUM_ADC_CHANNELS 8
 
@@ -24,5 +29,6 @@ static const adc_bits_width_t width = ADC_WIDTH_BIT_13;
 
 
 esp_err_t initializing_adc(void);
+void adc_start();
 void read_adc(void);
 void print_adc_values();
