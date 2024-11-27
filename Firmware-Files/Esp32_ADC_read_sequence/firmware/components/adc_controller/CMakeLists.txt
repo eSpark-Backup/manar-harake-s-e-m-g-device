@@ -5,7 +5,7 @@ if(IDF_TARGET STREQUAL "esp32")
                            INCLUDE_DIRS "include"
                            PRIV_INCLUDE_DIRS ""
                            PRIV_REQUIRES "driver"
-                           REQUIRES "")
+                           REQUIRES "esp_adc_cal")
     
     component_compile_options(-w)
     target_compile_options(${COMPONENT_LIB} PRIVATE "-Wno-format")

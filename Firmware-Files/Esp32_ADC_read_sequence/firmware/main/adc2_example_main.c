@@ -19,7 +19,7 @@ void app_main(void)
 {
     esp_err_t r;
 
-    r = initializing_adc();
+    r = initialize_adc();
     assert( r == ESP_OK );
 
     adc_sampling_start();

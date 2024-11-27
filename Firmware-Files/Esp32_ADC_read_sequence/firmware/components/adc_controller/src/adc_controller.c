@@ -9,12 +9,6 @@ static const char *TAG = "ADC_CONTROLLER_READER";
 void adc_queue_handle_task(void *pvParameters);
 
 typedef enum {
-    ADC_TYPE_NONE = 0, // No ADC type assigned
-    ADC_TYPE_ADC1,     // ADC1 type
-    ADC_TYPE_ADC2      // ADC2 type
-} adc_type_t;
-
-typedef enum {
     OFFSET_0 = 0,    // Example offset values
     OFFSET_100 = 100,
     OFFSET_200 = 200,
@@ -27,12 +21,14 @@ typedef enum {
 
 typedef struct adc_ctrl_t {
     union {
-        adc1_channel_t adc1_channel;
-        adc2_channel_t adc2_channel;
+        adc1_channel_t adc1_channel;   // Channel for ADC1
+        adc2_channel_t adc2_channel;   // Channel for ADC2
     } adc_ctl_channel_t;
-    int raw_value;     // Store the raw ADC reading
-    adc_type_t type;   // Type of ADC (ADC1 or ADC2)
-    adc_offset_t offset;
+    
+    int raw_value;                    // Store the raw ADC reading
+    adc_unit_t type;                  // Type of ADC (ADC1 or ADC2)
+    adc_offset_t offset;              // Offset for ADC calibration
+    esp_adc_cal_characteristics_t *adc_cal_chars; // Pointer to ADC calibration characteristics
 } adc_ctrl_t;
 
 typedef struct {
@@ -44,14 +40,14 @@ QueueHandle_t adc_queue;
 typedef char* (*adc_formatter_t)(const adc_ctrl_t *adc_channels, size_t num_channels, char *output, size_t max_output_length);
 
 adc_ctrl_t adc_channels[NUM_ADC_CHANNELS] = {
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_5, .type = ADC_TYPE_ADC1, .offset = OFFSET_0},
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_0, .type = ADC_TYPE_ADC1, .offset = OFFSET_100},
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_1, .type = ADC_TYPE_ADC1, .offset = OFFSET_200},
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_2, .type = ADC_TYPE_ADC1, .offset = OFFSET_300},
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_3, .type = ADC_TYPE_ADC1, .offset = OFFSET_400},
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_4, .type = ADC_TYPE_ADC1, .offset = OFFSET_500},
-    { .adc_ctl_channel_t.adc2_channel = ADC2_EXAMPLE_CHANNEL_0, .type = ADC_TYPE_ADC2, .offset = OFFSET_600},
-    { .adc_ctl_channel_t.adc2_channel = ADC2_EXAMPLE_CHANNEL_1, .type = ADC_TYPE_ADC2, .offset = OFFSET_700},
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_5, .type = ADC_UNIT_1, .offset = OFFSET_0},
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_0, .type = ADC_UNIT_1, .offset = OFFSET_100},
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_1, .type = ADC_UNIT_1, .offset = OFFSET_200},
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_2, .type = ADC_UNIT_1, .offset = OFFSET_300},
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_3, .type = ADC_UNIT_1, .offset = OFFSET_400},
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_4, .type = ADC_UNIT_1, .offset = OFFSET_500},
+    { .adc_ctl_channel_t.adc2_channel = ADC2_EXAMPLE_CHANNEL_0, .type = ADC_UNIT_2, .offset = OFFSET_600},
+    { .adc_ctl_channel_t.adc2_channel = ADC2_EXAMPLE_CHANNEL_1, .type = ADC_UNIT_2, .offset = OFFSET_700},
 };
 
 esp_err_t __initialize_adc(adc_ctrl_t *adc_channels, size_t num_channels)
@@ -63,7 +59,7 @@ esp_err_t __initialize_adc(adc_ctrl_t *adc_channels, size_t num_channels)
     {
         switch (adc_channels[i].type)
         {
-        case ADC_TYPE_ADC1:
+        case ADC_UNIT_1:
             {
                 adc1_channel_t channel = adc_channels[i].adc_ctl_channel_t.adc1_channel;
 
@@ -76,34 +72,55 @@ esp_err_t __initialize_adc(adc_ctrl_t *adc_channels, size_t num_channels)
                 // Configure attenuation for ADC1
                 r = adc1_config_channel_atten(channel, ADC_CON_ATTEN);
                 assert(r == ESP_OK);
+
+                // Allocate and initialize calibration characteristics for ADC1
+                adc_channels[i].adc_cal_chars = calloc(1, sizeof(esp_adc_cal_characteristics_t));
+                if (adc_channels[i].adc_cal_chars == NULL) {
+                    return ESP_ERR_NO_MEM;  // Allocation failure
+                }
+
+                // Calibrate ADC1
+                r = esp_adc_cal_characterize(adc_channels[i].type, ADC_CON_ATTEN, width, DEFAULT_VREF, adc_channels[i].adc_cal_chars);
+                assert(r == ESP_OK);
                 break;
             }
-        case ADC_TYPE_ADC2:
-        {
-            adc2_channel_t channel = adc_channels[i].adc_ctl_channel_t.adc2_channel;
+        case ADC_UNIT_2:
+            {
+                adc2_channel_t channel = adc_channels[i].adc_ctl_channel_t.adc2_channel;
 
-            // Get GPIO for ADC2 channel
-            r = adc2_pad_get_io_num(channel, &adc_gpio_num);
-            assert(r == ESP_OK);
+                // Get GPIO for ADC2 channel
+                r = adc2_pad_get_io_num(channel, &adc_gpio_num);
+                assert(r == ESP_OK);
 
-            printf("ADC2 channel %d @ GPIO %d\n", channel, adc_gpio_num);
+                printf("ADC2 channel %d @ GPIO %d\n", channel, adc_gpio_num);
 
-            // Configure attenuation for ADC2
-            r = adc2_config_channel_atten(channel, ADC_CON_ATTEN);
-            assert(r == ESP_OK);
-            break;
-        }
+                // Configure attenuation for ADC2
+                r = adc2_config_channel_atten(channel, ADC_CON_ATTEN);
+                assert(r == ESP_OK);
+
+                // Allocate and initialize calibration characteristics for ADC2
+                adc_channels[i].adc_cal_chars = calloc(1, sizeof(esp_adc_cal_characteristics_t));
+                if (adc_channels[i].adc_cal_chars == NULL) {
+                    return ESP_ERR_NO_MEM;  // Allocation failure
+                }
+
+                // Calibrate ADC2
+                r = esp_adc_cal_characterize(adc_channels[i].type, ADC_CON_ATTEN, width, DEFAULT_VREF, adc_channels[i].adc_cal_chars);
+                assert(r == ESP_OK);
+                break;
+            }
         
         default:
             break;
         }
+
         vTaskDelay(2 * portTICK_PERIOD_MS);
     }
 
     return r;
 }
 
-esp_err_t initializing_adc(void)
+esp_err_t initialize_adc(void)
 {
     esp_err_t r = ESP_FAIL;
 
@@ -132,7 +149,7 @@ void __read_adc(adc_ctrl_t *adc_channels, size_t num_channels, adc_bits_width_t 
 
         switch (adc_channels[i].type)
         {
-            case ADC_TYPE_ADC1:
+            case ADC_UNIT_1:
             {
                 adc1_channel_t channel = adc_channels[i].adc_ctl_channel_t.adc1_channel;
                 read_raw = adc1_get_raw(channel);
@@ -140,7 +157,7 @@ void __read_adc(adc_ctrl_t *adc_channels, size_t num_channels, adc_bits_width_t 
                 break;
             }
 
-            case ADC_TYPE_ADC2:
+            case ADC_UNIT_2:
             {
                 adc2_channel_t channel = adc_channels[i].adc_ctl_channel_t.adc2_channel;
                 r = adc2_get_raw(channel, width, &read_raw);
@@ -155,7 +172,6 @@ void __read_adc(adc_ctrl_t *adc_channels, size_t num_channels, adc_bits_width_t 
                 break;
             }
 
-            case ADC_TYPE_NONE:
             default:
                 adc_channels[i].raw_value = -1; // Invalid or uninitialized type
                 break;
@@ -173,6 +189,57 @@ char* __get_adc_values_string(const adc_ctrl_t *adc_channels, size_t num_channel
     return formatter(adc_channels, num_channels, output, sizeof(output));
 }
 
+char* serial_plotter_formatter_voltage(const adc_ctrl_t *adc_channels, size_t num_channels, char *output, size_t max_output_length)
+{
+    size_t offset = 0;
+
+    // Loop through the ADC channels and format each channel's data for the Serial Plotter
+    for (size_t i = 0; i < num_channels; i++)
+    {
+        int written = 0;  // Number of characters written in this iteration
+        
+        // Start with an empty line, formatting each ADC reading with its corresponding label
+        switch (adc_channels[i].type)
+        {
+            case ADC_UNIT_1:
+                written = snprintf(output + offset, max_output_length - offset,
+                                   "%d", esp_adc_cal_raw_to_voltage(adc_channels[i].raw_value, adc_channels[i].adc_cal_chars) + adc_channels[i].offset);
+                break;
+
+            case ADC_UNIT_2:
+                written = snprintf(output + offset, max_output_length - offset,
+                                   "%d", esp_adc_cal_raw_to_voltage(adc_channels[i].raw_value, adc_channels[i].adc_cal_chars) + adc_channels[i].offset);                
+                break;
+
+            default:
+                written = snprintf(output + offset, max_output_length - offset,
+                                   "No ADC data available");
+                break;
+        }
+
+        // If written was negative or we are about to overflow, stop writing more data
+        if (written < 0 || written >= max_output_length - offset)
+        {
+            break;
+        }
+
+        // Move the offset ahead by the number of characters written
+        offset += written;
+
+        // If this is not the last channel, add a comma to separate the values for the plotter
+        if (i < num_channels - 1)
+        {
+            written = snprintf(output + offset, max_output_length - offset, ",");
+            offset += written;
+        }
+    }
+
+    // After all values are added for this sample, add a newline to separate the sample from the next one
+    snprintf(output + offset, max_output_length - offset, "\n");
+
+    return output;
+}
+
 char* serial_plotter_formatter(const adc_ctrl_t *adc_channels, size_t num_channels, char *output, size_t max_output_length)
 {
     size_t offset = 0;
@@ -185,17 +252,16 @@ char* serial_plotter_formatter(const adc_ctrl_t *adc_channels, size_t num_channe
         // Start with an empty line, formatting each ADC reading with its corresponding label
         switch (adc_channels[i].type)
         {
-            case ADC_TYPE_ADC1:
+            case ADC_UNIT_1:
                 written = snprintf(output + offset, max_output_length - offset,
                                    "%d", adc_channels[i].raw_value + adc_channels[i].offset);
                 break;
 
-            case ADC_TYPE_ADC2:
+            case ADC_UNIT_2:
                 written = snprintf(output + offset, max_output_length - offset,
-                                   "%d", adc_channels[i].raw_value + adc_channels[i].offset);
+                                   "%d", adc_channels[i].raw_value + adc_channels[i].offset);           
                 break;
 
-            case ADC_TYPE_NONE:
             default:
                 written = snprintf(output + offset, max_output_length - offset,
                                    "No ADC data available");
@@ -234,21 +300,20 @@ char* json_formatter(const adc_ctrl_t *adc_channels, size_t num_channels, char *
     {
         switch (adc_channels[i].type)
         {
-            case ADC_TYPE_ADC1:
+            case ADC_UNIT_1:
                 offset += snprintf(output + offset, max_output_length - offset,
                                    "  \"ADC1_Channel_%d\": %d,\n",
                                    adc_channels[i].adc_ctl_channel_t.adc1_channel,
                                    adc_channels[i].raw_value);
                 break;
 
-            case ADC_TYPE_ADC2:
+            case ADC_UNIT_2:
                 offset += snprintf(output + offset, max_output_length - offset,
                                    "  \"ADC2_Channel_%d\": %d,\n",
                                    adc_channels[i].adc_ctl_channel_t.adc2_channel,
                                    adc_channels[i].raw_value);
                 break;
 
-            case ADC_TYPE_NONE:
             default:
                 offset += snprintf(output + offset, max_output_length - offset,
                                    "  \"Channel_%zu\": \"No ADC data available\",\n", i);
@@ -274,21 +339,20 @@ char* csv_formatter(const adc_ctrl_t *adc_channels, size_t num_channels, char *o
     {
         switch (adc_channels[i].type)
         {
-            case ADC_TYPE_ADC1:
+            case ADC_UNIT_1:
                 offset += snprintf(output + offset, max_output_length - offset,
                                    "ADC1_Channel_%d,ADC1,%d\n",
                                    adc_channels[i].adc_ctl_channel_t.adc1_channel,
                                    adc_channels[i].raw_value);
                 break;
 
-            case ADC_TYPE_ADC2:
+            case ADC_UNIT_2:
                 offset += snprintf(output + offset, max_output_length - offset,
                                    "ADC2_Channel_%d,ADC2,%d\n",
                                    adc_channels[i].adc_ctl_channel_t.adc2_channel,
                                    adc_channels[i].raw_value);
                 break;
 
-            case ADC_TYPE_NONE:
             default:
                 offset += snprintf(output + offset, max_output_length - offset,
                                    "Channel_%zu,Unknown,No ADC data available\n", i);
@@ -375,6 +439,7 @@ void adc_queue_handle_task(void *pvParameters)
         if (xQueueReceive(adc_queue, &received_batch, portMAX_DELAY) == pdPASS)
         {
             // Process the received ADC batch
+            // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, serial_plotter_formatter_voltage);
             char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, serial_plotter_formatter);
             // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, json_formatter);
             // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, csv_formatter);

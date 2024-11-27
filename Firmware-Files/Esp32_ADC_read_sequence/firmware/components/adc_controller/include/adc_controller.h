@@ -1,7 +1,7 @@
 #include "esp_system.h"
 #include "driver/gpio.h"
 #include "driver/adc.h"
-#include "driver/dac.h"
+#include "esp_adc_cal.h"
 
 #define ADC2_EXAMPLE_CHANNEL_0          ADC2_CHANNEL_9
 #define ADC2_EXAMPLE_CHANNEL_1          ADC2_CHANNEL_8
@@ -22,6 +22,7 @@
 
 #define ADC_CON_ATTEN ADC_ATTEN_11db
 #define NUM_ADC_CHANNELS 8
+#define DEFAULT_VREF 1093//mv 
 
 #if CONFIG_IDF_TARGET_ESP32
 static const adc_bits_width_t width = ADC_WIDTH_BIT_12;
@@ -30,7 +31,7 @@ static const adc_bits_width_t width = ADC_WIDTH_BIT_13;
 #endif
 
 
-esp_err_t initializing_adc(void);
+esp_err_t initialize_adc(void);
 void adc_sampling_start();
 void read_adc(void);
 void print_adc_values();
