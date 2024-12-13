@@ -13,7 +13,7 @@
 #include "usb_protocol_cdc.h"
 
 void usb_initializer_init();
-
+void custom_printf(const char *format, ...);
 void cdc_received(uint8_t port);
 
 /*! \brief Opens the communication port

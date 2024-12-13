@@ -9,6 +9,7 @@
 #include "conf_usb.h"
 #include "ui.h"
 #include "uart.h"
+#include <stdarg.h>
 #include <string.h>
 
 static volatile bool main_b_cdc_enable = false;
@@ -25,6 +26,30 @@ void usb_initializer_init()
 void println(const char* str)
 {
 	udi_cdc_write_buf(str,strlen(str));
+	char ch = '\r';
+	udi_cdc_putc(ch);
+	ch = '\n';
+	udi_cdc_putc(ch);
+}
+
+void custom_printf(const char *format, ...)
+{
+	char buffer[256]; // Temporary buffer for formatted string
+	va_list args;
+
+	// Initialize the variadic arguments list
+	va_start(args, format);
+
+	// Format the string into the buffer
+	vsnprintf(buffer, sizeof(buffer), format, args);
+
+	// End the variadic arguments list
+	va_end(args);
+
+	// Write the formatted string to the CDC buffer
+	udi_cdc_write_buf(buffer, strlen(buffer));
+
+	// Write the newline characters
 	char ch = '\r';
 	udi_cdc_putc(ch);
 	ch = '\n';
