@@ -1,3 +1,6 @@
+#ifndef __ADC_CONTROLLER_H__
+#define __ADC_CONTROLLER_H__
+
 #include "esp_system.h"
 #include "driver/gpio.h"
 #include "driver/adc.h"
@@ -15,7 +18,7 @@
 
 #define TIMER_GROUP    TIMER_GROUP_0
 #define TIMER_INDEX    TIMER_0
-#define TIMER_DIVIDER  16  // Timer clock divider (80 MHz / 16 = 5 MHz)
+#define TIMER_DIVIDER  16 // Timer clock divider (80 MHz / 16 = 5 MHz)
 #define TIMER_INTERVAL_SEC  0.005  // Sampling interval in seconds
 
 #define MAX_ADC_OUTPUT_LENGTH 1024*2  // Adjust size as needed
@@ -30,8 +33,48 @@ static const adc_bits_width_t width = ADC_WIDTH_BIT_12;
 static const adc_bits_width_t width = ADC_WIDTH_BIT_13;
 #endif
 
+typedef enum {
+    OFFSET_0 = 0,    // Example offset values
+    OFFSET_100 = 100,
+    OFFSET_200 = 200,
+    OFFSET_300 = 300,
+    OFFSET_400 = 400,
+    OFFSET_500 = 500,
+    OFFSET_600 = 600,
+    OFFSET_700 = 700
+} adc_offset_t;
+
+typedef struct adc_ctrl_t {
+    union {
+        adc1_channel_t adc1_channel;    // Channel for ADC1
+        adc2_channel_t adc2_channel;    // Channel for ADC2
+    } adc_ctl_channel_t;
+    
+    int raw_value;                      // Store the raw ADC reading
+    float mean_value;                     // mean value
+    int centered_value;                 // centered value
+    adc_unit_t type;                    // Type of ADC (ADC1 or ADC2)
+    adc_offset_t offset;                // Offset for ADC calibration
+    esp_adc_cal_characteristics_t *adc_cal_chars; // Pointer to ADC calibration characteristics
+
+    // High-pass filter fields
+    float prev_hpf_input;               // Previous input for HPF
+    float prev_hpf_output;              // Previous output for HPF
+
+    float prev_lpf_input;
+    float prev_lpf_output;
+    
+    float filtered_value;
+
+} adc_ctrl_t;
+
+typedef struct {
+    adc_ctrl_t adc_channels[NUM_ADC_CHANNELS];  // Array to hold ADC readings
+} adc_batch_t;
 
 esp_err_t initialize_adc(void);
 void adc_sampling_start();
 void read_adc(void);
 void print_adc_values();
+
+#endif //__ADC_CONTROLLER_H__

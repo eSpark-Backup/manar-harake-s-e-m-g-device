@@ -1,5 +1,5 @@
 if(IDF_TARGET STREQUAL "esp32")
-    set(component_srcs "src/adc_controller.c")
+    set(component_srcs "src/adc_controller.c" "src/adc_data_formatter.c")
 
     idf_component_register(SRCS "${component_srcs}"
                            INCLUDE_DIRS "include"

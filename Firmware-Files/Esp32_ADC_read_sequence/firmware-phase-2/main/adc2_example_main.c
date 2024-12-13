@@ -18,7 +18,7 @@ static const char *TAG = "ADC_READER_PHASE_2";
 void app_main(void)
 {
     esp_err_t r;
-    
+
     r = initialize_adc();
     assert( r == ESP_OK );
 
@@ -26,6 +26,6 @@ void app_main(void)
 
     while(1)
     {
-        vTaskDelay(500/portTICK_PERIOD_MS);
+        vTaskDelay(100/portTICK_PERIOD_MS);
     }
 }
