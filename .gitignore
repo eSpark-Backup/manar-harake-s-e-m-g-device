@@ -7,3 +7,4 @@ __Previews/
 /Firmware-Files/Esp32_ADC_read_sequence/firmware/.devcontainer
 /Firmware-Files/Esp32_ADC_read_sequence/firmware/.vscode
 *.zip
+/Firmware-Files/Esp32_ADC_read_sequence/firmware-phase-2/build
