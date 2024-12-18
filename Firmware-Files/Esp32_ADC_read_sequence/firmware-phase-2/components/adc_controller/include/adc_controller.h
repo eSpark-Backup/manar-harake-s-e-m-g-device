@@ -19,7 +19,7 @@
 #define TIMER_GROUP    TIMER_GROUP_0
 #define TIMER_INDEX    TIMER_0
 #define TIMER_DIVIDER  16 // Timer clock divider (80 MHz / 16 = 5 MHz)
-#define TIMER_INTERVAL_SEC  0.005  // Sampling interval in seconds
+#define TIMER_INTERVAL_SEC  0.001  // Sampling interval in seconds
 
 #define MAX_ADC_OUTPUT_LENGTH 1024*2  // Adjust size as needed
 
@@ -51,8 +51,9 @@ typedef struct adc_ctrl_t {
     } adc_ctl_channel_t;
     
     int raw_value;                      // Store the raw ADC reading
-    float mean_value;                     // mean value
-    int centered_value;                 // centered value
+    float normalized_value;             // Normalized value (between 0 and 1, or based on max ADC range)
+    float mean_value;                   // Mean value (used for centering)
+    float centered_value;                 // centered value
     adc_unit_t type;                    // Type of ADC (ADC1 or ADC2)
     adc_offset_t offset;                // Offset for ADC calibration
     esp_adc_cal_characteristics_t *adc_cal_chars; // Pointer to ADC calibration characteristics

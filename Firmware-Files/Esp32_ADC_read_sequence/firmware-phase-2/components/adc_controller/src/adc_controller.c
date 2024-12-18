@@ -10,12 +10,12 @@
 
 static const char *TAG = "ADC_CONTROLLER_READER";
 
-#define WINDOW_SIZE 200  // Fixed window size for averaging
+#define WINDOW_SIZE 100  // Fixed window size for averaging
 
 typedef struct {
-    int values[WINDOW_SIZE];
-    long sum; // Use long if values are int, or double for floating-point precision
-    int index;
+    float values[WINDOW_SIZE];    // Store float values since we are working with normalized values
+    float sum;                    // Use float to store the sum for precision
+    int index;                    // Index for the circular buffer
 } moving_avg_t;
 
 static moving_avg_t emg_avg_buffers[NUM_ADC_CHANNELS] = {0};  // Buffer for each channel
@@ -27,14 +27,14 @@ QueueHandle_t adc_queue;
 typedef char* (*adc_formatter_t)(const adc_ctrl_t *adc_channels, size_t num_channels, char *output, size_t max_output_length);
 
 adc_ctrl_t adc_channels[NUM_ADC_CHANNELS] = {
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_5, .type = ADC_UNIT_1, .offset = OFFSET_0},
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_0, .type = ADC_UNIT_1, .offset = OFFSET_100},
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_1, .type = ADC_UNIT_1, .offset = OFFSET_200},
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_2, .type = ADC_UNIT_1, .offset = OFFSET_300},
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_3, .type = ADC_UNIT_1, .offset = OFFSET_400},
-    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_4, .type = ADC_UNIT_1, .offset = OFFSET_500},
-    { .adc_ctl_channel_t.adc2_channel = ADC2_EXAMPLE_CHANNEL_0, .type = ADC_UNIT_2, .offset = OFFSET_600},
-    { .adc_ctl_channel_t.adc2_channel = ADC2_EXAMPLE_CHANNEL_1, .type = ADC_UNIT_2, .offset = OFFSET_700},
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_5, .type = ADC_UNIT_1, .offset = OFFSET_0, .prev_lpf_output = 1.0f,},    
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_0, .type = ADC_UNIT_1, .offset = OFFSET_100, .prev_lpf_output = 1.0f,},  
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_1, .type = ADC_UNIT_1, .offset = OFFSET_200, .prev_lpf_output = 1.0f,},  
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_2, .type = ADC_UNIT_1, .offset = OFFSET_300, .prev_lpf_output = 1.0f,},  
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_3, .type = ADC_UNIT_1, .offset = OFFSET_400, .prev_lpf_output = 1.0f,},  
+    { .adc_ctl_channel_t.adc1_channel = ADC1_EXAMPLE_CHANNEL_4, .type = ADC_UNIT_1, .offset = OFFSET_500, .prev_lpf_output = 1.0f,},  
+    { .adc_ctl_channel_t.adc2_channel = ADC2_EXAMPLE_CHANNEL_0, .type = ADC_UNIT_2, .offset = OFFSET_600, .prev_lpf_output = 1.0f,},  
+    { .adc_ctl_channel_t.adc2_channel = ADC2_EXAMPLE_CHANNEL_1, .type = ADC_UNIT_2, .offset = OFFSET_700, .prev_lpf_output = 1.0f,},  
 };
 
 esp_err_t __initialize_adc(adc_ctrl_t *adc_channels, size_t num_channels)
@@ -114,7 +114,7 @@ esp_err_t initialize_adc(void)
     r = __initialize_adc(adc_channels, NUM_ADC_CHANNELS);
     assert( r == ESP_OK );
 
-        adc_queue = xQueueCreate(100, sizeof(adc_batch_t));  // 10 is the max number of batches in the queue
+    adc_queue = xQueueCreate(100, sizeof(adc_batch_t));  // 10 is the max number of batches in the queue
     if (adc_queue == NULL) {
         // Handle queue creation failure
         printf("Failed to create ADC queue\n");
@@ -122,7 +122,8 @@ esp_err_t initialize_adc(void)
     }
 
     // Start the ADC processing task
-    xTaskCreate(adc_queue_handle_task, "adc_queue_handle_task", 2048, NULL, 10, NULL);
+    xTaskCreatePinnedToCore(adc_queue_handle_task, "adc_queue_handle_task", 1024*5, NULL, 1, NULL, 0);
+    // xTaskCreate(adc_queue_handle_task, "adc_queue_handle_task", 2048, NULL, 1, NULL);
 
     return r;
 }
@@ -184,23 +185,28 @@ void print_adc_values()
 }
 
 // Frequency of the sine wave in Hz
-#define SINE_WAVE_FREQ 50
+#define SINE_WAVE_FREQ 10
 // Timer frequency (200Hz)
-#define TIMER_FREQ 200
+#define TIMER_FREQ (1/TIMER_INTERVAL_SEC)
 // Timer interval in microseconds
 #define TIMER_INTERVAL_US (1000000 / TIMER_FREQ)
 
 // Sine wave generator function
 double generate_sine_wave() {
-    static double amplitude = 4095.0; // Amplitude of the sine wave
+    static double amplitude = 2048.0; // Amplitude of the sine wave
     static double time = 0.0; // Time variable for sine wave calculation
     // Generate the sine wave value at the current time
-    double value = amplitude * sin(2 * M_PI * SINE_WAVE_FREQ * time);
+    double value = amplitude * sin(2 * M_PI * SINE_WAVE_FREQ * time) + amplitude;
     
     // Update time by the period of the timer
     time += 1.0 / TIMER_FREQ; // Increment time by 1 sample period (1/200Hz)
     
     return value;
+}
+
+// Normalize the ADC value (example for 12-bit ADC with a range of 0-4095)
+float normalize_adc_value(int raw_value) {
+    return (float)raw_value / 4095.0f; // Normalize to range [0, 1]
 }
 
 void __read_adc_mock(adc_ctrl_t *adc_channels, size_t num_channels, adc_bits_width_t width)
@@ -214,20 +220,22 @@ void __read_adc_mock(adc_ctrl_t *adc_channels, size_t num_channels, adc_bits_wid
 
 void read_adc(void)
 {
-    // __read_adc(adc_channels, NUM_ADC_CHANNELS, width);
-    __read_adc_mock(adc_channels, NUM_ADC_CHANNELS, width);
+    __read_adc(adc_channels, NUM_ADC_CHANNELS, width);
+    // __read_adc_mock(adc_channels, NUM_ADC_CHANNELS, width);
     __send_adc_batch_to_queue(adc_channels);
 }
 
 // Interrupt handler for the timer
 void IRAM_ATTR timer_isr_handler(void *param) {
     // Clear the interrupt flag
+    // gpio_set_level(13, 1);
     timer_group_clr_intr_status_in_isr(TIMER_GROUP, TIMER_INDEX);
+
+    read_adc();
 
     // Re-enable the alarm
     timer_group_enable_alarm_in_isr(TIMER_GROUP, TIMER_INDEX);
-
-    read_adc();
+    // gpio_set_level(13, 0);
 }
 
 void adc_timer_init() {
@@ -268,26 +276,32 @@ void __send_adc_batch_to_queue(adc_ctrl_t *adc_channels)
     memcpy(adc_batch.adc_channels, adc_channels, sizeof(adc_batch.adc_channels));
 
     // Send the entire batch of ADC readings to the queue
-    if (xQueueSend(adc_queue, &adc_batch, portMAX_DELAY) != pdPASS)
+    if (xQueueSend(adc_queue, (adc_batch_t*)&adc_batch, pdMS_TO_TICKS(1)) != pdPASS)
+    // if (xQueueSend(adc_queue, (adc_batch_t*)&adc_batch, portMAX_DELAY) != pdPASS)
     {
         // Handle queue send error (e.g., queue full)
         // printf("Failed to send ADC batch to the queue\n");
     }
 }
 
-// Function to add a new sample and compute the mean
-float compute_mean(moving_avg_t *buffer, int new_value)
+// Function to compute the moving average
+float compute_mean(moving_avg_t *buffer, float new_value)
 {
-    // Ensure sum uses a type that can handle large values
-    buffer->sum -= buffer->values[buffer->index];    // Remove old value
-    buffer->values[buffer->index] = new_value;       // Add new value
-    buffer->sum += new_value;                        // Update sum
-    buffer->index = (buffer->index + 1) % WINDOW_SIZE; // Update index
+    // Remove the oldest value from the sum
+    buffer->sum -= buffer->values[buffer->index];
+
+    // Add the new value to the sum
+    buffer->values[buffer->index] = new_value;
+    buffer->sum += new_value;
+
+    // Update the index (circular buffer)
+    buffer->index = (buffer->index + 1) % WINDOW_SIZE;
 
     // Calculate and return the mean
-    return (float)((float)buffer->sum / (float)WINDOW_SIZE);
+    return buffer->sum / (float)WINDOW_SIZE;  // Return the average as a float
 }
 
+#if 0
 void center_emg_signal(adc_batch_t *batch, size_t num_channels)
 {
     static moving_avg_t emg_avg_buffers[NUM_ADC_CHANNELS] = {0}; // Circular buffers for each channel
@@ -304,6 +318,26 @@ void center_emg_signal(adc_batch_t *batch, size_t num_channels)
         batch->adc_channels[ch].centered_value = (int)((float)raw_value - (float)((batch)->adc_channels[ch].mean_value));
     }
 }
+#else
+void center_emg_signal(adc_batch_t *batch, size_t num_channels) {
+    static moving_avg_t emg_avg_buffers[NUM_ADC_CHANNELS] = {0};  // Circular buffers for each channel
+
+    // Iterate over each channel in the batch
+    for (size_t ch = 0; ch < num_channels; ch++) {
+        moving_avg_t *buffer = &emg_avg_buffers[ch];  // Get the buffer for the channel
+
+        int raw_value = batch->adc_channels[ch].raw_value;  // Get the raw sample
+        batch->adc_channels[ch].normalized_value = normalize_adc_value(raw_value);  // Normalize the value
+
+        // Compute the mean using the moving average of the normalized value
+        float mean_value = compute_mean(buffer, batch->adc_channels[ch].normalized_value);
+
+        // Subtract the mean from the normalized value to center it around zero
+        batch->adc_channels[ch].centered_value = (float)(batch->adc_channels[ch].normalized_value - (float)mean_value);
+        batch->adc_channels[ch].filtered_value = batch->adc_channels[ch].centered_value;
+    }
+}
+#endif
 
 float calculate_alpha(float sampling_rate, float cutoff_frequency) {
     float rc = 1.0f / (2.0f * M_PI * cutoff_frequency);
@@ -311,6 +345,7 @@ float calculate_alpha(float sampling_rate, float cutoff_frequency) {
     return rc / (rc + t);
 }
 
+#if 0
 void highpass_filter_emg_signal(adc_batch_t *batch, size_t num_channels, float sampling_rate, float cutoff_frequency) {
     float alpha = calculate_alpha(sampling_rate, cutoff_frequency);
 
@@ -328,33 +363,71 @@ void highpass_filter_emg_signal(adc_batch_t *batch, size_t num_channels, float s
         channel->prev_hpf_output = output;
     }
 }
-
-float calculate_beta(float sampling_rate, float cutoff_frequency)
-{
-    float beta = 1 / (1 + (sampling_rate / (2 * M_PI * cutoff_frequency)));
-    return beta;
-}
-
-void lowpass_filter_emg_signal(adc_batch_t *batch, size_t num_channels, float sampling_rate, float cutoff_frequency) {
-    // float beta = calculate_alpha(sampling_rate, cutoff_frequency);
-    float beta = calculate_beta(sampling_rate, cutoff_frequency);
+#else
+void highpass_filter_emg_signal(adc_batch_t *batch, size_t num_channels, float sampling_rate, float cutoff_frequency) {
+    float alpha = calculate_alpha(sampling_rate, cutoff_frequency);
 
     // Iterate over each channel in the batch
     for (size_t ch = 0; ch < num_channels; ch++) {
         adc_ctrl_t *channel = &batch->adc_channels[ch];
 
-        // Apply high-pass filter
-        float input = (float)channel->filtered_value; // Current input sample
-        float output = beta * input + (1 - beta) * channel->prev_lpf_output;
+        // Apply high-pass filter on the centered value (which has been DC removed)
+        float input = (float)channel->centered_value;  // Current input sample
+        float output = alpha * (channel->prev_hpf_output + input - channel->prev_hpf_input);
 
         // Store the filtered value and update the previous input/output
-        channel->filtered_value = (int)output;
-        channel->prev_lpf_input = input;
-        channel->prev_lpf_output = output;
+        channel->filtered_value = output;  // Store as float for higher accuracy
+        channel->prev_hpf_input = input;
+        channel->prev_hpf_output = output;
     }
 }
+#endif
 
+float calculate_beta(float sampling_rate, float cutoff_frequency) {
+    float rc = 1.0f / (2.0f * M_PI * cutoff_frequency);
+    float dt = 1.0f / sampling_rate;
+    return dt / (rc + dt);
+}
 
+#if 0
+void lowpass_filter_emg_signal(adc_batch_t *batch, size_t num_channels, float sampling_rate, float cutoff_frequency) {
+    // Calculate the smoothing factor (alpha)
+    float alpha = calculate_beta(sampling_rate, cutoff_frequency);
+
+    // Iterate over each channel in the batch
+    for (size_t ch = 0; ch < num_channels; ch++) {
+        adc_ctrl_t *channel = &batch->adc_channels[ch];
+
+        // Apply the low-pass filter
+        float input = (float)channel->filtered_value; // Current input sample
+        float output = alpha * input + (1 - alpha) * channel->prev_lpf_output;
+
+        // Store the filtered value and update the previous output
+        channel->filtered_value = (int)output; // Cast to integer if needed
+        channel->prev_lpf_output = output; // Update the filter state
+    }
+}
+#else
+void lowpass_filter_emg_signal(adc_batch_t *batch, size_t num_channels, float sampling_rate, float cutoff_frequency) {
+    // Calculate the smoothing factor (alpha)
+    float alpha = calculate_beta(sampling_rate, cutoff_frequency);
+
+    // Iterate over each channel in the batch
+    for (size_t ch = 0; ch < num_channels; ch++) {
+        adc_ctrl_t *channel = &batch->adc_channels[ch];
+
+        // Apply the low-pass filter on the filtered value (after high-pass or other filtering steps)
+        float input = (float)channel->filtered_value; // Current input sample
+        float output = alpha * input + (1 - alpha) * channel->prev_lpf_output;
+
+        // Store the filtered value and update the previous output
+        channel->filtered_value = output;  // Keep as float for accuracy
+        channel->prev_lpf_output = output; // Update the filter state
+    }
+}
+#endif
+
+#if 0
 void adc_queue_handle_task(void *pvParameters)
 {
     adc_batch_t received_batch;  // Structure to hold the received batch of ADC data
@@ -369,8 +442,10 @@ void adc_queue_handle_task(void *pvParameters)
 
             // Compute the mean for each channel
             center_emg_signal(&received_batch, NUM_ADC_CHANNELS);
-            // highpass_filter_emg_signal(&received_batch, NUM_ADC_CHANNELS, 200.0f, 20.0f); // Example: 1000 Hz sampling, 10 Hz cutoff
-            // lowpass_filter_emg_signal(&received_batch, NUM_ADC_CHANNELS, 200.0f, 40.0f); // Example: 1000 Hz sampling, 10 Hz cutoff
+            highpass_filter_emg_signal(&received_batch, NUM_ADC_CHANNELS, 281.0f, 30.0f); // Example: 1000 Hz sampling, 10 Hz cutoff
+            lowpass_filter_emg_signal(&received_batch, NUM_ADC_CHANNELS, 281.0f, 500.0f); // Example: 1000 Hz sampling, 10 Hz cutoff
+            
+            // Log the data out
             // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, serial_plotter_formatter_voltage);
             char *adc_values_string = __get_adc_values_string((adc_ctrl_t*)&received_batch, NUM_ADC_CHANNELS, serial_plotter_mean_formatter);
             // char *adc_values_string = __get_adc_values_string((adc_ctrl_t*)&received_batch, NUM_ADC_CHANNELS, serial_plotter_formatter);
@@ -381,12 +456,52 @@ void adc_queue_handle_task(void *pvParameters)
             printf("%s", adc_values_string);
             gpio_set_level(13, 0);
         }
-        else
-        {
-            // Handle the case where receiving from the queue failed
-            printf("Failed to receive ADC batch from the queue\n");
-        }
-        vTaskDelay(1);
     }
 }
+#else
+#define SIGNAL_BUFFER 40
+adc_batch_t batch_buffer[SIGNAL_BUFFER];  // Array to hold batches from the queue
+void adc_queue_handle_task(void *pvParameters)
+{
+    size_t batch_count = 0;                // Number of batches collected in the buffer
 
+    while (1)
+    {
+        batch_count = 0;
+
+        // Collect all messages from the queue
+        while (xQueueReceive(adc_queue, &batch_buffer[batch_count], 0) == pdPASS)
+        {
+            gpio_set_level(13, 1);
+            batch_count++;
+            if (batch_count >= SIGNAL_BUFFER)
+            {
+                break;  // Stop collecting if the buffer is full
+            }
+            gpio_set_level(13, 0);
+        }
+
+        if (batch_count > 0)
+        {
+
+            // Process each batch in the buffer
+            for (size_t i = 0; i < batch_count; i++)
+            {
+                center_emg_signal(&batch_buffer[i], NUM_ADC_CHANNELS);
+                highpass_filter_emg_signal(&batch_buffer[i], NUM_ADC_CHANNELS, 281.0f, 30.0f);
+                lowpass_filter_emg_signal(&batch_buffer[i], NUM_ADC_CHANNELS, 281.0f, 500.0f);
+
+                // Log the processed data for all batches
+                gpio_set_level(13, 1);
+                char *adc_values_string = __get_adc_values_string(
+                    (adc_ctrl_t*)&batch_buffer[i], NUM_ADC_CHANNELS, serial_plotter_mean_formatter);
+                printf("%s", adc_values_string);
+                gpio_set_level(13, 0);
+            }
+        }
+
+        // Optional: Add a delay if you want to prevent task hogging
+        // vTaskDelay(pdMS_TO_TICKS(10));
+    }
+}
+#endif
