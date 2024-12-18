@@ -5,6 +5,7 @@
 #include "driver/gpio.h"
 #include "driver/adc.h"
 #include "esp_adc_cal.h"
+#include "fir_filters.h"
 
 #define ADC2_EXAMPLE_CHANNEL_0          ADC2_CHANNEL_9
 #define ADC2_EXAMPLE_CHANNEL_1          ADC2_CHANNEL_8
@@ -47,26 +48,21 @@ typedef enum {
 typedef struct adc_ctrl_t {
     union {
         adc1_channel_t adc1_channel;    // Channel for ADC1
-        adc2_channel_t adc2_channel;    // Channel for ADC2
+        adc2_channel_t adc2_channel;   // Channel for ADC2
     } adc_ctl_channel_t;
-    
+
     int raw_value;                      // Store the raw ADC reading
     float normalized_value;             // Normalized value (between 0 and 1, or based on max ADC range)
     float mean_value;                   // Mean value (used for centering)
-    float centered_value;                 // centered value
+    float centered_value;               // Centered value
     adc_unit_t type;                    // Type of ADC (ADC1 or ADC2)
     adc_offset_t offset;                // Offset for ADC calibration
     esp_adc_cal_characteristics_t *adc_cal_chars; // Pointer to ADC calibration characteristics
 
-    // High-pass filter fields
-    float prev_hpf_input;               // Previous input for HPF
-    float prev_hpf_output;              // Previous output for HPF
+    HighPassFilter hpf;                 // High-pass filter instance
+    IIRLowPassFilter lpf;               // Low-pass filter instance
 
-    float prev_lpf_input;
-    float prev_lpf_output;
-    
-    float filtered_value;
-
+    float filtered_value;               // Final filtered value
 } adc_ctrl_t;
 
 typedef struct {
