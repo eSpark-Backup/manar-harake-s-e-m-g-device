@@ -157,8 +157,9 @@ char *serial_plotter_mean_formatter(const adc_ctrl_t *adc_channels, size_t num_c
         }
 
         // Format the mean value (multiplied by 1000 for better resolution)
-        // written = snprintf(output + offset, max_output_length - offset, "%.2f", (float)adc_channels[i].filtered_value);
-        written = snprintf(output + offset, max_output_length - offset, "%d", (int)adc_channels[i].filtered_value);
+        written = snprintf(output + offset, max_output_length - offset, "%.4f", (float)adc_channels[i].filtered_value);
+        // written = snprintf(output + offset, max_output_length - offset, "%.4f", (float)adc_channels[i].centered_value);
+        // written = snprintf(output + offset, max_output_length - offset, "%d", (int)adc_channels[i].filtered_value);
 
         // If snprintf failed or would overflow, stop formatting
         if (written < 0 || written >= (int)(max_output_length - offset))

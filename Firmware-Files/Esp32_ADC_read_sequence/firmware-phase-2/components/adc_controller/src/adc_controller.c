@@ -12,7 +12,8 @@
 static const char *TAG = "ADC_CONTROLLER_READER";
 
 #define WINDOW_SIZE 100  // Fixed window size for averaging
-#define SIGNAL_BUFFER FILTER_TAP_NUM
+#define BATCH_SIZE 50
+#define TIMER_FREQ (1/TIMER_INTERVAL_SEC)
 
 typedef struct {
     float values[WINDOW_SIZE];    // Store float values since we are working with normalized values
@@ -21,7 +22,7 @@ typedef struct {
 } moving_avg_t;
 
 static moving_avg_t emg_avg_buffers[NUM_ADC_CHANNELS] = {0};  // Buffer for each channel
-static adc_batch_t batch_buffer[SIGNAL_BUFFER];  // Array to hold batches from the queue
+static adc_batch_t batch_buffer[BATCH_SIZE];  // Array to hold batches from the queue
 
 void adc_queue_handle_task(void *pvParameters);
 
@@ -121,19 +122,18 @@ esp_err_t initialize_adc(void)
     r = __initialize_adc(adc_channels, NUM_ADC_CHANNELS);
     assert( r == ESP_OK );
 
-    #if USE_BANDPASS_FILTER
     for (size_t ch = 0; ch < NUM_ADC_CHANNELS; ch++) {
+    #if USE_BANDPASS_FILTER
         adc_channels[ch].bpf.buf = (float *)malloc(FILTER_TAP_NUM * sizeof(float));
         FIRFilter_Init(&adc_channels[ch].bpf, filter_taps, adc_channels[ch].bpf.buf, FILTER_TAP_NUM);
-    }
     #else
-    for (size_t ch = 0; ch < NUM_ADC_CHANNELS; ch++) {
         init_highpass_filter(&adc_channels[ch].hpf, sampling_rate, highpass_cutoff);
         init_lowpass_filter(&adc_channels[ch].lpf, sampling_rate, lowpass_cutoff);
-    }
     #endif
+        adc_channels[ch].mvc_value = 4095.0f;
+    }
 
-    adc_queue = xQueueCreate(SIGNAL_BUFFER, sizeof(adc_batch_t)); 
+    adc_queue = xQueueCreate(BATCH_SIZE, sizeof(adc_batch_t)); 
     if (adc_queue == NULL) {
         printf("Failed to create ADC queue\n");
         return;
@@ -201,9 +201,6 @@ void print_adc_values(adc_ctrl_t* adc_data_ptr)
     printf("%s", adc_values_string);
 }
 
-// Timer frequency (200Hz)
-#define TIMER_FREQ (1/TIMER_INTERVAL_SEC)
-
 double generate_sine_wave() 
 {
     static double response_duration = 60.0*2;
@@ -235,7 +232,7 @@ double generate_combined_sine_wave()
 {
     static double amplitude = 2047.5;  // Half of the max value (4095/2)
     static double time = 0.0;          // Time variable for sine wave calculation
-    const double low_freq = 40.0;      // Frequency of the low-frequency sine wave
+    const double low_freq = 10.0;      // Frequency of the low-frequency sine wave
     const double high_freq = 400.0;    // Frequency of the high-frequency sine wave
     const double high_amplitude = 512.0; // Amplitude of the high-frequency sine wave
 
@@ -274,8 +271,8 @@ void __read_adc_mock(adc_ctrl_t *adc_channels, size_t num_channels, adc_bits_wid
 
 void read_adc(void)
 {
-    // __read_adc(adc_channels, NUM_ADC_CHANNELS, width);
-    __read_adc_mock(adc_channels, NUM_ADC_CHANNELS, width);
+    __read_adc(adc_channels, NUM_ADC_CHANNELS, width);
+    // __read_adc_mock(adc_channels, NUM_ADC_CHANNELS, width);
     __send_adc_batch_to_queue(adc_channels);
 }
 
@@ -356,7 +353,6 @@ float compute_mean(moving_avg_t *buffer, float new_value)
 }
 
 void center_emg_signal(adc_batch_t *batch, size_t num_channels) {
-    static moving_avg_t emg_avg_buffers[NUM_ADC_CHANNELS] = {0};  // Circular buffers for each channel
 
     // Iterate over each channel in the batch
     for (size_t ch = 0; ch < num_channels; ch++) {
@@ -372,6 +368,10 @@ void center_emg_signal(adc_batch_t *batch, size_t num_channels) {
         // Subtract the mean from the normalized value to center it around zero
         batch->adc_channels[ch].centered_value = (float)(batch->adc_channels[ch].normalized_value - (float)mean_value);
         // batch->adc_channels[ch].centered_value = batch->adc_channels[ch].normalized_value;
+        // batch->adc_channels[ch].centered_value = (float)raw_value;
+
+        //bypassing centering for testing
+        // batch->adc_channels[ch].centered_value = (float)raw_value;
     }
 }
 
@@ -394,6 +394,26 @@ void lowpass_filter_emg_signal(adc_batch_t *batch, size_t num_channels) {
         // Apply the low-pass filter
         float input = channel->filtered_value; // Input to the low-pass filter
         channel->filtered_value = apply_lowpass_filter(lpf, input);
+    }
+}
+
+void rectify_filter_emg_signal(adc_batch_t *batch, size_t num_channels) {
+    // Iterate over each channel in the batch
+    for (size_t ch = 0; ch < num_channels; ch++) {
+        adc_ctrl_t *channel = &batch->adc_channels[ch];
+
+        float input = channel->filtered_value; // Input to the low-pass filter
+        channel->filtered_value = fabs(input);
+    }
+}
+
+void normalize_filter_emg_signal(adc_batch_t *batch, size_t num_channels) {
+    // Iterate over each channel in the batch
+    for (size_t ch = 0; ch < num_channels; ch++) {
+        adc_ctrl_t *channel = &batch->adc_channels[ch];
+
+        float input = channel->filtered_value; // Input to the low-pass filter
+        channel->filtered_value = input/channel->mvc_value;
     }
 }
 
@@ -422,7 +442,7 @@ void adc_queue_handle_task(void *pvParameters)
         {
             // gpio_set_level(13, 1);
             batch_count++;
-            if (batch_count >= SIGNAL_BUFFER)
+            if (batch_count >= BATCH_SIZE)
             {
                 break;  // Stop collecting if the buffer is full
             }
@@ -436,12 +456,17 @@ void adc_queue_handle_task(void *pvParameters)
             for (size_t i = 0; i < batch_count; i++)
             {
                 center_emg_signal(&batch_buffer[i], NUM_ADC_CHANNELS);
+
                 #if USE_BANDPASS_FILTER
                 bandpass_filter_emg_signal(&batch_buffer[i], NUM_ADC_CHANNELS);
                 #else
                 highpass_filter_emg_signal(&batch_buffer[i], NUM_ADC_CHANNELS);
                 lowpass_filter_emg_signal(&batch_buffer[i], NUM_ADC_CHANNELS);
                 #endif
+
+                rectify_filter_emg_signal(&batch_buffer[i], NUM_ADC_CHANNELS);
+                normalize_filter_emg_signal(&batch_buffer[i], NUM_ADC_CHANNELS);
+
                 // Log the processed data for all batches
                 gpio_set_level(13, 1);
                 print_adc_values((adc_ctrl_t*)&batch_buffer[i]);

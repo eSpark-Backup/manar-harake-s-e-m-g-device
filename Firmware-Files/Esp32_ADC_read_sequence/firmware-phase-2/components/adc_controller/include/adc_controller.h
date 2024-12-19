@@ -28,7 +28,7 @@
 #define NUM_ADC_CHANNELS 8
 #define DEFAULT_VREF 1093//mv 
 
-#define USE_BANDPASS_FILTER true
+#define USE_BANDPASS_FILTER 1
 
 #if CONFIG_IDF_TARGET_ESP32
 static const adc_bits_width_t width = ADC_WIDTH_BIT_12;
@@ -52,6 +52,8 @@ typedef struct adc_ctrl_t {
         adc1_channel_t adc1_channel;    // Channel for ADC1
         adc2_channel_t adc2_channel;   // Channel for ADC2
     } adc_ctl_channel_t;
+
+    float mvc_value;                    //Maximum Voluntary Contraction (MVC)
 
     int raw_value;                      // Store the raw ADC reading
     float normalized_value;             // Normalized value (between 0 and 1, or based on max ADC range)
