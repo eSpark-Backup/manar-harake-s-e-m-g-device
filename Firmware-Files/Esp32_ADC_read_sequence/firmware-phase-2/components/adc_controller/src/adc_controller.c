@@ -7,11 +7,12 @@
 #include "esp_log.h"
 #include "adc_data_formatter.h"
 #include "math.h"
+#include "filter_info.h"
 
 static const char *TAG = "ADC_CONTROLLER_READER";
 
-#define WINDOW_SIZE 20  // Fixed window size for averaging
-#define SIGNAL_BUFFER 100
+#define WINDOW_SIZE 100  // Fixed window size for averaging
+#define SIGNAL_BUFFER FILTER_TAP_NUM
 
 typedef struct {
     float values[WINDOW_SIZE];    // Store float values since we are working with normalized values
@@ -28,7 +29,7 @@ QueueHandle_t adc_queue;
 
 static float sampling_rate = 1000.0f;      // Example sampling rate
 static float highpass_cutoff = 30.0f;      // High-pass cutoff frequency
-static float lowpass_cutoff = 500.0f;       // Low-pass cutoff frequency
+static float lowpass_cutoff = 450.0f;       // Low-pass cutoff frequency
 
 typedef char* (*adc_formatter_t)(const adc_ctrl_t *adc_channels, size_t num_channels, char *output, size_t max_output_length);
 
@@ -120,10 +121,17 @@ esp_err_t initialize_adc(void)
     r = __initialize_adc(adc_channels, NUM_ADC_CHANNELS);
     assert( r == ESP_OK );
 
+    #if USE_BANDPASS_FILTER
+    for (size_t ch = 0; ch < NUM_ADC_CHANNELS; ch++) {
+        adc_channels[ch].bpf.buf = (float *)malloc(FILTER_TAP_NUM * sizeof(float));
+        FIRFilter_Init(&adc_channels[ch].bpf, filter_taps, adc_channels[ch].bpf.buf, FILTER_TAP_NUM);
+    }
+    #else
     for (size_t ch = 0; ch < NUM_ADC_CHANNELS; ch++) {
         init_highpass_filter(&adc_channels[ch].hpf, sampling_rate, highpass_cutoff);
         init_lowpass_filter(&adc_channels[ch].lpf, sampling_rate, lowpass_cutoff);
     }
+    #endif
 
     adc_queue = xQueueCreate(SIGNAL_BUFFER, sizeof(adc_batch_t)); 
     if (adc_queue == NULL) {
@@ -185,26 +193,23 @@ char* __get_adc_values_string(const adc_ctrl_t *adc_channels, size_t num_channel
     return formatter(adc_channels, num_channels, output, sizeof(output));
 }
 
-void print_adc_values()
+void print_adc_values(adc_ctrl_t* adc_data_ptr)
 {
-    char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, serial_plotter_formatter);
+    char *adc_values_string = __get_adc_values_string(adc_data_ptr, NUM_ADC_CHANNELS, serial_plotter_mean_formatter);
     // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, json_formatter);
     // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, csv_formatter);
     printf("%s", adc_values_string);
 }
 
-// Frequency of the sine wave in Hz
-#define SINE_WAVE_FREQ 10
 // Timer frequency (200Hz)
 #define TIMER_FREQ (1/TIMER_INTERVAL_SEC)
-// Timer interval in microseconds
-#define TIMER_INTERVAL_US (1000000 / TIMER_FREQ)
 
-double generate_sine_wave() {
+double generate_sine_wave() 
+{
     static double response_duration = 60.0*2;
     static double amplitude = 2047.5;  // Half of the max value (4095/2)
     static double time = 0.0;          // Time variable for sine wave calculation
-    static double freq = 1.0;          // Initial frequency in Hz
+    static double freq = 30.0;          // Initial frequency in Hz
     const double freq_step = (1000.0 - 1.0) / response_duration; // Frequency step per second
     const double max_freq = 500.0;     // Maximum frequency in Hz
     
@@ -226,6 +231,32 @@ double generate_sine_wave() {
     return value;
 }
 
+double generate_combined_sine_wave() 
+{
+    static double amplitude = 2047.5;  // Half of the max value (4095/2)
+    static double time = 0.0;          // Time variable for sine wave calculation
+    const double low_freq = 40.0;      // Frequency of the low-frequency sine wave
+    const double high_freq = 400.0;    // Frequency of the high-frequency sine wave
+    const double high_amplitude = 512.0; // Amplitude of the high-frequency sine wave
+
+    // Generate the low-frequency sine wave value
+    double low_freq_value = amplitude * sin(2 * M_PI * low_freq * time) + amplitude;
+
+    // Generate the high-frequency sine wave value
+    double high_freq_value = high_amplitude * sin(2 * M_PI * high_freq * time);
+
+    // Combine the low-frequency and high-frequency components
+    double combined_value = low_freq_value + high_freq_value;
+
+    // Normalize the combined value to be within the range 0 to 4095
+    combined_value = (combined_value / (2 * amplitude + high_amplitude)) * 4095.0;
+
+    // Update time by the period of the timer
+    time += 1.0 / TIMER_FREQ;  // Increment time by 1 sample period
+
+    return combined_value;
+}
+
 // Normalize the ADC value (example for 12-bit ADC with a range of 0-4095)
 float normalize_adc_value(int raw_value) {
     return (float)raw_value / 4095.0f; // Normalize to range [0, 1]
@@ -233,7 +264,8 @@ float normalize_adc_value(int raw_value) {
 
 void __read_adc_mock(adc_ctrl_t *adc_channels, size_t num_channels, adc_bits_width_t width)
 {
-    double adc_value = generate_sine_wave();
+    // double adc_value = generate_sine_wave();
+    double adc_value = generate_combined_sine_wave();
     for (size_t i = 0; i < num_channels; i++)
     {
         adc_channels[i].raw_value = (int)adc_value;
@@ -331,13 +363,15 @@ void center_emg_signal(adc_batch_t *batch, size_t num_channels) {
         moving_avg_t *buffer = &emg_avg_buffers[ch];  // Get the buffer for the channel
 
         int raw_value = batch->adc_channels[ch].raw_value;  // Get the raw sample
-        batch->adc_channels[ch].normalized_value = normalize_adc_value(raw_value);  // Normalize the value
+        // batch->adc_channels[ch].normalized_value = normalize_adc_value(raw_value);  // Normalize the value
+        batch->adc_channels[ch].normalized_value = (float)(raw_value);  // Normalize the value
 
         // Compute the mean using the moving average of the normalized value
         float mean_value = compute_mean(buffer, batch->adc_channels[ch].normalized_value);
 
         // Subtract the mean from the normalized value to center it around zero
         batch->adc_channels[ch].centered_value = (float)(batch->adc_channels[ch].normalized_value - (float)mean_value);
+        // batch->adc_channels[ch].centered_value = batch->adc_channels[ch].normalized_value;
     }
 }
 
@@ -363,38 +397,17 @@ void lowpass_filter_emg_signal(adc_batch_t *batch, size_t num_channels) {
     }
 }
 
-#if 0
-void adc_queue_handle_task(void *pvParameters)
-{
-    adc_batch_t received_batch;  // Structure to hold the received batch of ADC data
+void bandpass_filter_emg_signal(adc_batch_t *batch, size_t num_channels) {
+    for (size_t ch = 0; ch < num_channels; ch++) {
+        adc_ctrl_t *channel = &batch->adc_channels[ch];
+        FIRFilter *hpf = &channel->bpf; // Reference the low-pass filter for this channel
 
-    while (1)
-    {
-        // Wait for the batch of ADC data to arrive in the queue
-        if (xQueueReceive(adc_queue, &received_batch, portMAX_DELAY) == pdPASS)
-        {
-            gpio_set_level(13, 1);
-            // Process the received ADC batch
-
-            // Compute the mean for each channel
-            center_emg_signal(&received_batch, NUM_ADC_CHANNELS);
-            highpass_filter_emg_signal(&received_batch, NUM_ADC_CHANNELS, 281.0f, 30.0f); // Example: 1000 Hz sampling, 10 Hz cutoff
-            lowpass_filter_emg_signal(&received_batch, NUM_ADC_CHANNELS, 281.0f, 500.0f); // Example: 1000 Hz sampling, 10 Hz cutoff
-            
-            // Log the data out
-            // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, serial_plotter_formatter_voltage);
-            char *adc_values_string = __get_adc_values_string((adc_ctrl_t*)&received_batch, NUM_ADC_CHANNELS, serial_plotter_mean_formatter);
-            // char *adc_values_string = __get_adc_values_string((adc_ctrl_t*)&received_batch, NUM_ADC_CHANNELS, serial_plotter_formatter);
-            // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, json_formatter);
-            // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, csv_formatter);
-
-
-            printf("%s", adc_values_string);
-            gpio_set_level(13, 0);
-        }
+        // Apply the low-pass filter
+        float input = channel->centered_value; // Input to the low-pass filter
+        channel->filtered_value = FIRFilter_Update(hpf, input);
+        // printf("%.2f, %.2f\n", channel->filtered_value, input);    
     }
 }
-#else
 
 void adc_queue_handle_task(void *pvParameters)
 {
@@ -423,16 +436,17 @@ void adc_queue_handle_task(void *pvParameters)
             for (size_t i = 0; i < batch_count; i++)
             {
                 center_emg_signal(&batch_buffer[i], NUM_ADC_CHANNELS);
+                #if USE_BANDPASS_FILTER
+                bandpass_filter_emg_signal(&batch_buffer[i], NUM_ADC_CHANNELS);
+                #else
                 highpass_filter_emg_signal(&batch_buffer[i], NUM_ADC_CHANNELS);
                 lowpass_filter_emg_signal(&batch_buffer[i], NUM_ADC_CHANNELS);
+                #endif
                 // Log the processed data for all batches
                 gpio_set_level(13, 1);
-                char *adc_values_string = __get_adc_values_string(
-                    (adc_ctrl_t*)&batch_buffer[i], NUM_ADC_CHANNELS, serial_plotter_mean_formatter);
-                printf("%s", adc_values_string);
+                print_adc_values((adc_ctrl_t*)&batch_buffer[i]);
                 gpio_set_level(13, 0);
             }
         }
     }
 }
-#endif

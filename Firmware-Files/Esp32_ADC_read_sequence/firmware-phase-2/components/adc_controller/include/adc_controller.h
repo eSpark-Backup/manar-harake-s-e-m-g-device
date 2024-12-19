@@ -28,6 +28,8 @@
 #define NUM_ADC_CHANNELS 8
 #define DEFAULT_VREF 1093//mv 
 
+#define USE_BANDPASS_FILTER true
+
 #if CONFIG_IDF_TARGET_ESP32
 static const adc_bits_width_t width = ADC_WIDTH_BIT_12;
 #elif CONFIG_IDF_TARGET_ESP32S2
@@ -61,6 +63,8 @@ typedef struct adc_ctrl_t {
 
     HighPassFilter hpf;                 // High-pass filter instance
     IIRLowPassFilter lpf;               // Low-pass filter instance
+
+    FIRFilter bpf;
 
     float filtered_value;               // Final filtered value
 } adc_ctrl_t;
