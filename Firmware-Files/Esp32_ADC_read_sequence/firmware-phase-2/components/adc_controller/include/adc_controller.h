@@ -75,9 +75,12 @@ typedef struct {
     adc_ctrl_t adc_channels[NUM_ADC_CHANNELS];  // Array to hold ADC readings
 } adc_batch_t;
 
+typedef esp_err_t (*adc_log_cb_t)(uint8_t *, uint16_t);
+
 esp_err_t initialize_adc(void);
 void adc_sampling_start();
 void read_adc(void);
 void print_adc_values();
+void adc_set_logging_callback(adc_log_cb_t log_cb);
 
 #endif //__ADC_CONTROLLER_H__

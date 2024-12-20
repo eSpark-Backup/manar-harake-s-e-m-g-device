@@ -23,6 +23,7 @@ typedef struct {
 
 static moving_avg_t emg_avg_buffers[NUM_ADC_CHANNELS] = {0};  // Buffer for each channel
 static adc_batch_t batch_buffer[BATCH_SIZE];  // Array to hold batches from the queue
+static adc_log_cb_t __log_cb = NULL;
 
 void adc_queue_handle_task(void *pvParameters);
 
@@ -198,7 +199,8 @@ void print_adc_values(adc_ctrl_t* adc_data_ptr)
     char *adc_values_string = __get_adc_values_string(adc_data_ptr, NUM_ADC_CHANNELS, serial_plotter_mean_formatter);
     // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, json_formatter);
     // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, csv_formatter);
-    printf("%s", adc_values_string);
+    // printf("%s", adc_values_string);
+    __log_cb(adc_values_string, strlen(adc_values_string));
 }
 
 double generate_sine_wave() 
@@ -313,11 +315,22 @@ void adc_timer_init() {
     gpio_config(&debug_gpio);
 }
 
-void adc_sampling_start()
+void adc_set_logging_callback(adc_log_cb_t log_cb)
 {
-    adc_timer_init();
+    __log_cb = log_cb;
 }
 
+void adc_sampling_start()
+{
+    if(__log_cb)
+    {
+        adc_timer_init();
+    }
+    else
+    {
+        printf("Logging Callback is NULL");
+    }
+}
 
 void __send_adc_batch_to_queue(adc_ctrl_t *adc_channels)
 {
