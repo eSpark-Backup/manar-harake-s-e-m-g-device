@@ -29,6 +29,7 @@
 #define DEFAULT_VREF 1093//mv 
 
 #define USE_BANDPASS_FILTER 1
+#define CALIBRATION_DURATION_MS 10000
 
 #if CONFIG_IDF_TARGET_ESP32
 static const adc_bits_width_t width = ADC_WIDTH_BIT_12;

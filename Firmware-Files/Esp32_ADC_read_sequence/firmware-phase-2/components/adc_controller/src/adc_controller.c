@@ -33,6 +33,7 @@ static moving_avg_t emg_avg_buffers[NUM_ADC_CHANNELS] = {0};  // Buffer for each
 static sliding_moving_avg_t emg_sliding_avg_buffers[NUM_ADC_CHANNELS] = {0};  // Buffer for each channel
 static adc_batch_t batch_buffer[BATCH_SIZE];  // Array to hold batches from the queue
 static adc_log_cb_t __log_cb = NULL;
+static bool calibration_done = false;    
 
 void adc_queue_handle_task(void *pvParameters);
 
@@ -140,7 +141,7 @@ esp_err_t initialize_adc(void)
         init_highpass_filter(&adc_channels[ch].hpf, sampling_rate, highpass_cutoff);
         init_lowpass_filter(&adc_channels[ch].lpf, sampling_rate, lowpass_cutoff);
     #endif
-        adc_channels[ch].mvc_value = 4095.0f;
+        adc_channels[ch].mvc_value = 0.0f;
     }
 
     adc_queue = xQueueCreate(BATCH_SIZE, sizeof(adc_batch_t)); 
@@ -209,7 +210,10 @@ void print_adc_values(adc_ctrl_t* adc_data_ptr)
     char *adc_values_string = __get_adc_values_string(adc_data_ptr, NUM_ADC_CHANNELS, json_formatter);
     // char *adc_values_string = __get_adc_values_string(adc_data_ptr, NUM_ADC_CHANNELS, csv_formatter);
     // printf("%s", adc_values_string);
-    __log_cb(adc_values_string, strlen(adc_values_string)+1);
+    if(__log_cb)
+    {
+        __log_cb(adc_values_string, strlen(adc_values_string)+1);
+    }
 }
 
 double generate_sine_wave() 
@@ -331,13 +335,8 @@ void adc_set_logging_callback(adc_log_cb_t log_cb)
 
 void adc_sampling_start()
 {
-    if(__log_cb)
     {
         adc_timer_init();
-    }
-    else
-    {
-        printf("Logging Callback is NULL");
     }
 }
 
@@ -414,11 +413,25 @@ void center_emg_signal(adc_batch_t *batch, size_t num_channels) {
         // Subtract the mean from the normalized value to center it around zero
         // batch->adc_channels[ch].centered_value = (float)(batch->adc_channels[ch].normalized_value - (float)mean_value);
         batch->adc_channels[ch].centered_value = (float)((float)raw_value - (float)mean_value);
+        float centered_value_abs = fabsf(batch->adc_channels[ch].centered_value);
+        if(!calibration_done)
+        {
+            // adc_ctrl_t *channel = &batch->adc_channels[ch];
+            if((float)centered_value_abs > fabsf(adc_channels[ch].mvc_value) )
+            {
+                adc_channels[ch].mvc_value = (float)centered_value_abs;
+            }
+            // printf("%.2f,", batch->adc_channels[ch].mvc_value);
+        }
         // batch->adc_channels[ch].centered_value = batch->adc_channels[ch].normalized_value;
         // batch->adc_channels[ch].centered_value = (float)raw_value;
 
         //bypassing centering for testing
         // batch->adc_channels[ch].centered_value = (float)raw_value;
+    }
+    if(!calibration_done)
+    {
+        // printf("\n");
     }
 }
 
@@ -479,7 +492,8 @@ void bandpass_filter_emg_signal(adc_batch_t *batch, size_t num_channels) {
 void adc_queue_handle_task(void *pvParameters)
 {
     size_t batch_count = 0;                // Number of batches collected in the buffer
-
+    const TickType_t calibration_duration = pdMS_TO_TICKS(CALIBRATION_DURATION_MS); // 10 seconds in ticks
+    TickType_t start_time = xTaskGetTickCount(); // Record the start time
     while (1)
     {
         batch_count = 0;
@@ -498,7 +512,15 @@ void adc_queue_handle_task(void *pvParameters)
 
         if (batch_count > 0)
         {
-
+            // Check if calibration period is ongoing
+            if(!calibration_done)
+            {
+                TickType_t elapsed_time = xTaskGetTickCount() - start_time;
+                if (elapsed_time >= calibration_duration)
+                {
+                    calibration_done = true;
+                }
+            }
             // Process each batch in the buffer
             for (size_t i = 0; i < batch_count; i++)
             {

@@ -35,8 +35,4 @@ void app_main(void)
     adc_sampling_start();
 
 
-    while(1)
-    {
-        vTaskDelay(100/portTICK_PERIOD_MS);
-    }
 }
