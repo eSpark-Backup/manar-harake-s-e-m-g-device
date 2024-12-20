@@ -39,6 +39,7 @@
 #define ESP_BLE_ADV_NAME_LEN_MAX 29
 
 #define ESP_LOGI
+#define ESP_LOG_BUFFER_HEX
 ///Declare the static function
 static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_t gatts_if, esp_ble_gatts_cb_param_t *param);
 
@@ -66,7 +67,7 @@ static notify_information_t service_information;
 static uint8_t char1_str[] = {0x11,0x22,0x33};
 static esp_gatt_char_prop_t a_property = 0;
 
-esp_err_t ble_server_send_data(uint8_t *data_ptr, uint16_t data_len);
+esp_err_t ble_service_send_data(uint8_t *data_ptr, uint16_t data_len);
 
 static esp_attr_value_t gatts_demo_char1_val =
 {
@@ -604,7 +605,7 @@ esp_err_t ble_service_init(void)
         ESP_LOGE(GATTS_TAG, "gatts app register error, error code = %x", ret);
         return;
     }
-    esp_err_t local_mtu_ret = esp_ble_gatt_set_local_mtu(500);
+    esp_err_t local_mtu_ret = esp_ble_gatt_set_local_mtu(517);
     if (local_mtu_ret){
         ESP_LOGE(GATTS_TAG, "set local  MTU failed, error code = %x", local_mtu_ret);
     }
@@ -618,14 +619,14 @@ esp_err_t ble_service_init(void)
     //     {
     //         indicate_data[i] = xTaskGetTickCount() - indicate_data[i];
     //     }
-    //     ble_server_send_data(indicate_data, sizeof(indicate_data));
+    //     ble_service_send_data(indicate_data, sizeof(indicate_data));
     //     vTaskDelay(1/portTICK_PERIOD_MS);
     // }
 
     return ret;
 }
 
-esp_err_t ble_server_send_data(uint8_t *data_ptr, uint16_t data_len)
+esp_err_t ble_service_send_data(uint8_t *data_ptr, uint16_t data_len)
 {
     esp_err_t ret = ESP_FAIL;
     if(service_information.enabled)

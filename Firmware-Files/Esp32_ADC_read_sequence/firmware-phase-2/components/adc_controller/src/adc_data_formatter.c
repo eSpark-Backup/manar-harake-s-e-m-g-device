@@ -105,7 +105,7 @@ char* serial_plotter_formatter(const adc_ctrl_t *adc_channels, size_t num_channe
 char* json_formatter(const adc_ctrl_t *adc_channels, size_t num_channels, char *output, size_t max_output_length)
 {
     size_t offset = 0;
-    offset += snprintf(output + offset, max_output_length - offset, "{\n");
+    offset += snprintf(output + offset, max_output_length - offset, "{");
 
     for (size_t i = 0; i < num_channels; i++)
     {
@@ -113,30 +113,30 @@ char* json_formatter(const adc_ctrl_t *adc_channels, size_t num_channels, char *
         {
             case ADC_UNIT_1:
                 offset += snprintf(output + offset, max_output_length - offset,
-                                   "  \"ADC1_Channel_%d\": %d,\n",
+                                   "\"A1C%d\":%.2f,",
                                    adc_channels[i].adc_ctl_channel_t.adc1_channel,
-                                   adc_channels[i].raw_value);
+                                   (float)adc_channels[i].filtered_value);
                 break;
 
             case ADC_UNIT_2:
                 offset += snprintf(output + offset, max_output_length - offset,
-                                   "  \"ADC2_Channel_%d\": %d,\n",
+                                   "\"A2C%d\":%.2f,",
                                    adc_channels[i].adc_ctl_channel_t.adc2_channel,
-                                   adc_channels[i].raw_value);
+                                   (float)adc_channels[i].filtered_value);
                 break;
 
             default:
-                offset += snprintf(output + offset, max_output_length - offset,
-                                   "  \"Channel_%zu\": \"No ADC data available\",\n", i);
+                // offset += snprintf(output + offset, max_output_length - offset,
+                //                    "  \"Channel_%zu\": \"No ADC data available\",\n", i);
                 break;
         }
     }
 
     // Remove the last comma and add closing bracket
     if (offset > 2)
-        output[offset - 2] = '\0';  // Remove last comma
+        output[offset - 1] = '}';  // Remove last comma
 
-    offset += snprintf(output + offset, max_output_length - offset, "\n}\n");
+    offset += snprintf(output + offset, max_output_length - offset, "\n");
 
     return output;
 }

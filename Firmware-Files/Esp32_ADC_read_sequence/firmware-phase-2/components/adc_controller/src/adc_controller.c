@@ -196,16 +196,16 @@ char* __get_adc_values_string(const adc_ctrl_t *adc_channels, size_t num_channel
 
 void print_adc_values(adc_ctrl_t* adc_data_ptr)
 {
-    char *adc_values_string = __get_adc_values_string(adc_data_ptr, NUM_ADC_CHANNELS, serial_plotter_mean_formatter);
-    // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, json_formatter);
-    // char *adc_values_string = __get_adc_values_string(adc_channels, NUM_ADC_CHANNELS, csv_formatter);
+    // char *adc_values_string = __get_adc_values_string(adc_data_ptr, NUM_ADC_CHANNELS, serial_plotter_mean_formatter);
+    char *adc_values_string = __get_adc_values_string(adc_data_ptr, NUM_ADC_CHANNELS, json_formatter);
+    // char *adc_values_string = __get_adc_values_string(adc_data_ptr, NUM_ADC_CHANNELS, csv_formatter);
     // printf("%s", adc_values_string);
-    __log_cb(adc_values_string, strlen(adc_values_string));
+    __log_cb(adc_values_string, strlen(adc_values_string)+1);
 }
 
 double generate_sine_wave() 
 {
-    static double response_duration = 60.0*2;
+    static double response_duration = 600.0*2;
     static double amplitude = 2047.5;  // Half of the max value (4095/2)
     static double time = 0.0;          // Time variable for sine wave calculation
     static double freq = 30.0;          // Initial frequency in Hz
@@ -263,8 +263,8 @@ float normalize_adc_value(int raw_value) {
 
 void __read_adc_mock(adc_ctrl_t *adc_channels, size_t num_channels, adc_bits_width_t width)
 {
-    // double adc_value = generate_sine_wave();
-    double adc_value = generate_combined_sine_wave();
+    double adc_value = generate_sine_wave();
+    // double adc_value = generate_combined_sine_wave();
     for (size_t i = 0; i < num_channels; i++)
     {
         adc_channels[i].raw_value = (int)adc_value;
@@ -273,8 +273,8 @@ void __read_adc_mock(adc_ctrl_t *adc_channels, size_t num_channels, adc_bits_wid
 
 void read_adc(void)
 {
-    __read_adc(adc_channels, NUM_ADC_CHANNELS, width);
-    // __read_adc_mock(adc_channels, NUM_ADC_CHANNELS, width);
+    // __read_adc(adc_channels, NUM_ADC_CHANNELS, width);
+    __read_adc_mock(adc_channels, NUM_ADC_CHANNELS, width);
     __send_adc_batch_to_queue(adc_channels);
 }
 
@@ -373,15 +373,15 @@ void center_emg_signal(adc_batch_t *batch, size_t num_channels) {
 
         int raw_value = batch->adc_channels[ch].raw_value;  // Get the raw sample
         // batch->adc_channels[ch].normalized_value = normalize_adc_value(raw_value);  // Normalize the value
-        batch->adc_channels[ch].normalized_value = (float)(raw_value);  // Normalize the value
+        // batch->adc_channels[ch].normalized_value = (float)(raw_value);  // Normalize the value
 
         // Compute the mean using the moving average of the normalized value
-        float mean_value = compute_mean(buffer, batch->adc_channels[ch].normalized_value);
+        // float mean_value = compute_mean(buffer, batch->adc_channels[ch].normalized_value);
 
         // Subtract the mean from the normalized value to center it around zero
-        batch->adc_channels[ch].centered_value = (float)(batch->adc_channels[ch].normalized_value - (float)mean_value);
+        // batch->adc_channels[ch].centered_value = (float)(batch->adc_channels[ch].normalized_value - (float)mean_value);
         // batch->adc_channels[ch].centered_value = batch->adc_channels[ch].normalized_value;
-        // batch->adc_channels[ch].centered_value = (float)raw_value;
+        batch->adc_channels[ch].centered_value = (float)raw_value;
 
         //bypassing centering for testing
         // batch->adc_channels[ch].centered_value = (float)raw_value;

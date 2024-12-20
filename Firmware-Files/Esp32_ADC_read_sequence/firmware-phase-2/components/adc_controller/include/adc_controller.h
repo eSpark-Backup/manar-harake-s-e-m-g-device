@@ -22,7 +22,7 @@
 #define TIMER_DIVIDER  16 // Timer clock divider (80 MHz / 16 = 5 MHz)
 #define TIMER_INTERVAL_SEC  0.001  // Sampling interval in seconds
 
-#define MAX_ADC_OUTPUT_LENGTH 1024*2  // Adjust size as needed
+#define MAX_ADC_OUTPUT_LENGTH 512*2  // Adjust size as needed
 
 #define ADC_CON_ATTEN ADC_ATTEN_11db
 #define NUM_ADC_CHANNELS 8

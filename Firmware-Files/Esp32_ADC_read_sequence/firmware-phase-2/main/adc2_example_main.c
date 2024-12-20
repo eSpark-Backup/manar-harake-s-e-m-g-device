@@ -14,6 +14,7 @@
 
 #include "adc_controller.h"
 #include "ble_service.h"
+#include "encoder_manager.h"
 
 static const char *TAG = "ADC_READER_PHASE_2";
 
@@ -31,9 +32,14 @@ void app_main(void)
 
     r = initialize_adc();
     assert( r == ESP_OK );
+    
+    // set_custom_encoder(mbedtls_base64_encode_wrapper);
+    set_custom_encoder(pass_through_encoder);
+    
 
     // adc_set_logging_callback((adc_log_cb_t)printf_logging);
-    adc_set_logging_callback((adc_log_cb_t)ble_server_send_data);
+    // adc_set_logging_callback((adc_log_cb_t)ble_service_send_data);
+    adc_set_logging_callback((adc_log_cb_t)ble_service_send_data_encoded);
     adc_sampling_start();
 
 
