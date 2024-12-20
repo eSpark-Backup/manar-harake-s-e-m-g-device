@@ -21,7 +21,16 @@ typedef struct {
     int index;                    // Index for the circular buffer
 } moving_avg_t;
 
+typedef struct {
+    float values[WINDOW_SIZE];  // Static buffer for values
+    int size;                   // Current size of the buffer
+    int front;                  // Index of the front element
+    int rear;                   // Index of the rear element
+    float sum;                  // Current sum of the values in the buffer
+} sliding_moving_avg_t;
+
 static moving_avg_t emg_avg_buffers[NUM_ADC_CHANNELS] = {0};  // Buffer for each channel
+static sliding_moving_avg_t emg_sliding_avg_buffers[NUM_ADC_CHANNELS] = {0};  // Buffer for each channel
 static adc_batch_t batch_buffer[BATCH_SIZE];  // Array to hold batches from the queue
 static adc_log_cb_t __log_cb = NULL;
 
@@ -273,8 +282,8 @@ void __read_adc_mock(adc_ctrl_t *adc_channels, size_t num_channels, adc_bits_wid
 
 void read_adc(void)
 {
-    // __read_adc(adc_channels, NUM_ADC_CHANNELS, width);
-    __read_adc_mock(adc_channels, NUM_ADC_CHANNELS, width);
+    __read_adc(adc_channels, NUM_ADC_CHANNELS, width);
+    // __read_adc_mock(adc_channels, NUM_ADC_CHANNELS, width);
     __send_adc_batch_to_queue(adc_channels);
 }
 
@@ -349,6 +358,27 @@ void __send_adc_batch_to_queue(adc_ctrl_t *adc_channels)
 }
 
 // Function to compute the moving average
+float sliding_compute_mean(sliding_moving_avg_t *buffer, float new_value) {
+    // Add the new value to the buffer
+    buffer->rear = (buffer->rear + 1) % WINDOW_SIZE;
+
+    if (buffer->size < WINDOW_SIZE) {
+        // If the buffer is not yet full
+        buffer->size++;
+    } else {
+        // If the buffer is full, subtract the value being replaced from the sum
+        buffer->sum -= buffer->values[buffer->rear];
+    }
+
+    // Update the sum with the new value
+    buffer->values[buffer->rear] = new_value;
+    buffer->sum += new_value;
+
+    // Return the mean
+    return buffer->sum / (float)buffer->size;
+}
+
+// Function to compute the moving average
 float compute_mean(moving_avg_t *buffer, float new_value)
 {
     // Remove the oldest value from the sum
@@ -369,7 +399,8 @@ void center_emg_signal(adc_batch_t *batch, size_t num_channels) {
 
     // Iterate over each channel in the batch
     for (size_t ch = 0; ch < num_channels; ch++) {
-        moving_avg_t *buffer = &emg_avg_buffers[ch];  // Get the buffer for the channel
+        // moving_avg_t *buffer = &emg_avg_buffers[ch];  // Get the buffer for the channel
+        sliding_moving_avg_t *buffer = &emg_sliding_avg_buffers[ch];
 
         int raw_value = batch->adc_channels[ch].raw_value;  // Get the raw sample
         // batch->adc_channels[ch].normalized_value = normalize_adc_value(raw_value);  // Normalize the value
@@ -377,11 +408,14 @@ void center_emg_signal(adc_batch_t *batch, size_t num_channels) {
 
         // Compute the mean using the moving average of the normalized value
         // float mean_value = compute_mean(buffer, batch->adc_channels[ch].normalized_value);
+        // float mean_value = compute_mean(buffer, (float)raw_value);
+        float mean_value = sliding_compute_mean(buffer, (float)raw_value);
 
         // Subtract the mean from the normalized value to center it around zero
         // batch->adc_channels[ch].centered_value = (float)(batch->adc_channels[ch].normalized_value - (float)mean_value);
+        batch->adc_channels[ch].centered_value = (float)((float)raw_value - (float)mean_value);
         // batch->adc_channels[ch].centered_value = batch->adc_channels[ch].normalized_value;
-        batch->adc_channels[ch].centered_value = (float)raw_value;
+        // batch->adc_channels[ch].centered_value = (float)raw_value;
 
         //bypassing centering for testing
         // batch->adc_channels[ch].centered_value = (float)raw_value;

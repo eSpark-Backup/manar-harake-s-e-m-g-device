@@ -1,11 +1,3 @@
-/* ADC2 Example
-
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
-
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
-*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "esp_system.h"
@@ -33,8 +25,8 @@ void app_main(void)
     r = initialize_adc();
     assert( r == ESP_OK );
     
-    // set_custom_encoder(mbedtls_base64_encode_wrapper);
-    set_custom_encoder(pass_through_encoder);
+    set_custom_encoder(mbedtls_base64_encode_wrapper);
+    // set_custom_encoder(pass_through_encoder);
     
 
     // adc_set_logging_callback((adc_log_cb_t)printf_logging);

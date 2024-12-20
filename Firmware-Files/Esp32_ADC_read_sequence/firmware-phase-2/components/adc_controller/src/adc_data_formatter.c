@@ -105,7 +105,7 @@ char* serial_plotter_formatter(const adc_ctrl_t *adc_channels, size_t num_channe
 char* json_formatter(const adc_ctrl_t *adc_channels, size_t num_channels, char *output, size_t max_output_length)
 {
     size_t offset = 0;
-    offset += snprintf(output + offset, max_output_length - offset, "{");
+    offset += snprintf(output + offset, max_output_length - offset, "{\"ADC\":{");
 
     for (size_t i = 0; i < num_channels; i++)
     {
@@ -113,15 +113,17 @@ char* json_formatter(const adc_ctrl_t *adc_channels, size_t num_channels, char *
         {
             case ADC_UNIT_1:
                 offset += snprintf(output + offset, max_output_length - offset,
-                                   "\"A1C%d\":%.2f,",
-                                   adc_channels[i].adc_ctl_channel_t.adc1_channel,
+                                   "\"Value_%d\":%.2f,",
+                                //    adc_channels[i].adc_ctl_channel_t.adc1_channel,
+                                    i,
                                    (float)adc_channels[i].filtered_value);
                 break;
 
             case ADC_UNIT_2:
                 offset += snprintf(output + offset, max_output_length - offset,
-                                   "\"A2C%d\":%.2f,",
-                                   adc_channels[i].adc_ctl_channel_t.adc2_channel,
+                                   "\"Value_%d\":%.2f,",
+                                //    adc_channels[i].adc_ctl_channel_t.adc2_channel,
+                                    i,
                                    (float)adc_channels[i].filtered_value);
                 break;
 
@@ -136,8 +138,7 @@ char* json_formatter(const adc_ctrl_t *adc_channels, size_t num_channels, char *
     if (offset > 2)
         output[offset - 1] = '}';  // Remove last comma
 
-    offset += snprintf(output + offset, max_output_length - offset, "\n");
-
+    offset += snprintf(output + offset, max_output_length - offset, "}\n");
     return output;
 }
 
