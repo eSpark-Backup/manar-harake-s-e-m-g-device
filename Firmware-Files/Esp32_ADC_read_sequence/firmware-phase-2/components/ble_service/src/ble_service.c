@@ -48,6 +48,15 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
 #define GATTS_DESCR_UUID_TEST_A     0x3333
 #define GATTS_NUM_HANDLE_TEST_A     4
 
+#define CHECK_PRINT_ERROR(x, msg)                                    \
+    {                                                                \
+        if (x)                                                       \
+        {                                                            \
+            printf("%s %s: %s", __func__, msg, esp_err_to_name(x)); \
+            return;                                                  \
+        }                                                            \
+    }
+
 static char test_device_name[ESP_BLE_ADV_NAME_LEN_MAX] = "ESP_GATTS_DEMO";
 
 #define TEST_MANUFACTURER_DATA_LEN  17
@@ -189,6 +198,20 @@ static prepare_type_env_t b_prepare_write_env;
 void example_write_event_env(esp_gatt_if_t gatts_if, prepare_type_env_t *prepare_write_env, esp_ble_gatts_cb_param_t *param);
 void example_exec_write_event_env(prepare_type_env_t *prepare_write_env, esp_ble_gatts_cb_param_t *param);
 
+static bool connected = false;
+static bool paired = false;
+
+// Functions to set the connection and pairing status for testing
+void set_ble_service_connected(bool status) 
+{
+    connected = status;
+}
+
+void set_ble_service_paired(bool status) 
+{
+    paired = status;
+}
+
 static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *param)
 {
     switch (event) {
@@ -247,6 +270,83 @@ static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param
                   param->pkt_data_lenth_cmpl.params.rx_len,
                   param->pkt_data_lenth_cmpl.params.tx_len);
         break;
+    case ESP_GAP_BLE_PASSKEY_REQ_EVT: // 12
+    {
+        break;
+    }
+    case ESP_GAP_BLE_OOB_REQ_EVT: // 13
+    {
+        uint8_t tk[16] = { 1 };
+        esp_ble_oob_req_reply(param->ble_security.ble_req.bd_addr, tk, sizeof(tk));
+        break;
+    }
+    case ESP_GAP_BLE_NC_REQ_EVT: // 16
+    {
+        esp_ble_confirm_reply(param->ble_security.ble_req.bd_addr, true);
+        break;
+    }
+    case ESP_GAP_BLE_SEC_REQ_EVT: // 10
+    {
+        esp_ble_gap_security_rsp(param->ble_security.ble_req.bd_addr, true);
+        break;
+    }
+#ifdef CONFIG_EZPI_UTIL_TRACE_EN
+    case ESP_GAP_BLE_PASSKEY_NOTIF_EVT: // 11
+    {
+        break;
+    }
+    case ESP_GAP_BLE_KEY_EVT: // 9
+    {
+        break;
+    }
+#endif
+    case ESP_GAP_BLE_AUTH_CMPL_EVT: // 8
+    {
+        esp_bd_addr_t bd_addr;
+        memcpy(bd_addr, param->ble_security.auth_cmpl.bd_addr, sizeof(esp_bd_addr_t));
+        // dump("remote BD_ADDR", bd_addr, 0, 6);
+        // TRACE_I("address type = %d", param->ble_security.auth_cmpl.addr_type);
+        printf("BLE: '%2X-%2X-%2X-%2X-%2X-%2X' connected!", bd_addr[0], bd_addr[1], bd_addr[2], bd_addr[3], bd_addr[4], bd_addr[5]);
+        if (!param->ble_security.auth_cmpl.success)
+        {
+            printf("BLE PAIRING FAILED\n");
+            set_ble_service_paired(false);
+#ifdef CONFIG_EZPI_UTIL_TRACE_EN
+            TRACE_W("pair status = fail");
+            TRACE_W("fail reason = 0x%x", param->ble_security.auth_cmpl.fail_reason);
+#endif
+            esp_ble_gap_disconnect(bd_addr);
+        }
+        else
+        {
+            printf("BLE PAIRING SUCCESS\n");
+            set_ble_service_paired(true);
+        }
+#ifdef CONFIG_EZPI_UTIL_TRACE_EN
+        else
+        {
+            TRACE_S("pair status = success");
+            TRACE_S("auth mode =  %s", esp_auth_req_to_str(param->ble_security.auth_cmpl.auth_mode));
+        }
+#endif
+#if (1 == ENABLE_TRACE)
+        show_bonded_devices();
+#endif // 1 == ENABLE_TRACE
+        break;
+    }
+    case ESP_GAP_BLE_REMOVE_BOND_DEV_COMPLETE_EVT: // 23
+    {
+        uint8_t* client_mac = param->remove_bond_dev_cmpl.bd_addr;
+        printf("BLE: '%2X-%2X-%2X-%2X-%2X-%2X' dis-connected!", client_mac[0], client_mac[1], client_mac[2], client_mac[3], client_mac[4], client_mac[5]);
+#ifdef CONFIG_EZPI_UTIL_TRACE_EN
+        TRACE_I("ESP_GAP_BLE_REMOVE_BOND_DEV_COMPLETE_EVT status = %d", param->remove_bond_dev_cmpl.status);
+        TRACE_I("ESP_GAP_BLE_REMOVE_BOND_DEV");
+        TRACE_I("-----ESP_GAP_BLE_REMOVE_BOND_DEV----");
+        // dump("bd_adrr", param->remove_bond_dev_cmpl.bd_addr, 0, sizeof(esp_bd_addr_t));
+        TRACE_I("------------------------------------");
+#endif
+        break;
+    }
     default:
         break;
     }
@@ -495,12 +595,15 @@ static void gatts_profile_a_event_handler(esp_gatts_cb_event_t event, esp_gatt_i
         gl_profile_tab[PROFILE_A_APP_ID].conn_id = param->connect.conn_id;
         //start sent the update connection parameters to the peer device.
         esp_ble_gap_update_conn_params(&conn_params);
+        set_ble_service_connected(true);
+        esp_ble_set_encryption(param->connect.remote_bda, ESP_BLE_SEC_ENCRYPT_MITM);
         break;
     }
     case ESP_GATTS_DISCONNECT_EVT:
         ESP_LOGI(GATTS_TAG, "Disconnected, remote "ESP_BD_ADDR_STR", reason 0x%02x",
                  ESP_BD_ADDR_HEX(param->disconnect.remote_bda), param->disconnect.reason);
         service_information.enabled = false;
+        set_ble_service_connected(false);
         esp_ble_gap_start_advertising(&adv_params);
         break;
     case ESP_GATTS_CONF_EVT:
@@ -546,6 +649,31 @@ static void gatts_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_t gatts_
             }
         }
     } while (0);
+}
+
+static void ble_start_secure_gatt_server_open_pairing(void)
+{
+    const esp_ble_auth_req_t auth_req = ESP_LE_AUTH_REQ_SC_MITM_BOND;
+    // ESP_LE_AUTH_REQ_SC_MITM_BOND;
+    // ESP_LE_AUTH_REQ_BOND_MITM;
+    const esp_ble_io_cap_t iocap = ESP_IO_CAP_NONE; // ESP_IO_CAP_OUT;
+    const uint8_t auth_option = ESP_BLE_ONLY_ACCEPT_SPECIFIED_AUTH_DISABLE;
+    const uint8_t oob_support = ESP_BLE_OOB_DISABLE; // ESP_BLE_OOB_ENABLE; // ESP_BLE_OOB_DISABLE;
+    const uint8_t init_key = (ESP_BLE_ENC_KEY_MASK | ESP_BLE_ID_KEY_MASK);
+    const uint8_t rsp_key = (ESP_BLE_ENC_KEY_MASK | ESP_BLE_ID_KEY_MASK);
+
+    CHECK_PRINT_ERROR(esp_ble_gap_set_security_param(ESP_BLE_SM_AUTHEN_REQ_MODE, (void*)&auth_req, sizeof(uint8_t)),
+        "failed -set - ESP_BLE_SM_AUTHEN_REQ_MODE");
+    CHECK_PRINT_ERROR(esp_ble_gap_set_security_param(ESP_BLE_SM_IOCAP_MODE, (void*)&iocap, sizeof(uint8_t)),
+        "failed -set - ESP_BLE_SM_IOCAP_MODE");
+    CHECK_PRINT_ERROR(esp_ble_gap_set_security_param(ESP_BLE_SM_ONLY_ACCEPT_SPECIFIED_SEC_AUTH, (void*)&auth_option, sizeof(uint8_t)),
+        "failed -set - ESP_BLE_SM_ONLY_ACCEPT_SPECIFIED_SEC_AUTH");
+    CHECK_PRINT_ERROR(esp_ble_gap_set_security_param(ESP_BLE_SM_OOB_SUPPORT, (void*)&oob_support, sizeof(uint8_t)),
+        "failed -set - ESP_BLE_SM_OOB_SUPPORT");
+    CHECK_PRINT_ERROR(esp_ble_gap_set_security_param(ESP_BLE_SM_SET_INIT_KEY, (void*)&init_key, sizeof(uint8_t)),
+        "failed -set - ESP_BLE_SM_SET_INIT_KEY");
+    CHECK_PRINT_ERROR(esp_ble_gap_set_security_param(ESP_BLE_SM_SET_RSP_KEY, (void*)&rsp_key, sizeof(uint8_t)),
+        "failed -set - ESP_BLE_SM_SET_RSP_KEY");
 }
 
 esp_err_t ble_service_init(void)
@@ -610,6 +738,7 @@ esp_err_t ble_service_init(void)
         ESP_LOGE(GATTS_TAG, "set local  MTU failed, error code = %x", local_mtu_ret);
     }
 
+    ble_start_secure_gatt_server_open_pairing();
 
     // while(1)
     // {
@@ -636,3 +765,16 @@ esp_err_t ble_service_send_data(uint8_t *data_ptr, uint16_t data_len)
     }
     return ret;
 }
+
+bool ble_service_is_connected(void) 
+{
+    // Replace with actual implementation to check BLE connection status
+    return connected;
+}
+
+bool ble_service_is_paired(void) 
+{
+    // Replace with actual implementation to check BLE pairing status
+    return paired;
+}
+
