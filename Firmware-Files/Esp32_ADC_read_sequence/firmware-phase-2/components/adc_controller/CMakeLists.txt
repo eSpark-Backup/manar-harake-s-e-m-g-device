@@ -5,8 +5,11 @@ if(IDF_TARGET STREQUAL "esp32")
                            INCLUDE_DIRS "include"
                            PRIV_INCLUDE_DIRS ""
                            PRIV_REQUIRES "driver"
-                           REQUIRES "esp_adc_cal"
+                           REQUIRES 
+                                    # "esp_adc_cal"
                                     "fir_filters"
+                                    esp_adc
+                                    driver
                                     )
     
     component_compile_options(-w)

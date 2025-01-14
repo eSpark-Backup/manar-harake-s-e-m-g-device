@@ -7,6 +7,7 @@
 #include "adc_controller.h"
 #include "ble_service.h"
 #include "encoder_manager.h"
+#include "nimble-nordic-uart.h"
 
 static const char *TAG = "ADC_READER_PHASE_2";
 
@@ -24,19 +25,21 @@ void app_main(void)
 
     // Wait for BLE connection and pairing
     while (!ble_service_is_connected() || !ble_service_is_paired()) {
-        printf("Waiting for BLE connection and pairing...\n");
+        // printf("Waiting for BLE connection and pairing...\n");
+        printf("loop...\n");
+        nordic_uart_send("Hello World!");
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 
-    r = initialize_adc();
-    assert(r == ESP_OK);
+    // r = initialize_adc();
+    // assert(r == ESP_OK);
 
-    set_custom_encoder(mbedtls_base64_encode_wrapper);
-    // set_custom_encoder(pass_through_encoder);
+    // set_custom_encoder(mbedtls_base64_encode_wrapper);
+    // // set_custom_encoder(pass_through_encoder);
 
-    // adc_set_logging_callback((adc_log_cb_t)printf_logging);
-    // adc_set_logging_callback((adc_log_cb_t)ble_service_send_data);
-    adc_set_logging_callback((adc_log_cb_t)ble_service_send_data_encoded);
-    adc_sampling_start();
+    // // adc_set_logging_callback((adc_log_cb_t)printf_logging);
+    // // adc_set_logging_callback((adc_log_cb_t)ble_service_send_data);
+    // adc_set_logging_callback((adc_log_cb_t)ble_service_send_data_encoded);
+    // adc_sampling_start();
 
 }

@@ -4,6 +4,9 @@
         "adc_controller.h": "c",
         "adc_data_formatter.h": "c",
         "ble_service.h": "c",
-        "encoder_manager.h": "c"
-    }
+        "encoder_manager.h": "c",
+        "nimble-nordic-uart.h": "c"
+    },
+    "idf.espIdfPathWin": "c:\\.toolchains\\esp\\v5.2.1\\idf\\v5.2.1\\esp-idf",
+    "idf.toolsPathWin": "c:\\.toolchains\\esp\\v5.2.1\\.espressif"
 }

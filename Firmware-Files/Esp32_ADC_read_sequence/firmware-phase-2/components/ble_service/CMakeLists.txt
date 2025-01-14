@@ -5,7 +5,8 @@ if(IDF_TARGET STREQUAL "esp32")
                            INCLUDE_DIRS "include"
                            PRIV_INCLUDE_DIRS ""
                            PRIV_REQUIRES bt nvs_flash
-                           REQUIRES                                   
+                           REQUIRES     
+                                    nimble-nordic-uart                              
                                     )
     
     component_compile_options(-w)

@@ -3,4 +3,8 @@ idf_component_register(SRCS
                             # "continuos_mode.c"
                     INCLUDE_DIRS "."
                     REQUIRES
+                        nimble-nordic-uart
+                        adc_controller
+                        ble_service
+                        encoder_manager
                     )

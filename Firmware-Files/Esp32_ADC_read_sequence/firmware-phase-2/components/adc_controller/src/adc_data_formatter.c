@@ -2,53 +2,53 @@
 
 char* serial_plotter_formatter_voltage(const adc_ctrl_t *adc_channels, size_t num_channels, char *output, size_t max_output_length)
 {
-    size_t offset = 0;
+    // size_t offset = 0;
 
-    // Loop through the ADC channels and format each channel's data for the Serial Plotter
-    for (size_t i = 0; i < num_channels; i++)
-    {
-        int written = 0;  // Number of characters written in this iteration
+    // // Loop through the ADC channels and format each channel's data for the Serial Plotter
+    // for (size_t i = 0; i < num_channels; i++)
+    // {
+    //     int written = 0;  // Number of characters written in this iteration
         
-        // Start with an empty line, formatting each ADC reading with its corresponding label
-        switch (adc_channels[i].type)
-        {
-            case ADC_UNIT_1:
-                written = snprintf(output + offset, max_output_length - offset,
-                                   "%d", esp_adc_cal_raw_to_voltage(adc_channels[i].raw_value, adc_channels[i].adc_cal_chars) + adc_channels[i].offset);
-                break;
+    //     // Start with an empty line, formatting each ADC reading with its corresponding label
+    //     switch (adc_channels[i].type)
+    //     {
+    //         case ADC_UNIT_1:
+    //             written = snprintf(output + offset, max_output_length - offset,
+    //                                "%d", esp_adc_cal_raw_to_voltage(adc_channels[i].raw_value, adc_channels[i].adc_cal_chars) + adc_channels[i].offset);
+    //             break;
 
-            case ADC_UNIT_2:
-                written = snprintf(output + offset, max_output_length - offset,
-                                   "%d", esp_adc_cal_raw_to_voltage(adc_channels[i].raw_value, adc_channels[i].adc_cal_chars) + adc_channels[i].offset);                
-                break;
+    //         case ADC_UNIT_2:
+    //             written = snprintf(output + offset, max_output_length - offset,
+    //                                "%d", esp_adc_cal_raw_to_voltage(adc_channels[i].raw_value, adc_channels[i].adc_cal_chars) + adc_channels[i].offset);                
+    //             break;
 
-            default:
-                written = snprintf(output + offset, max_output_length - offset,
-                                   "No ADC data available");
-                break;
-        }
+    //         default:
+    //             written = snprintf(output + offset, max_output_length - offset,
+    //                                "No ADC data available");
+    //             break;
+    //     }
 
-        // If written was negative or we are about to overflow, stop writing more data
-        if (written < 0 || written >= max_output_length - offset)
-        {
-            break;
-        }
+    //     // If written was negative or we are about to overflow, stop writing more data
+    //     if (written < 0 || written >= max_output_length - offset)
+    //     {
+    //         break;
+    //     }
 
-        // Move the offset ahead by the number of characters written
-        offset += written;
+    //     // Move the offset ahead by the number of characters written
+    //     offset += written;
 
-        // If this is not the last channel, add a comma to separate the values for the plotter
-        if (i < num_channels - 1)
-        {
-            written = snprintf(output + offset, max_output_length - offset, ",");
-            offset += written;
-        }
-    }
+    //     // If this is not the last channel, add a comma to separate the values for the plotter
+    //     if (i < num_channels - 1)
+    //     {
+    //         written = snprintf(output + offset, max_output_length - offset, ",");
+    //         offset += written;
+    //     }
+    // }
 
-    // After all values are added for this sample, add a newline to separate the sample from the next one
-    snprintf(output + offset, max_output_length - offset, "\n");
+    // // After all values are added for this sample, add a newline to separate the sample from the next one
+    // snprintf(output + offset, max_output_length - offset, "\n");
 
-    return output;
+    // return output;
 }
 
 char* serial_plotter_formatter(const adc_ctrl_t *adc_channels, size_t num_channels, char *output, size_t max_output_length)

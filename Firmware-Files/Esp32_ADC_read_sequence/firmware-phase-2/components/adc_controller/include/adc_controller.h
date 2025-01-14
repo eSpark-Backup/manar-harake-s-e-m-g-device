@@ -4,7 +4,8 @@
 #include "esp_system.h"
 #include "driver/gpio.h"
 #include "driver/adc.h"
-#include "esp_adc_cal.h"
+// #include "esp_adc_cal.h"
+#include "esp_adc/adc_cali.h"
 #include "fir_filters.h"
 
 #define ADC2_EXAMPLE_CHANNEL_0          ADC2_CHANNEL_9
@@ -24,7 +25,7 @@
 
 #define MAX_ADC_OUTPUT_LENGTH 512*2  // Adjust size as needed
 
-#define ADC_CON_ATTEN ADC_ATTEN_11db
+#define ADC_CON_ATTEN ADC_ATTEN_DB_11
 #define NUM_ADC_CHANNELS 8
 #define DEFAULT_VREF 1093//mv 
 
@@ -62,7 +63,7 @@ typedef struct adc_ctrl_t {
     float centered_value;               // Centered value
     adc_unit_t type;                    // Type of ADC (ADC1 or ADC2)
     adc_offset_t offset;                // Offset for ADC calibration
-    esp_adc_cal_characteristics_t *adc_cal_chars; // Pointer to ADC calibration characteristics
+    // esp_adc_cal_characteristics_t *adc_cal_chars; // Pointer to ADC calibration characteristics
 
     HighPassFilter hpf;                 // High-pass filter instance
     IIRLowPassFilter lpf;               // Low-pass filter instance

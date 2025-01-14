@@ -80,14 +80,14 @@ esp_err_t __initialize_adc(adc_ctrl_t *adc_channels, size_t num_channels)
                 assert(r == ESP_OK);
 
                 // Allocate and initialize calibration characteristics for ADC1
-                adc_channels[i].adc_cal_chars = calloc(1, sizeof(esp_adc_cal_characteristics_t));
-                if (adc_channels[i].adc_cal_chars == NULL) {
-                    return ESP_ERR_NO_MEM;  // Allocation failure
-                }
+                // adc_channels[i].adc_cal_chars = calloc(1, sizeof(esp_adc_cal_characteristics_t));
+                // if (adc_channels[i].adc_cal_chars == NULL) {
+                //     return ESP_ERR_NO_MEM;  // Allocation failure
+                // }
 
                 // Calibrate ADC1
-                r = esp_adc_cal_characterize(adc_channels[i].type, ADC_CON_ATTEN, width, DEFAULT_VREF, adc_channels[i].adc_cal_chars);
-                assert(r == ESP_OK);
+                // r = esp_adc_cal_characterize(adc_channels[i].type, ADC_CON_ATTEN, width, DEFAULT_VREF, adc_channels[i].adc_cal_chars);
+                // assert(r == ESP_OK);
                 break;
             }
         case ADC_UNIT_2:
@@ -105,14 +105,14 @@ esp_err_t __initialize_adc(adc_ctrl_t *adc_channels, size_t num_channels)
                 assert(r == ESP_OK);
 
                 // Allocate and initialize calibration characteristics for ADC2
-                adc_channels[i].adc_cal_chars = calloc(1, sizeof(esp_adc_cal_characteristics_t));
-                if (adc_channels[i].adc_cal_chars == NULL) {
-                    return ESP_ERR_NO_MEM;  // Allocation failure
-                }
+                // adc_channels[i].adc_cal_chars = calloc(1, sizeof(esp_adc_cal_characteristics_t));
+                // if (adc_channels[i].adc_cal_chars == NULL) {
+                //     return ESP_ERR_NO_MEM;  // Allocation failure
+                // }
 
                 // Calibrate ADC2
-                r = esp_adc_cal_characterize(adc_channels[i].type, ADC_CON_ATTEN, width, DEFAULT_VREF, adc_channels[i].adc_cal_chars);
-                assert(r == ESP_OK);
+                // r = esp_adc_cal_characterize(adc_channels[i].type, ADC_CON_ATTEN, width, DEFAULT_VREF, adc_channels[i].adc_cal_chars);
+                // assert(r == ESP_OK);
                 break;
             }
         
@@ -315,9 +315,9 @@ void adc_timer_init() {
 
     timer_init(TIMER_GROUP, TIMER_INDEX, &config);
     timer_set_counter_value(TIMER_GROUP, TIMER_INDEX, 0x00000000);
-    timer_set_alarm_value(TIMER_GROUP, TIMER_INDEX, TIMER_INTERVAL_SEC * (TIMER_BASE_CLK / TIMER_DIVIDER));
+    timer_set_alarm_value(TIMER_GROUP, TIMER_INDEX, TIMER_INTERVAL_SEC * (TIMER_SRC_CLK_APB  / TIMER_DIVIDER));
     timer_enable_intr(TIMER_GROUP, TIMER_INDEX);
-    printf("ADC INIT %d\n", TIMER_BASE_CLK);
+    printf("ADC INIT %d\n", TIMER_SRC_CLK_APB );
     timer_isr_register(TIMER_GROUP, TIMER_INDEX, timer_isr_handler, NULL, ESP_INTR_FLAG_IRAM, NULL);
     timer_start(TIMER_GROUP, TIMER_INDEX);
 
