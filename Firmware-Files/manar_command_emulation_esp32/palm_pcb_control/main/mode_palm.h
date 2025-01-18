@@ -1,0 +1,1 @@
+void handle_palm_command(const char *cmd);
