@@ -43,7 +43,20 @@ Each mode responds to six gesture commands (`1-6`) received from UART and perfor
 
 ## How to Test
 
-### 1. **Run the Firmware**
+### 1. **Flash the Firmware**
+
+To test the project, you can flash the ESP32 using the provided binary files. The files should be placed at the following addresses:
+Flash Commands
+- **Bootloader**: `bootloader.bin` → Flash at address `0x1000`
+- **Firmware**: `palm_pcb_control.bin` → Flash at address `0x10000`
+- **Partition Table**: `partition-table.bin` → Flash at address `0x8000`
+
+These binaries can be flashed using the following command (using `esptool.py`):
+
+```bash
+esptool.py --port /dev/ttyUSB0 write_flash 0x1000 bootloader.bin 0x10000 palm_pcb_control.bin 0x8000 partition-table.bin
+```
+
 - Power the ESP32 and monitor logs via UART.
 - Use a UART terminal program (e.g., `CoolTerm`) to send commands to the ESP32.
 - Set UART terminal program baudrate to 38400
