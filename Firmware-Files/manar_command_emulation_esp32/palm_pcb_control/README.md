@@ -1,49 +1,85 @@
-| Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C6 | ESP32-H2 | ESP32-P4 | ESP32-S2 | ESP32-S3 |
-| ----------------- | ----- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+# UART Gesture-Controlled Modes Firmware
 
-# UART Events Example
+This project implements a firmware that receives gestures via UART, processes them, and executes commands based on the active mode. The supported modes are:
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+1. **Palm PCB Control**
+2. **Mouse Control** (currently not Implemented)
+3. **Gamepad Control** (currently not Implemented)
+4. **VR Control** (currently not Implemented)
 
-This example shows how to use the UART driver to handle special UART events. It also reads data from `UART0` directly,
-and echoes it back to the monitoring console.
+Each mode responds to six gesture commands (`1-6`) received from UART and performs specific actions accordingly.
 
-## How to use example
+---
 
-### Hardware Required
+## Project Features
+- Handles four different control modes using an interrupt-driven mode switch mechanism.
+- Supports debounced mode switching with an external button.
+- Processes six distinct gesture commands (`1-6`).
+- Executes unique actions per mode:
+  - Palm commands (e.g., `G1`, `G2`).
 
-The example can be run on any development board, that is based on the Espressif SoC. The board shall be connected to a computer with a single USB cable for flashing and monitoring.
+---
 
-### Configure the project
+## Setup
 
-```
-idf.py menuconfig
-```
+### 1. **Hardware Connections**
+- **UART Connections**:
+  - UART0 (`MANAR_UART_RX` `RX2 D16` and `MANAR_UART_TX` `TX2 D17`): Connect this to your UART tool or device for sending and receiving commands.
+  - Make sure to common the ground connection.
+- **Button for Mode Switching**:
+  - Connect a momentary push button to the GPIO pin defined for `MODE_SWITCH_PIN` in the firmware (default: `GPIO_NUM_23`).
+- **LED (Optional)**:
+  - Connect an LED to `GPIO_NUM_2` (ESP32 BUILTIN LED) defined in the firmware to visualize mode switching (e.g., blinking interval 200ms).
 
-### Build and Flash
+---
 
-Build the project and flash it to the board, then run monitor tool to view serial output:
+## Hardware Requirements
+- ESP32 Development Board.
+- Push button for mode switching.
+- LED (optional, for visual feedback).
+- UART communication device (e.g., Palm PCB).
 
-```
-idf.py -p PORT flash monitor
-```
+---
 
-(To exit the serial monitor, type ``Ctrl-]``.)
+## How to Test
 
-See the Getting Started Guide for full steps to configure and use ESP-IDF to build projects.
+### 1. **Run the Firmware**
+- Power the ESP32 and monitor logs via UART.
+- Use a UART terminal program (e.g., `CoolTerm`) to send commands to the ESP32.
+- Set UART terminal program baudrate to 38400
 
-## Example Output
+### 2. **Send Gesture Commands**
+- Commands `1`, `2`, `3`, `4`, `5`, and `6` represent gesture inputs.
+- Send these commands over UART (configured with `38400 baud` rate) to test different responses for the current mode.
 
-Pushing `a` followed by a `b` on the keyboard will generate the following output:
-```
-...
-I (0) cpu_start: Starting scheduler on APP CPU.
-I (299) uart: queue free spaces: 20
-I (2249) uart_events: uart[0] event:
-I (2249) uart_events: [UART DATA]: 1
-I (2249) uart_events: [DATA EVT]:
-aI (12089) uart_events: uart[0] event:
-I (12089) uart_events: [UART DATA]: 1
-I (12089) uart_events: [DATA EVT]:
-b
-```
+### 3. **Switch Modes**
+- Button GPIO 23
+- Press the mode-switching button to change the mode.
+- Interrupt on Negative Edge.
+- Debounce Period 200ms
+- The mode order is:
+  ```
+  MODE_PALM -> MODE_MOUSE -> MODE_GAMEPAD -> MODE_VR -> MODE_PALM (loop)
+  ```
+- Debounce ensures that a single button press doesn’t cause multiple mode switches.
+
+---
+
+## Mode Details and Behavior
+
+### **Palm PCB Control Mode**
+- Gesture commands (`1-6`) are mapped to `G1` to `G6`.
+- Each command is forwarded to another UART (`MANAR_UART_TX`).
+- Example:
+  - Input: `1`
+  - Output: `G1` written to UART.
+
+### **Mouse Control Mode**
+(currently not Implemented)
+
+### **Gamepad Control Mode**
+(currently not Implemented)
+
+### **VR Control Mode**
+(currently not Implemented)
+

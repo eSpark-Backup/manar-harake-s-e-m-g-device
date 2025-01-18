@@ -24,6 +24,7 @@ typedef enum {
 #define DEBOUNCE_TIME_MS 200
 #define INDICATION_LED_NUM 2
 #define INDICATION_BLINK_INTERVAL 200
+#define MANAR_UART_BAUDRATE 38400
 
 static volatile ControlMode current_mode = MODE_UNKNOWN;
 static uint64_t last_interrupt_time = 0;
@@ -60,12 +61,15 @@ void my_uart_callback(uint8_t *data, size_t len) {
             break;
         case MODE_MOUSE:
             // handle_mouse_command(gesture);
+            ESP_LOGE(TAG, "%s NOT HANDLED", control_mode_to_string(current_mode));
             break;
         case MODE_GAMEPAD:
             // handle_gamepad_command(gesture);
+            ESP_LOGE(TAG, "%s NOT HANDLED", control_mode_to_string(current_mode));
             break;
         case MODE_VR:
             // handle_vr_command(gesture);
+            ESP_LOGE(TAG, "%s NOT HANDLED", control_mode_to_string(current_mode));
             break;
         default:
             ESP_LOGE(TAG, "MODE NOT HANDLED");
@@ -109,7 +113,7 @@ void app_main(void)
 
     current_mode = MODE_PALM;
 
-    manar_uart_config_t command_uart_config = {.uart = MANAR_UART_TX, .baudrate = 115200};
+    manar_uart_config_t command_uart_config = {.uart = MANAR_UART_TX, .baudrate = MANAR_UART_BAUDRATE};
     manar_uart_init(command_uart_config, NULL);
     vTaskDelay(1000/portTICK_PERIOD_MS);
 

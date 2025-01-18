@@ -33,14 +33,14 @@ static void uart_event_task(void *pvParameters)
         //Waiting for UART event.
         if (xQueueReceive(uart_queue, (void *)&event, (TickType_t)portMAX_DELAY)) {
             bzero(dtmp, RD_BUF_SIZE);
-            ESP_LOGI(TAG, "uart[%d] event:", uart_num);
+            // ESP_LOGI(TAG, "uart[%d] event:", uart_num);
             switch (event.type) {
             //Event of UART receving data
             /*We'd better handler data event fast, there would be much more data events than
             other types of events. If we take too much time on data event, the queue might
             be full.*/
             case UART_DATA:
-                ESP_LOGI(TAG, "[UART DATA]: %d", event.size);
+                // ESP_LOGI(TAG, "[UART DATA]: %d", event.size);
                 uart_read_bytes(uart_num, dtmp, event.size, portMAX_DELAY);
                 // ESP_LOGI(TAG, "[DATA EVT]:");
                 // uart_write_bytes(uart_num, (const char*) dtmp, event.size);
