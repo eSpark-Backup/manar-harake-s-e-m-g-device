@@ -17,26 +17,7 @@ typedef enum {
     MODE_UNKNOWN
 } ControlMode;
 
-#define NUMBER_OF_GESTURES (GESTURES_MAX - 1)
-
 static ControlMode current_mode = MODE_UNKNOWN;
-
-int parse_gesture(uint8_t *data, size_t len) {
-    // Assuming data is a string representing a number from 1 to 6
-    if (len == 0) {
-        return -1; // Invalid data length
-    }
-
-    // Convert the data to an integer
-    int gesture = atoi((char *)data);
-
-    // Check if the gesture is within the valid range (1-6)
-    if (gesture >= 1 && gesture <= NUMBER_OF_GESTURES) {
-        return gesture;  // Return 0-based index for the gesture
-    } else {
-        return -1;  // Invalid gesture
-    }
-}
 
 void my_uart_callback(uint8_t *data, size_t len) {
     int gesture = parse_gesture(data, len);
@@ -59,7 +40,7 @@ void my_uart_callback(uint8_t *data, size_t len) {
             // handle_vr_command(gesture);
             break;
         default:
-            ESP_LOGE("MODE NOT HANDLED");
+            ESP_LOGE(TAG, "MODE NOT HANDLED");
             break;
     }
 }

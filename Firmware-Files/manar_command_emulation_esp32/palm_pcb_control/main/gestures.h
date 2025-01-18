@@ -1,3 +1,6 @@
+#include <stdint.h>
+#include <stddef.h>
+
 typedef enum {
     GESTURE_UNKNOWN = 0,
     GESTURE_1,   // Gesture 1
@@ -8,3 +11,8 @@ typedef enum {
     GESTURE_6,   // Gesture 6
     GESTURES_MAX
 } GestureCommand;
+
+#define NUMBER_OF_GESTURES (GESTURES_MAX - 1)
+
+
+int parse_gesture(uint8_t *data, size_t len);
