@@ -1,0 +1,24 @@
+{
+    "C_Cpp.intelliSenseEngine": "default",
+    "idf.espIdfPathWin": "c:\\.toolchains\\esp\\v5.2.1\\idf\\v5.2.1\\esp-idf",
+    "idf.openOcdConfigs": [
+        "board/esp32-wrover-kit-3.3v.cfg"
+    ],
+    "idf.portWin": "COM3",
+    "idf.toolsPathWin": "c:\\.toolchains\\esp\\v5.2.1\\.espressif",
+    "files.associations": {
+        "manar_uart_hal.h": "c",
+        "queue.h": "c",
+        "array": "c",
+        "bitset": "c",
+        "string_view": "c",
+        "format": "c",
+        "initializer_list": "c",
+        "span": "c",
+        "regex": "c",
+        "esp_log.h": "c",
+        "string.h": "c",
+        "mode_palm.h": "c",
+        "gestures.h": "c"
+    }
+}
