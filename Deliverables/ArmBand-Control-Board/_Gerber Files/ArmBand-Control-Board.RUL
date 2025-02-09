@@ -1,4 +1,4 @@
-DRC Rules Export File for PCB: E:\ManarHarake-sEMGDevice\Design-Files\ArmBand-Control-Board\ArmBand-Control-Board.PcbDoc
+DRC Rules Export File for PCB: S:\ManarHarake-sEMGDevice\Design-Files\ArmBand-Control-Board-v2.0\ArmBand-Control-Board.PcbDoc
 RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
 RuleKind=Width|RuleName=Width|Scope=Board|Minimum=6.00
 RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=7.00
