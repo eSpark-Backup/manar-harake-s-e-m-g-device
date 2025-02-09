@@ -287,91 +287,112 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ZRBWWLEC
 
+[Document15]
+DocumentPath=EMG-Arm-ELEC-V2.0.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=QIQOBTQM
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Design Rule Check - Electrode_PCB_v4.0.html
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.DRR
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Design Rule Check - EMG-Arm-ELEC-V2.html
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.EXTREP
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GBL
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GBO
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GBP
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GBS
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GD1
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GG1
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GD1
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GM2
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GG1
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GPB
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GM2
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GPT
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GPB
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GTL
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GPT
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GTO
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GTP
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GTS
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.LDP
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.REP
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.RUL
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.REP
 DItemRevisionGUID=
 
 [GeneratedDocument20]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.TXT
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.RUL
 DItemRevisionGUID=
 
 [GeneratedDocument21]
-DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Pick Place for Electrode_PCB_v4.0.2.csv
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Electrode_PCB_v4.0.2.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument22]
+DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Pick Place for Electrode_PCB_v4.0.2.csv
+DItemRevisionGUID=
+
+[GeneratedDocument23]
 DocumentPath=Project Outputs for Electrode_Board_v4.0.2\Pick Place for Electrode_PCB_v4.0.2.txt
 DItemRevisionGUID=
 
