@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: D:\eSpark-Consultants\ManarHarake-sEMGDevice\Design-Files\ArmBand-Control-Board-v2.0\ArmBand-Control-Board.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=armband-control-board-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=armband-control-board-slotholes.txt|DrillLayers=gtl,gbl
