@@ -5,8 +5,8 @@ D:\eSpark-Consultants\ManarHarake-sEMGDevice\Design-Files\Electrode-Board-v4.0\E
 File Design Information:
 
 Date:       11/02/25
-Time:       14:16
-Revision:   ea8183f96d7e67a51e3bfac5c344e989a6aa99c4
+Time:       16:43
+Revision:   a11590007f8045183cf1ac2c9baae76a6a0ae7a9
 Variant:    No variations
 Units used: mm
 
@@ -93,6 +93,7 @@ D8         TopLayer    120.5490mm   157.9794mm   90       120.5490mm 157.9794mm 
 J1         TopLayer    216.2293mm   19.1000mm    180      216.2293mm 19.1000mm  216.2293mm 16.5600mm  
 J2         TopLayer    221.3864mm   19.1008mm    90       221.3864mm 15.2908mm  221.3864mm 15.2908mm  
 J3         BottomLayer 216.2293mm   13.2575mm    0        216.2293mm 13.2575mm  216.2292mm 23.2447mm  
+J4         TopLayer    114.4996mm   164.9208mm   180      114.4996mm 164.9208mm 110.9996mm 163.3806mm 
 J5         TopLayer    199.2246mm   19.1000mm    180      199.2246mm 19.1000mm  199.2246mm 16.5600mm  
 J6         TopLayer    204.3817mm   19.1008mm    90       204.3817mm 15.2908mm  204.3817mm 15.2908mm  
 J7         BottomLayer 199.2246mm   13.2575mm    0        199.2246mm 13.2575mm  199.2246mm 23.2447mm  
@@ -102,7 +103,6 @@ J10        BottomLayer 180.5112mm   13.2574mm    0        180.5112mm 13.2574mm  
 J11        TopLayer    159.8683mm   19.1000mm    180      159.8683mm 19.1000mm  159.8683mm 16.5600mm  
 J12        TopLayer    165.0254mm   19.1008mm    90       165.0254mm 15.2908mm  165.0254mm 15.2908mm  
 J13        BottomLayer 159.8683mm   13.2575mm    0        159.8683mm 13.2575mm  159.8683mm 23.2447mm  
-J14        TopLayer    114.4996mm   164.9208mm   180      114.4996mm 164.9208mm 110.9996mm 163.3806mm 
 J14        TopLayer    110.0293mm   19.1000mm    180      110.0293mm 19.1000mm  110.0293mm 16.5600mm  
 J15        TopLayer    115.1864mm   19.1008mm    90       115.1864mm 15.2908mm  115.1864mm 15.2908mm  
 J16        BottomLayer 110.0293mm   3.2447mm     0        110.0293mm 3.2447mm   110.0293mm 23.2447mm  
