@@ -1,0 +1,16 @@
+Board Information Report
+Filename     : S:\ManarHarake-sEMGDevice\Design-Files\ArmBand-Control-Board-v2.0\ArmBand-Control-Board.PcbDoc
+Date         : 2/8/2025
+Time         : 7:31:30 PM
+Time Elapsed : 00:00:00
+
+Routing Information
+    Routing completion, 99.64%
+    Connections, 281
+    Connections routed, 280
+    Connections remaining, 1
+count : 4
+
+Net Track Width, Count
+    6mils, 81
+count : 1
