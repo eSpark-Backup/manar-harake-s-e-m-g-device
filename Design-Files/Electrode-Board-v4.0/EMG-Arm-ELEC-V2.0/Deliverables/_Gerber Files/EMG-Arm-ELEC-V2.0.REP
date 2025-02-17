@@ -48,6 +48,51 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
+Generating : Top Pad Master
+      File : EMG-Arm-ELEC-V2.0.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : EMG-Arm-ELEC-V2.0.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+*************************************************************
+
+*************************************************************
 Generating : Top Solder
       File : EMG-Arm-ELEC-V2.0.GTS
 
@@ -77,121 +122,6 @@ Used DCodes :
     D48
     D49
     D50
-*************************************************************
-
-*************************************************************
-Generating : Bottom Paste
-      File : EMG-Arm-ELEC-V2.0.GBP
-
-    Adding Layer      : Bottom Paste
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D69
-*************************************************************
-
-*************************************************************
-Generating : Top Pad Master
-      File : EMG-Arm-ELEC-V2.0.GPT
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-*************************************************************
-
-*************************************************************
-Generating : Top Paste
-      File : EMG-Arm-ELEC-V2.0.GTP
-
-    Adding Layer      : Top Paste
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-*************************************************************
-
-*************************************************************
-Generating : Bottom Layer
-      File : EMG-Arm-ELEC-V2.0.GBL
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D11
-    D51
-    D52
-    D53
-    D54
-    D55
-    D68
-    D69
-*************************************************************
-
-*************************************************************
-Generating : Board Outline
-      File : EMG-Arm-ELEC-V2.0.GM2
-
-    Adding Layer      : Board Outline
-
-
-Used DCodes :
-    D10
-*************************************************************
-
-*************************************************************
-Generating : Bottom Pad Master
-      File : EMG-Arm-ELEC-V2.0.GPB
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D69
 *************************************************************
 
 *************************************************************
@@ -225,6 +155,94 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
+Generating : Board Outline
+      File : EMG-Arm-ELEC-V2.0.GM2
+
+    Adding Layer      : Board Outline
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : EMG-Arm-ELEC-V2.0.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : EMG-Arm-ELEC-V2.0.GPB
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D69
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : EMG-Arm-ELEC-V2.0.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D69
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : EMG-Arm-ELEC-V2.0.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D51
+    D52
+    D53
+    D54
+    D55
+    D68
+    D69
+*************************************************************
+
+*************************************************************
 Generating : Bottom Overlay
       File : EMG-Arm-ELEC-V2.0.GBO
 
@@ -232,24 +250,6 @@ Generating : Bottom Overlay
 
 
 Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Top Overlay
-      File : EMG-Arm-ELEC-V2.0.GTO
-
-    Adding Layer      : Top Overlay
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-    D14
-    D15
-    D16
-    D17
 *************************************************************
 
 *************************************************************

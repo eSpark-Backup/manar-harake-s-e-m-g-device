@@ -2,35 +2,16 @@
 FileName = EMG-Arm-ELEC-V1.0.GBR
 AutoAperture = True
 *************************************************************
-Generating : Top Paste
-      File : EMG-Arm-ELEC-V1.0.GTP
+Generating : Bottom Pad Master
+      File : EMG-Arm-ELEC-V1.0.GPB
 
-    Adding Layer      : Top Paste
-
-    Adding Layer      : Top Layer
+    Adding Layer      : Bottom Layer
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D33
-    D34
-    D35
-    D36
+    D70
 *************************************************************
 
 *************************************************************
@@ -64,21 +45,6 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Bottom Paste
-      File : EMG-Arm-ELEC-V1.0.GBP
-
-    Adding Layer      : Bottom Paste
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D70
-*************************************************************
-
-*************************************************************
 Generating : Bottom Overlay
       File : EMG-Arm-ELEC-V1.0.GBO
 
@@ -86,108 +52,6 @@ Generating : Bottom Overlay
 
 
 Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Bottom Pad Master
-      File : EMG-Arm-ELEC-V1.0.GPB
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D70
-*************************************************************
-
-*************************************************************
-Generating : Bottom Solder
-      File : EMG-Arm-ELEC-V1.0.GBS
-
-    Adding Layer      : Bottom Solder
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D59
-    D71
-*************************************************************
-
-*************************************************************
-Generating : Top Layer
-      File : EMG-Arm-ELEC-V1.0.GTL
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D11
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D33
-    D34
-    D35
-    D36
-    D60
-    D61
-    D62
-    D63
-    D64
-    D65
-    D66
-    D67
-    D68
-    D69
-*************************************************************
-
-*************************************************************
-Generating : Fabrication
-      File : EMG-Arm-ELEC-V1.0.GM3
-
-    Adding Layer      : Fabrication
-
-
-Used DCodes :
-    D10
-    D11
-    D63
-    D72
-*************************************************************
-
-*************************************************************
-Generating : Bottom Layer
-      File : EMG-Arm-ELEC-V1.0.GBL
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D11
-    D61
-    D63
-    D64
-    D69
-    D70
 *************************************************************
 
 *************************************************************
@@ -239,6 +103,21 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
+Generating : Bottom Paste
+      File : EMG-Arm-ELEC-V1.0.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D70
+*************************************************************
+
+*************************************************************
 Generating : Top Overlay
       File : EMG-Arm-ELEC-V1.0.GTO
 
@@ -258,13 +137,124 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Keep-Out Layer
-      File : EMG-Arm-ELEC-V1.0.GKO
+Generating : Fabrication
+      File : EMG-Arm-ELEC-V1.0.GM3
 
-    Adding Layer      : Keep-Out Layer
+    Adding Layer      : Fabrication
 
 
 Used DCodes :
+    D10
+    D11
+    D63
+    D72
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : EMG-Arm-ELEC-V1.0.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D61
+    D63
+    D64
+    D69
+    D70
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : EMG-Arm-ELEC-V1.0.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : EMG-Arm-ELEC-V1.0.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : EMG-Arm-ELEC-V1.0.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D59
+    D71
 *************************************************************
 
 *************************************************************

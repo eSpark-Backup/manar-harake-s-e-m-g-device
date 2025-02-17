@@ -2,26 +2,6 @@
 FileName = EMG_Arm_ELCT-V3.0.GBR
 AutoAperture = True
 *************************************************************
-Generating : Bottom Layer
-      File : EMG_Arm_ELCT-V3.0.GBL
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D69
-    D70
-    D71
-    D72
-    D73
-    D75
-    D110
-    D111
-*************************************************************
-
-*************************************************************
 Generating : Fabrication
       File : EMG_Arm_ELCT-V3.0.GM3
 
@@ -33,6 +13,85 @@ Used DCodes :
     D11
     D71
     D113
+*************************************************************
+
+*************************************************************
+Generating : Board Outline
+      File : EMG_Arm_ELCT-V3.0.GM2
+
+    Adding Layer      : Board Outline
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : EMG_Arm_ELCT-V3.0.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D111
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : EMG_Arm_ELCT-V3.0.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : EMG_Arm_ELCT-V3.0.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D68
+    D112
 *************************************************************
 
 *************************************************************
@@ -87,10 +146,8 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Top Paste
-      File : EMG_Arm_ELCT-V3.0.GTP
-
-    Adding Layer      : Top Paste
+Generating : Top Pad Master
+      File : EMG_Arm_ELCT-V3.0.GPT
 
     Adding Layer      : Top Layer
 
@@ -144,10 +201,8 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Bottom Solder
-      File : EMG_Arm_ELCT-V3.0.GBS
-
-    Adding Layer      : Bottom Solder
+Generating : Bottom Layer
+      File : EMG_Arm_ELCT-V3.0.GBL
 
     Adding Layer      : Bottom Layer
 
@@ -155,28 +210,19 @@ Generating : Bottom Solder
 
 
 Used DCodes :
-    D68
-    D112
+    D69
+    D70
+    D71
+    D72
+    D73
+    D75
+    D110
+    D111
 *************************************************************
 
 *************************************************************
 Generating : Bottom Pad Master
       File : EMG_Arm_ELCT-V3.0.GPB
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D111
-*************************************************************
-
-*************************************************************
-Generating : Bottom Paste
-      File : EMG_Arm_ELCT-V3.0.GBP
-
-    Adding Layer      : Bottom Paste
 
     Adding Layer      : Bottom Layer
 
@@ -263,52 +309,6 @@ Used DCodes :
     D108
     D109
     D110
-*************************************************************
-
-*************************************************************
-Generating : Board Outline
-      File : EMG_Arm_ELCT-V3.0.GM2
-
-    Adding Layer      : Board Outline
-
-
-Used DCodes :
-    D10
-*************************************************************
-
-*************************************************************
-Generating : Top Pad Master
-      File : EMG_Arm_ELCT-V3.0.GPT
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D33
-    D34
-    D35
-    D36
-    D37
-    D38
-    D39
-    D40
-    D41
-    D42
 *************************************************************
 
 *************************************************************
